@@ -15,6 +15,13 @@ const guides = [
     ready: true
   },
   {
+    title: 'ATS Resume Optimization: Beat the Bots',
+    desc: '75% of resumes get filtered by ATS. Learn how to optimize keywords, formatting, and pass the bots.',
+    tag: 'Resume',
+    href: '/guides/ats-resume-optimization',
+    ready: true
+  },
+  {
     title: 'AI Cover Letter Generator Guide',
     desc: 'Generate personalized cover letters in minutes, not hours. Best tools and prompts.',
     tag: 'Cover Letter',
@@ -26,6 +33,13 @@ const guides = [
     desc: 'Practice with AI before your real interview. Generate questions, build STAR answers, role-play.',
     tag: 'Interview',
     href: '/guides/ai-interview-prep',
+    ready: true
+  },
+  {
+    title: 'AI Salary Negotiation Scripts',
+    desc: 'Research market rates, generate negotiation scripts, prepare for objections. Get the salary you deserve.',
+    tag: 'Salary',
+    href: '/guides/ai-salary-negotiation',
     ready: true
   },
   {
