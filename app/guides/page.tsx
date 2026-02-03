@@ -8,6 +8,20 @@ export const metadata: Metadata = {
 
 const guides = [
   {
+    title: 'AI Interview Follow-Ups and Thank You Notes',
+    desc: 'Write memorable thank you emails that actually get responses. Prompts and templates for panel interviews and recovery.',
+    tag: 'Interview',
+    href: '/guides/ai-interview-followup',
+    ready: true
+  },
+  {
+    title: 'Research Companies with AI Before Interviews',
+    desc: '20 minutes of AI research beats 90% of candidates. Prompts for company deep dives, Glassdoor analysis, interviewer prep.',
+    tag: 'Interview',
+    href: '/guides/ai-company-research',
+    ready: true
+  },
+  {
     title: 'Build Your Personal Brand with AI',
     desc: 'Use AI to build a standout professional brand. Optimize LinkedIn, create content, and get found by recruiters.',
     tag: 'Personal Branding',
