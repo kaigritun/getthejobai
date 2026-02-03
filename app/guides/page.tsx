@@ -8,6 +8,13 @@ export const metadata: Metadata = {
 
 const guides = [
   {
+    title: 'Build Your Personal Brand with AI',
+    desc: 'Use AI to build a standout professional brand. Optimize LinkedIn, create content, and get found by recruiters.',
+    tag: 'Personal Branding',
+    href: '/guides/ai-personal-branding',
+    ready: true
+  },
+  {
     title: 'AI Career Pivot: Switch Industries with AI',
     desc: 'Use AI to identify transferable skills, fill knowledge gaps fast, and rewrite your narrative for a successful career change.',
     tag: 'Career Change',
