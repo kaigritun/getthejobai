@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import EmailSignup from '@/components/EmailSignup'
 
 export default function Home() {
   return (
@@ -39,6 +40,14 @@ export default function Home() {
             >
               Browse Guides
             </Link>
+          </div>
+          
+          {/* Email Signup */}
+          <div className="mt-12">
+            <EmailSignup 
+              headline="Get weekly AI job search tips" 
+              buttonText="Get Free Tips" 
+            />
           </div>
         </div>
 
@@ -137,6 +146,17 @@ export default function Home() {
                 </li>
               </ul>
             </div>
+          </div>
+        </section>
+        
+        {/* Newsletter Section */}
+        <section className="mt-24 border-t border-white/10 pt-16">
+          <div className="max-w-xl">
+            <h2 className="text-2xl font-bold mb-4">Stay ahead of the competition</h2>
+            <EmailSignup 
+              headline="Free AI job search tips, weekly" 
+              buttonText="Subscribe Free" 
+            />
           </div>
         </section>
       </main>
