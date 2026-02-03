@@ -8,6 +8,27 @@ export const metadata: Metadata = {
 
 const guides = [
   {
+    title: 'AI Career Pivot: Switch Industries with AI',
+    desc: 'Use AI to identify transferable skills, fill knowledge gaps fast, and rewrite your narrative for a successful career change.',
+    tag: 'Career Change',
+    href: '/guides/ai-career-pivot',
+    ready: true
+  },
+  {
+    title: 'Finding Remote Jobs with AI',
+    desc: 'Find hidden remote jobs, tailor applications at scale, and prove your remote readiness. Beat global competition.',
+    tag: 'Remote Work',
+    href: '/guides/remote-job-search-ai',
+    ready: true
+  },
+  {
+    title: 'AI Skills Gap Analysis',
+    desc: 'Identify exactly what skills you need for your target job, prioritize what to learn, and close gaps quickly.',
+    tag: 'Skills',
+    href: '/guides/ai-skills-gap-analysis',
+    ready: true
+  },
+  {
     title: 'How to Land a Remote Job Using AI in 2026',
     desc: 'Beat the competition for remote jobs with AI tools. Smart job search, tailored applications, and interview prep.',
     tag: 'Remote Work',
