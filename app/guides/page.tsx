@@ -8,6 +8,20 @@ export const metadata: Metadata = {
 
 const guides = [
   {
+    title: 'AI Job Search Tools: Complete Guide',
+    desc: 'Comprehensive guide to AI tools for job searching. Compare resume builders, job boards, networking tools, and interview prep platforms.',
+    tag: 'Tools',
+    href: '/guides/ai-job-search-tools',
+    ready: true
+  },
+  {
+    title: 'AI Interview Preparation Guide',
+    desc: 'Use AI to prepare for interviews. Mock interviews with ChatGPT, company research, answer preparation, and follow-up strategies.',
+    tag: 'Interview',
+    href: '/guides/ai-interview-preparation',
+    ready: true
+  },
+  {
     title: 'AI Job Application Tracking',
     desc: 'Automate tracking, follow-ups, and organization so you never lose track of opportunities. Best tools and AI prompts.',
     tag: 'Organization',
