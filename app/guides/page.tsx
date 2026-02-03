@@ -8,6 +8,13 @@ export const metadata: Metadata = {
 
 const guides = [
   {
+    title: 'Build a Killer Portfolio with AI',
+    desc: 'Use AI to build portfolio projects fast. Generate ideas, scaffold projects, create case studies, and stand out.',
+    tag: 'Portfolio',
+    href: '/guides/ai-portfolio-building',
+    ready: true
+  },
+  {
     title: 'AI Interview Follow-Ups and Thank You Notes',
     desc: 'Write memorable thank you emails that actually get responses. Prompts and templates for panel interviews and recovery.',
     tag: 'Interview',
