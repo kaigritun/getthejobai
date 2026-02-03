@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import RelatedGuides from '@/components/RelatedGuides'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -300,6 +301,24 @@ Keep each under 100 words. Make them sound different—not templated.`}</p>
               </div>
             </section>
           </div>
+        
+          <RelatedGuides guides={[
+                    {
+                              slug: 'chatgpt-linkedin-outreach',
+                              title: 'LinkedIn Outreach',
+                              description: 'Network on LinkedIn with AI assistance.'
+                    },
+                    {
+                              slug: 'ai-interview-followup',
+                              title: 'AI Interview Follow-up',
+                              description: 'Write professional follow-up emails.'
+                    },
+                    {
+                              slug: 'linkedin-ai-optimization',
+                              title: 'LinkedIn Optimization',
+                              description: 'Build your network with an optimized profile.'
+                    }
+          ]} />
         </article>
       </main>
 

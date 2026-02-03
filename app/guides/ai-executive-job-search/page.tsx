@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import RelatedGuides from '@/components/RelatedGuides'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -246,6 +247,24 @@ export default function AIExecutiveJobSearchPage() {
               </div>
             </section>
           </div>
+        
+          <RelatedGuides guides={[
+                    {
+                              slug: 'ai-networking-emails',
+                              title: 'Networking Emails',
+                              description: 'Executive-level networking outreach.'
+                    },
+                    {
+                              slug: 'ai-salary-negotiation',
+                              title: 'Salary Negotiation',
+                              description: 'Negotiate executive compensation.'
+                    },
+                    {
+                              slug: 'linkedin-ai-optimization',
+                              title: 'LinkedIn Optimization',
+                              description: 'Executive LinkedIn presence.'
+                    }
+          ]} />
         </article>
       </main>
     </div>

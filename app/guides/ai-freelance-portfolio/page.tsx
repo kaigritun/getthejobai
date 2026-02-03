@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import RelatedGuides from '@/components/RelatedGuides'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -234,6 +235,24 @@ export default function AIFreelancePortfolioPage() {
               </div>
             </section>
           </div>
+        
+          <RelatedGuides guides={[
+                    {
+                              slug: 'ai-portfolio-building',
+                              title: 'Portfolio Building',
+                              description: 'General portfolio building strategies.'
+                    },
+                    {
+                              slug: 'ai-personal-branding',
+                              title: 'Personal Branding',
+                              description: 'Brand yourself as a freelancer.'
+                    },
+                    {
+                              slug: 'ai-networking-emails',
+                              title: 'Networking Emails',
+                              description: 'Reach out to potential freelance clients.'
+                    }
+          ]} />
         </article>
       </main>
 

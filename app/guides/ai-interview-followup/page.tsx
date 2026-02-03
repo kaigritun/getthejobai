@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import RelatedGuides from '@/components/RelatedGuides'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -229,6 +230,24 @@ Write a brief, professional clarification I can include in my thank you email th
               </div>
             </section>
           </div>
+        
+          <RelatedGuides guides={[
+                    {
+                              slug: 'ai-interview-prep',
+                              title: 'AI Interview Prep',
+                              description: 'Prepare for interviews with AI-generated questions.'
+                    },
+                    {
+                              slug: 'ai-salary-negotiation',
+                              title: 'AI Salary Negotiation',
+                              description: 'Negotiate your offer after a successful interview.'
+                    },
+                    {
+                              slug: 'ai-networking-emails',
+                              title: 'AI Networking Emails',
+                              description: 'Write professional emails that get responses.'
+                    }
+          ]} />
         </article>
       </main>
 

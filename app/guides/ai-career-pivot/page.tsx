@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import RelatedGuides from '@/components/RelatedGuides'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -239,6 +240,24 @@ Include why each company might be receptive to a pivot candidate.`}</p>
               </div>
             </section>
           </div>
+        
+          <RelatedGuides guides={[
+                    {
+                              slug: 'ai-skills-gap-analysis',
+                              title: 'Skills Gap Analysis',
+                              description: 'Identify what skills you need for your new career.'
+                    },
+                    {
+                              slug: 'ai-job-market-research',
+                              title: 'Job Market Research',
+                              description: 'Research demand in your target industry.'
+                    },
+                    {
+                              slug: 'chatgpt-resume-prompts',
+                              title: 'ChatGPT Resume Prompts',
+                              description: 'Reframe your experience for a new field.'
+                    }
+          ]} />
         </article>
       </main>
 

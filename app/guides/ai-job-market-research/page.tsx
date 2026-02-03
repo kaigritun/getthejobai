@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import RelatedGuides from '@/components/RelatedGuides'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -327,6 +328,24 @@ Sources to consider: Levels.fyi, Glassdoor, LinkedIn Salary, Payscale`}</p>
               </div>
             </section>
           </div>
+        
+          <RelatedGuides guides={[
+                    {
+                              slug: 'ai-salary-negotiation',
+                              title: 'AI Salary Negotiation',
+                              description: 'Use market data to negotiate better.'
+                    },
+                    {
+                              slug: 'ai-career-pivot',
+                              title: 'AI Career Pivot',
+                              description: 'Find growing fields for your pivot.'
+                    },
+                    {
+                              slug: 'ai-company-research',
+                              title: 'AI Company Research',
+                              description: 'Research specific companies in your target market.'
+                    }
+          ]} />
         </article>
       </main>
 

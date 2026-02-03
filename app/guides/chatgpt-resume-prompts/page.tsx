@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import RelatedGuides from '@/components/RelatedGuides'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -271,6 +272,24 @@ I want to be honest but also present myself well.`}</p>
               </div>
             </section>
           </div>
+        
+          <RelatedGuides guides={[
+                    {
+                              slug: 'best-ai-resume-builders-2026',
+                              title: 'Best AI Resume Builders',
+                              description: 'Top tools to build an ATS-optimized resume automatically.'
+                    },
+                    {
+                              slug: 'ats-resume-optimization',
+                              title: 'ATS Resume Optimization',
+                              description: 'Get past applicant tracking systems with AI-optimized formatting.'
+                    },
+                    {
+                              slug: 'ai-cover-letter-generator',
+                              title: 'AI Cover Letter Generator',
+                              description: 'Write compelling cover letters that match job descriptions.'
+                    }
+          ]} />
         </article>
       </main>
 

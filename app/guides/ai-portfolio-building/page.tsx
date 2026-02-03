@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import RelatedGuides from '@/components/RelatedGuides'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -230,6 +231,24 @@ export default function AIPortfolioBuildingPage() {
               </p>
             </section>
           </div>
+        
+          <RelatedGuides guides={[
+                    {
+                              slug: 'ai-freelance-portfolio',
+                              title: 'Freelance Portfolio',
+                              description: 'Build a portfolio for freelance work.'
+                    },
+                    {
+                              slug: 'ai-github-profile-optimization',
+                              title: 'GitHub Profile',
+                              description: 'Tech portfolios on GitHub.'
+                    },
+                    {
+                              slug: 'ai-personal-branding',
+                              title: 'Personal Branding',
+                              description: 'Your portfolio is part of your brand.'
+                    }
+          ]} />
         </article>
 
         <div className="mt-16 pt-8 border-t border-white/10">

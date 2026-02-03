@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import RelatedGuides from '@/components/RelatedGuides'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -303,6 +304,24 @@ Create a complete negotiation strategy including:
               </div>
             </section>
           </div>
+        
+          <RelatedGuides guides={[
+                    {
+                              slug: 'ai-interview-prep',
+                              title: 'AI Interview Prep',
+                              description: 'Ace the interview before negotiating your salary.'
+                    },
+                    {
+                              slug: 'ai-interview-followup',
+                              title: 'AI Interview Follow-up',
+                              description: 'Follow up professionally after negotiations.'
+                    },
+                    {
+                              slug: 'ai-job-market-research',
+                              title: 'AI Job Market Research',
+                              description: 'Know your market value before negotiating.'
+                    }
+          ]} />
         </article>
       </main>
 

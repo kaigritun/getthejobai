@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import RelatedGuides from '@/components/RelatedGuides'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -254,6 +255,24 @@ Write a response for when they ask about my experience with [skill] that:
               </div>
             </section>
           </div>
+        
+          <RelatedGuides guides={[
+                    {
+                              slug: 'ai-career-pivot',
+                              title: 'AI Career Pivot',
+                              description: 'Use skill insights to change careers.'
+                    },
+                    {
+                              slug: 'ai-job-market-research',
+                              title: 'Job Market Research',
+                              description: 'Align skills with market demand.'
+                    },
+                    {
+                              slug: 'ai-interview-prep',
+                              title: 'AI Interview Prep',
+                              description: 'Prepare to discuss your skills in interviews.'
+                    }
+          ]} />
         </article>
       </main>
 

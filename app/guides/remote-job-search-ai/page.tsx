@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import RelatedGuides from '@/components/RelatedGuides'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -267,6 +268,24 @@ For each question, give me:
               </div>
             </section>
           </div>
+        
+          <RelatedGuides guides={[
+                    {
+                              slug: 'job-search-automation',
+                              title: 'Job Search Automation',
+                              description: 'Automate your entire remote job search.'
+                    },
+                    {
+                              slug: 'ai-job-alerts',
+                              title: 'AI Job Alerts',
+                              description: 'Get notified about new remote opportunities.'
+                    },
+                    {
+                              slug: 'remote-job-ai-guide',
+                              title: 'Remote Job AI Guide',
+                              description: 'Complete guide to landing remote work.'
+                    }
+          ]} />
         </article>
       </main>
 

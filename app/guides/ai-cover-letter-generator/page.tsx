@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import RelatedGuides from '@/components/RelatedGuides'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -312,6 +313,24 @@ Focus on how my experience directly addresses their requirements. Don't use gene
               </div>
             </section>
           </div>
+        
+          <RelatedGuides guides={[
+                    {
+                              slug: 'chatgpt-resume-prompts',
+                              title: 'ChatGPT Resume Prompts',
+                              description: 'Match your cover letter to a strong resume.'
+                    },
+                    {
+                              slug: 'ai-interview-prep',
+                              title: 'AI Interview Prep',
+                              description: 'Prepare for the interviews your cover letter lands.'
+                    },
+                    {
+                              slug: 'ats-resume-optimization',
+                              title: 'ATS Resume Optimization',
+                              description: 'Ensure both resume and cover letter pass ATS.'
+                    }
+          ]} />
         </article>
       </main>
 

@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import RelatedGuides from '@/components/RelatedGuides'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -371,6 +372,24 @@ Help me:
               </div>
             </section>
           </div>
+        
+          <RelatedGuides guides={[
+                    {
+                              slug: 'ai-interview-followup',
+                              title: 'AI Interview Follow-up',
+                              description: 'Write perfect thank-you emails and follow-ups.'
+                    },
+                    {
+                              slug: 'ai-salary-negotiation',
+                              title: 'AI Salary Negotiation',
+                              description: 'Negotiate better offers with AI-powered strategies.'
+                    },
+                    {
+                              slug: 'ai-company-research',
+                              title: 'AI Company Research',
+                              description: 'Research companies thoroughly before interviews.'
+                    }
+          ]} />
         </article>
       </main>
 

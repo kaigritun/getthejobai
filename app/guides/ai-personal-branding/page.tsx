@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import RelatedGuides from '@/components/RelatedGuides'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -268,6 +269,24 @@ Write a thoughtful comment that adds value (not just "great post!") and position
               </div>
             </section>
           </div>
+        
+          <RelatedGuides guides={[
+                    {
+                              slug: 'linkedin-ai-optimization',
+                              title: 'LinkedIn Optimization',
+                              description: 'Your LinkedIn is central to your brand.'
+                    },
+                    {
+                              slug: 'ai-portfolio-building',
+                              title: 'AI Portfolio Building',
+                              description: 'Showcase your work professionally.'
+                    },
+                    {
+                              slug: 'ai-github-profile-optimization',
+                              title: 'GitHub Profile Optimization',
+                              description: 'Developers: optimize your GitHub presence.'
+                    }
+          ]} />
         </article>
       </main>
 

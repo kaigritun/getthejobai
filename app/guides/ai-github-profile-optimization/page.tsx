@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import RelatedGuides from '@/components/RelatedGuides'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -261,6 +262,24 @@ Format: imperative mood, under 50 chars for title`}</p>
               </div>
             </section>
           </div>
+        
+          <RelatedGuides guides={[
+                    {
+                              slug: 'ai-portfolio-building',
+                              title: 'Portfolio Building',
+                              description: 'GitHub is part of your portfolio.'
+                    },
+                    {
+                              slug: 'ai-personal-branding',
+                              title: 'Personal Branding',
+                              description: 'Your GitHub reflects your brand.'
+                    },
+                    {
+                              slug: 'linkedin-ai-optimization',
+                              title: 'LinkedIn Optimization',
+                              description: 'Link your GitHub to LinkedIn.'
+                    }
+          ]} />
         </article>
       </main>
 

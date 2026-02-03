@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import RelatedGuides from '@/components/RelatedGuides'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -410,6 +411,24 @@ Analyze patterns and tell me:
               </div>
             </section>
           </div>
+        
+          <RelatedGuides guides={[
+                    {
+                              slug: 'remote-job-search-ai',
+                              title: 'Remote Job Search',
+                              description: 'Tactical remote job searching.'
+                    },
+                    {
+                              slug: 'job-search-automation',
+                              title: 'Job Search Automation',
+                              description: 'Automate your remote job hunt.'
+                    },
+                    {
+                              slug: 'ai-interview-prep',
+                              title: 'Interview Prep',
+                              description: 'Prepare for remote interviews.'
+                    }
+          ]} />
         </article>
       </main>
 

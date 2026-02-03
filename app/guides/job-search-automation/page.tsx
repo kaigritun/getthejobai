@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import RelatedGuides from '@/components/RelatedGuides'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -263,6 +264,24 @@ Keep it under 250 words. Conversational tone, not corporate speak.`}</p>
               </p>
             </section>
           </div>
+        
+          <RelatedGuides guides={[
+                    {
+                              slug: 'remote-job-search-ai',
+                              title: 'Remote Job Search with AI',
+                              description: 'Find remote positions efficiently with AI tools.'
+                    },
+                    {
+                              slug: 'ai-company-research',
+                              title: 'AI Company Research',
+                              description: 'Research potential employers automatically.'
+                    },
+                    {
+                              slug: 'ai-job-alerts',
+                              title: 'AI Job Alerts',
+                              description: 'Set up smart alerts for matching opportunities.'
+                    }
+          ]} />
         </article>
 
         <div className="mt-16 pt-8 border-t border-white/10">

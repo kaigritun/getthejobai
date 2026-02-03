@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import RelatedGuides from '@/components/RelatedGuides'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -319,6 +320,24 @@ export default function AIJobTrackerPage() {
               </div>
             </section>
           </div>
+        
+          <RelatedGuides guides={[
+                    {
+                              slug: 'ai-job-application-tracking',
+                              title: 'Application Tracking',
+                              description: 'Track your entire application process.'
+                    },
+                    {
+                              slug: 'ai-job-alerts',
+                              title: 'AI Job Alerts',
+                              description: 'Feed alerts into your tracker.'
+                    },
+                    {
+                              slug: 'job-search-automation',
+                              title: 'Job Search Automation',
+                              description: 'Automate your tracking workflow.'
+                    }
+          ]} />
         </article>
       </main>
 

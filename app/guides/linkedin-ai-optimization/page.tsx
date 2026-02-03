@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import RelatedGuides from '@/components/RelatedGuides'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -278,6 +279,24 @@ Each post should:
               </div>
             </section>
           </div>
+        
+          <RelatedGuides guides={[
+                    {
+                              slug: 'chatgpt-linkedin-outreach',
+                              title: 'LinkedIn Outreach',
+                              description: 'Craft messages that get responses on LinkedIn.'
+                    },
+                    {
+                              slug: 'ai-personal-branding',
+                              title: 'AI Personal Branding',
+                              description: 'Build a compelling professional presence.'
+                    },
+                    {
+                              slug: 'ai-networking-emails',
+                              title: 'AI Networking Emails',
+                              description: 'Connect with people beyond LinkedIn.'
+                    }
+          ]} />
         </article>
       </main>
 
