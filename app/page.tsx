@@ -53,7 +53,7 @@ export default function Home() {
                 desc: 'Copy-paste prompts to improve your resume with AI',
                 tag: 'Resume',
                 href: '/guides/chatgpt-resume-prompts',
-                soon: true
+                soon: false
               },
               {
                 title: 'How to Use AI for Cover Letters',
