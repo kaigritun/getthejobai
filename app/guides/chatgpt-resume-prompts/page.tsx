@@ -257,10 +257,10 @@ I want to be honest but also present myself well.`}</p>
               </p>
               <div className="flex flex-wrap gap-3">
                 <Link 
-                  href="/guides/ai-cover-letter-guide"
+                  href="/guides/ai-cover-letter-generator"
                   className="text-emerald-400 hover:text-emerald-300 text-sm"
                 >
-                  AI Cover Letter Guide →
+                  AI Cover Letter Generator →
                 </Link>
                 <Link 
                   href="/guides/ai-interview-prep"

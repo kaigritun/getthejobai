@@ -53,33 +53,38 @@ export default function Home() {
                 desc: 'Copy-paste prompts to improve your resume with AI',
                 tag: 'Resume',
                 href: '/guides/chatgpt-resume-prompts',
-                soon: false
+                ready: true
               },
               {
-                title: 'How to Use AI for Cover Letters',
+                title: 'AI Cover Letter Generator Guide',
                 desc: 'Generate personalized cover letters in minutes',
                 tag: 'Cover Letter',
-                href: '/guides/ai-cover-letter-guide',
-                soon: true
-              },
-              {
-                title: 'Best AI Resume Builders 2025',
-                desc: 'Comparison of top AI tools for job seekers',
-                tag: 'Tools',
-                href: '/guides/best-ai-resume-builders',
-                soon: true
+                href: '/guides/ai-cover-letter-generator',
+                ready: true
               },
               {
                 title: 'AI Interview Prep Guide',
                 desc: 'Practice with AI before your real interview',
                 tag: 'Interview',
                 href: '/guides/ai-interview-prep',
-                soon: true
+                ready: true
+              },
+              {
+                title: 'Best AI Resume Builders 2025',
+                desc: 'Comparison of top AI tools for job seekers',
+                tag: 'Tools',
+                href: '/guides/best-ai-resume-builders',
+                ready: false
               },
             ].map((guide) => (
-              <div
+              <Link
                 key={guide.title}
-                className="border border-white/10 rounded-lg p-5 hover:border-white/20 transition-colors"
+                href={guide.ready ? guide.href : '#'}
+                className={`border border-white/10 rounded-lg p-5 transition-colors ${
+                  guide.ready 
+                    ? 'hover:border-white/20' 
+                    : 'opacity-60 cursor-not-allowed'
+                }`}
               >
                 <div className="flex items-start justify-between gap-4">
                   <div>
@@ -87,7 +92,7 @@ export default function Home() {
                       <span className="text-xs font-mono text-emerald-400 uppercase">
                         {guide.tag}
                       </span>
-                      {guide.soon && (
+                      {!guide.ready && (
                         <span className="text-xs font-mono text-white/30 uppercase">
                           Coming Soon
                         </span>
@@ -96,8 +101,11 @@ export default function Home() {
                     <h3 className="font-medium mb-1">{guide.title}</h3>
                     <p className="text-sm text-white/50">{guide.desc}</p>
                   </div>
+                  {guide.ready && (
+                    <span className="text-emerald-400">→</span>
+                  )}
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </section>

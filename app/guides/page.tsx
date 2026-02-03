@@ -15,24 +15,24 @@ const guides = [
     ready: true
   },
   {
-    title: 'How to Use AI for Cover Letters',
-    desc: 'Generate personalized cover letters in minutes, not hours.',
+    title: 'AI Cover Letter Generator Guide',
+    desc: 'Generate personalized cover letters in minutes, not hours. Best tools and prompts.',
     tag: 'Cover Letter',
-    href: '/guides/ai-cover-letter-guide',
-    ready: false
+    href: '/guides/ai-cover-letter-generator',
+    ready: true
+  },
+  {
+    title: 'AI Interview Prep Guide',
+    desc: 'Practice with AI before your real interview. Generate questions, build STAR answers, role-play.',
+    tag: 'Interview',
+    href: '/guides/ai-interview-prep',
+    ready: true
   },
   {
     title: 'Best AI Resume Builders 2025',
     desc: 'Comparison of top AI-powered tools for job seekers.',
     tag: 'Tools',
     href: '/guides/best-ai-resume-builders',
-    ready: false
-  },
-  {
-    title: 'AI Interview Prep Guide',
-    desc: 'Practice with AI before your real interview. Common questions and mock sessions.',
-    tag: 'Interview',
-    href: '/guides/ai-interview-prep',
     ready: false
   },
   {
