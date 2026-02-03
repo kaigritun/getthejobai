@@ -1,65 +1,145 @@
-import Image from "next/image";
+import Link from 'next/link'
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <div className="min-h-screen bg-[#0c0c0c] text-white">
+      <nav className="border-b border-white/10 px-6 py-4">
+        <div className="max-w-5xl mx-auto flex justify-between items-center">
+          <span className="font-semibold text-lg">GetTheJobAI</span>
+          <div className="flex gap-6 text-sm text-white/60">
+            <Link href="/guides" className="hover:text-white transition-colors">Guides</Link>
+            <Link href="/tools" className="hover:text-white transition-colors">Tools</Link>
+            <Link href="/prompts" className="hover:text-white transition-colors">Prompts</Link>
+          </div>
+        </div>
+      </nav>
+
+      <main className="max-w-5xl mx-auto px-6 py-20">
+        <div className="max-w-2xl">
+          <p className="text-emerald-400 font-mono text-sm mb-4 uppercase tracking-wider">
+            AI-Powered Job Search
+          </p>
+          <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
+            Land your next job faster with AI
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+          <p className="text-xl text-white/60 mb-8 leading-relaxed">
+            Practical guides, prompts, and tools to use ChatGPT and AI assistants 
+            for resumes, cover letters, interview prep, and job applications.
+          </p>
+          <div className="flex gap-4">
+            <Link 
+              href="/guides/chatgpt-resume-prompts"
+              className="bg-emerald-500 hover:bg-emerald-400 text-black font-medium px-6 py-3 rounded transition-colors"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              Free Resume Prompts →
+            </Link>
+            <Link 
+              href="/guides"
+              className="border border-white/20 hover:border-white/40 px-6 py-3 rounded transition-colors"
             >
-              Learning
-            </a>{" "}
-            center.
+              Browse Guides
+            </Link>
+          </div>
+        </div>
+
+        <section className="mt-24">
+          <p className="text-white/40 font-mono text-xs uppercase tracking-wider mb-8">
+            Popular Guides
+          </p>
+          <div className="grid gap-4">
+            {[
+              {
+                title: 'ChatGPT Resume Prompts That Actually Work',
+                desc: 'Copy-paste prompts to improve your resume with AI',
+                tag: 'Resume',
+                href: '/guides/chatgpt-resume-prompts',
+                soon: true
+              },
+              {
+                title: 'How to Use AI for Cover Letters',
+                desc: 'Generate personalized cover letters in minutes',
+                tag: 'Cover Letter',
+                href: '/guides/ai-cover-letter-guide',
+                soon: true
+              },
+              {
+                title: 'Best AI Resume Builders 2025',
+                desc: 'Comparison of top AI tools for job seekers',
+                tag: 'Tools',
+                href: '/guides/best-ai-resume-builders',
+                soon: true
+              },
+              {
+                title: 'AI Interview Prep Guide',
+                desc: 'Practice with AI before your real interview',
+                tag: 'Interview',
+                href: '/guides/ai-interview-prep',
+                soon: true
+              },
+            ].map((guide) => (
+              <div
+                key={guide.title}
+                className="border border-white/10 rounded-lg p-5 hover:border-white/20 transition-colors"
+              >
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <div className="flex items-center gap-3 mb-2">
+                      <span className="text-xs font-mono text-emerald-400 uppercase">
+                        {guide.tag}
+                      </span>
+                      {guide.soon && (
+                        <span className="text-xs font-mono text-white/30 uppercase">
+                          Coming Soon
+                        </span>
+                      )}
+                    </div>
+                    <h3 className="font-medium mb-1">{guide.title}</h3>
+                    <p className="text-sm text-white/50">{guide.desc}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="mt-24 border-t border-white/10 pt-16">
+          <div className="max-w-xl">
+            <h2 className="text-2xl font-bold mb-4">Why use AI for your job search?</h2>
+            <div className="space-y-6 text-white/70">
+              <p>
+                The job market is brutal. You&apos;re competing against hundreds of applicants,
+                many using AI to optimize their applications. Level the playing field.
+              </p>
+              <ul className="space-y-3">
+                <li className="flex gap-3">
+                  <span className="text-emerald-400">→</span>
+                  <span>Tailor your resume to each job posting in minutes</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-emerald-400">→</span>
+                  <span>Write cover letters that actually get read</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-emerald-400">→</span>
+                  <span>Practice interviews with AI before the real thing</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-emerald-400">→</span>
+                  <span>Research companies and prepare better questions</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer className="border-t border-white/10 mt-24">
+        <div className="max-w-5xl mx-auto px-6 py-8">
+          <p className="text-sm text-white/40">
+            © 2025 GetTheJobAI. Helping job seekers use AI effectively.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+      </footer>
     </div>
-  );
+  )
 }
