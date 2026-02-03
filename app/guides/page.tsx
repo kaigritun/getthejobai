@@ -29,24 +29,24 @@ const guides = [
     ready: true
   },
   {
-    title: 'Best AI Resume Builders 2025',
-    desc: 'Comparison of top AI-powered tools for job seekers.',
+    title: 'Best AI Resume Builders 2026',
+    desc: 'Honest reviews of every major AI resume builder. Teal for free, Rezi if you pay.',
     tag: 'Tools',
-    href: '/guides/best-ai-resume-builders',
-    ready: false
+    href: '/guides/best-ai-resume-builders-2026',
+    ready: true
+  },
+  {
+    title: 'LinkedIn Optimization with AI',
+    desc: 'Use AI to optimize your LinkedIn profile and get found by recruiters. Keywords, headline, About section.',
+    tag: 'LinkedIn',
+    href: '/guides/linkedin-ai-optimization',
+    ready: true
   },
   {
     title: 'Job Search Automation with AI',
     desc: 'Automate job applications and tracking with AI assistants.',
     tag: 'Automation',
     href: '/guides/job-search-automation',
-    ready: false
-  },
-  {
-    title: 'LinkedIn Optimization with AI',
-    desc: 'Use AI to improve your LinkedIn profile and get noticed by recruiters.',
-    tag: 'LinkedIn',
-    href: '/guides/linkedin-optimization',
     ready: false
   },
 ]
