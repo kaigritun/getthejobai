@@ -8,6 +8,20 @@ export const metadata: Metadata = {
 
 const guides = [
   {
+    title: 'AI Job Application Tracking',
+    desc: 'Automate tracking, follow-ups, and organization so you never lose track of opportunities. Best tools and AI prompts.',
+    tag: 'Organization',
+    href: '/guides/ai-job-application-tracking',
+    ready: true
+  },
+  {
+    title: 'AI Job Market Research',
+    desc: 'Research job markets 10x faster with AI. Target the right companies, understand trends, position yourself as ideal.',
+    tag: 'Research',
+    href: '/guides/ai-job-market-research',
+    ready: true
+  },
+  {
     title: 'ChatGPT Prompts for LinkedIn Outreach',
     desc: 'AI-powered LinkedIn outreach that gets responses. Prompts for connecting with hiring managers, recruiters, and industry contacts.',
     tag: 'Networking',
