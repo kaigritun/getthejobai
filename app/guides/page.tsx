@@ -8,6 +8,13 @@ export const metadata: Metadata = {
 
 const guides = [
   {
+    title: 'How to Land a Remote Job Using AI in 2026',
+    desc: 'Beat the competition for remote jobs with AI tools. Smart job search, tailored applications, and interview prep.',
+    tag: 'Remote Work',
+    href: '/guides/remote-job-ai-guide',
+    ready: true
+  },
+  {
     title: 'ChatGPT Resume Prompts That Actually Work',
     desc: 'Copy-paste prompts to improve your resume with AI. Tested and refined prompts for real results.',
     tag: 'Resume',
