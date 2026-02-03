@@ -8,6 +8,27 @@ export const metadata: Metadata = {
 
 const guides = [
   {
+    title: 'ChatGPT Prompts for LinkedIn Outreach',
+    desc: 'AI-powered LinkedIn outreach that gets responses. Prompts for connecting with hiring managers, recruiters, and industry contacts.',
+    tag: 'Networking',
+    href: '/guides/chatgpt-linkedin-outreach',
+    ready: true
+  },
+  {
+    title: 'Building an AI-Powered Job Tracker',
+    desc: 'Track applications with AI. Build a system that helps you follow up, analyze patterns, and improve your strategy.',
+    tag: 'Organization',
+    href: '/guides/ai-job-tracker',
+    ready: true
+  },
+  {
+    title: 'Build a Freelance Portfolio with AI',
+    desc: 'Create impressive portfolio projects without client work. Generate ideas, create spec work, and write compelling case studies.',
+    tag: 'Portfolio',
+    href: '/guides/ai-freelance-portfolio',
+    ready: true
+  },
+  {
     title: 'Build a Killer Portfolio with AI',
     desc: 'Use AI to build portfolio projects fast. Generate ideas, scaffold projects, create case studies, and stand out.',
     tag: 'Portfolio',
