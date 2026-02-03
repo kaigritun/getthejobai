@@ -50,6 +50,13 @@ const guides = [
     ready: true
   },
   {
+    title: 'AI Networking Emails That Get Responses',
+    desc: 'Templates and prompts for cold outreach, follow-ups, and intro requests. High-volume personalization.',
+    tag: 'Networking',
+    href: '/guides/ai-networking-emails',
+    ready: true
+  },
+  {
     title: 'Best AI Resume Builders 2026',
     desc: 'Honest reviews of every major AI resume builder. Teal for free, Rezi if you pay.',
     tag: 'Tools',
