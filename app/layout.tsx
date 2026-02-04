@@ -20,6 +20,9 @@ export const metadata: Metadata = {
     title: 'GetTheJobAI - Land Your Next Job Faster with AI',
     description: 'Use AI to optimize your resume, write cover letters, and prepare for interviews.',
   },
+  other: {
+    'impact-site-verification': 'add25e44-59d0-4212-b76d-6e212bea06a9',
+  },
 }
 
 export default function RootLayout({
