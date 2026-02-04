@@ -8,6 +8,13 @@ export const metadata: Metadata = {
 
 const guides = [
   {
+    title: 'Best AI Resume Tools 2026: Complete Comparison',
+    desc: 'Tested 12 AI resume tools. Compare Teal, Rezi, Kickresume, ChatGPT and more. Find the best tool for your needs.',
+    tag: 'Tools',
+    href: '/guides/best-ai-resume-tools-2026',
+    ready: true
+  },
+  {
     title: 'AI Resume for Software Engineers (2026 Guide)',
     desc: 'Use AI to build a software engineer resume that beats ATS. Prompts for bullet points, tech skills, and projects.',
     tag: 'Resume',
