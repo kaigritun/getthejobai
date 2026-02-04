@@ -1,11 +1,12 @@
 import Link from 'next/link'
 import RelatedGuides from '@/components/RelatedGuides'
+import EmailSignup from '@/components/EmailSignup'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'AI Salary Negotiation: Scripts, Prompts & Strategies | GetTheJobAI',
-  description: 'Use ChatGPT to prepare for salary negotiations. Get scripts, handle objections, run mock negotiations, and negotiate confidently.',
-  keywords: ['ai salary negotiation', 'chatgpt salary negotiation', 'salary negotiation scripts', 'negotiate salary ai'],
+  title: 'AI Tools for Salary Negotiation (Get Paid What You\'re Worth) | GetTheJobAI',
+  description: 'Use AI tools and ChatGPT to research salaries, practice negotiations, and get the compensation you deserve. Free scripts and prompts included.',
+  keywords: ['ai salary negotiation', 'chatgpt salary negotiation', 'negotiate salary with ai', 'salary research tools', 'how to negotiate salary'],
 }
 
 export default function AISalaryNegotiationPage() {
@@ -34,273 +35,213 @@ export default function AISalaryNegotiationPage() {
 
         <article className="prose-custom">
           <p className="text-emerald-400 font-mono text-sm mb-4 uppercase tracking-wider">
-            Career Growth
+            Salary Negotiation
           </p>
           <h1 className="text-4xl font-bold mb-6">
-            AI Salary Negotiation: Scripts, Prompts, and Strategies That Work
+            AI Tools for Salary Negotiation
           </h1>
           <p className="text-xl text-white/60 mb-12 leading-relaxed">
-            Negotiating salary is uncomfortable. Use AI to prepare for every objection, 
-            craft your scripts, and run mock negotiations until you&apos;re confident.
+            You got the offer. Now comes the part most people dread: negotiating salary. 
+            Companies expect you to negotiate—and AI tools can give you a serious edge.
           </p>
 
           <div className="space-y-12">
             <section>
-              <h2 className="text-2xl font-bold mb-4">Why AI Changes Salary Negotiation</h2>
+              <h2 className="text-2xl font-bold mb-4">The Data Advantage</h2>
               <p className="text-white/70 mb-4">
-                The #1 reason people fail at negotiation: they&apos;re unprepared. They don&apos;t know 
-                what to say when the hiring manager says &quot;that&apos;s above our budget.&quot;
+                Negotiation is won before the conversation starts. You need to know:
               </p>
-              <p className="text-white/70 mb-4">AI solves this by:</p>
-              <ul className="space-y-2 text-white/70">
-                <li className="flex gap-3">
-                  <span className="text-emerald-400">→</span>
-                  <strong>Generating scripts</strong> you can practice until they feel natural
-                </li>
-                <li className="flex gap-3">
-                  <span className="text-emerald-400">→</span>
-                  <strong>Predicting objections</strong> and crafting responses for each one
-                </li>
-                <li className="flex gap-3">
-                  <span className="text-emerald-400">→</span>
-                  <strong>Running mock negotiations</strong> so you&apos;ve heard &quot;no&quot; 20 times before the real conversation
-                </li>
-                <li className="flex gap-3">
-                  <span className="text-emerald-400">→</span>
-                  <strong>Researching market rates</strong> so you anchor confidently
-                </li>
-              </ul>
-            </section>
-
-            <section>
-              <h2 className="text-2xl font-bold mb-4">Step 1: Research Your Market Value</h2>
-              <p className="text-white/70 mb-4">Before any negotiation, you need data:</p>
-              <div className="bg-white/5 border border-white/10 rounded-lg p-4 mb-4">
-                <p className="text-sm text-white/40 mb-2 font-mono">PROMPT</p>
-                <p className="text-white/90 font-mono text-sm whitespace-pre-wrap">{`I'm a [your title] with [X years] experience in [industry] in [city/region]. My key skills include [list 3-5 skills]. I'm negotiating salary for a [target role] at a [company size] company.
-
-Help me research:
-1. Salary range for this role in my market (low/median/high)
-2. What factors would put me at the high end vs. low end
-3. Additional compensation to negotiate (bonus, equity, benefits)
-4. 3 specific data points I can cite in negotiation`}</p>
-              </div>
-              <p className="text-white/50 text-sm">
-                <strong className="text-white/70">Pro tip:</strong> Cross-reference with Glassdoor, 
-                Levels.fyi (for tech), and LinkedIn Salary Insights.
-              </p>
-            </section>
-
-            <section>
-              <h2 className="text-2xl font-bold mb-4">Step 2: Define Your Numbers</h2>
-              <p className="text-white/70 mb-4">Every negotiation needs three numbers:</p>
-              <ul className="space-y-2 text-white/70 mb-4">
-                <li className="flex gap-3">
-                  <span className="text-emerald-400">1.</span>
-                  <strong>Target:</strong> What you actually want
-                </li>
-                <li className="flex gap-3">
-                  <span className="text-emerald-400">2.</span>
-                  <strong>Anchor:</strong> First number you state (10-15% above target)
-                </li>
-                <li className="flex gap-3">
-                  <span className="text-emerald-400">3.</span>
-                  <strong>Walk-away:</strong> The minimum you&apos;d accept
-                </li>
-              </ul>
-              <div className="bg-white/5 border border-white/10 rounded-lg p-4 mb-4">
-                <p className="text-sm text-white/40 mb-2 font-mono">PROMPT</p>
-                <p className="text-white/90 font-mono text-sm whitespace-pre-wrap">{`Based on this market research [paste research], help me define:
-1. My target salary
-2. My anchor number (what I should initially ask for)
-3. My walk-away point
-4. Reasoning I can use to justify my anchor
-
-Context: [Current salary, competing offers, unique qualifications]`}</p>
-              </div>
-            </section>
-
-            <section>
-              <h2 className="text-2xl font-bold mb-4">Step 3: Craft Your Initial Response</h2>
-              <p className="text-white/70 mb-4">When they make an offer, don&apos;t react. Use a prepared script:</p>
-              <div className="bg-white/5 border border-white/10 rounded-lg p-4 mb-4">
-                <p className="text-sm text-white/40 mb-2 font-mono">PROMPT</p>
-                <p className="text-white/90 font-mono text-sm whitespace-pre-wrap">{`The company offered me $[X]. I'm targeting $[Y]. Write me a professional, warm response that:
-1. Expresses genuine enthusiasm about the role
-2. Asks if there's flexibility on compensation
-3. Doesn't reveal my exact number yet
-4. Keeps the door open for discussion
-
-Keep it conversational, not corporate.`}</p>
-              </div>
-              <div className="bg-emerald-500/10 border border-emerald-500/30 rounded-lg p-4">
-                <p className="text-sm text-emerald-400 mb-2 font-mono">EXAMPLE OUTPUT</p>
-                <p className="text-white/80 text-sm italic">
-                  &quot;I&apos;m really excited about this opportunity—the team, the mission, everything we 
-                  discussed aligns perfectly. I do want to be transparent: based on my research 
-                  and what I&apos;d be bringing to the role, I was expecting something a bit higher. 
-                  Is there flexibility on the compensation?&quot;
-                </p>
-              </div>
-            </section>
-
-            <section>
-              <h2 className="text-2xl font-bold mb-4">Step 4: Handle Every Objection</h2>
-              <p className="text-white/70 mb-4">This is where AI shines. Generate responses to every possible pushback:</p>
-              <div className="bg-white/5 border border-white/10 rounded-lg p-4 mb-4">
-                <p className="text-sm text-white/40 mb-2 font-mono">PROMPT</p>
-                <p className="text-white/90 font-mono text-sm whitespace-pre-wrap">{`I'm negotiating for $[target]. Generate responses to these common objections:
-
-1. "That's above our budget for this role."
-2. "We don't negotiate starting salaries."
-3. "You'd be at the top of our pay band."
-4. "Can you justify that number?"
-5. "We can revisit compensation after 6 months."
-6. "That's more than people with more experience make here."
-
-For each: give me 2-3 response options ranging from firm to flexible.`}</p>
-              </div>
-            </section>
-
-            <section>
-              <h2 className="text-2xl font-bold mb-4">Step 5: Run Mock Negotiations</h2>
-              <p className="text-white/70 mb-4">This is the secret weapon. Practice until the real thing feels easy:</p>
-              <div className="bg-white/5 border border-white/10 rounded-lg p-4 mb-4">
-                <p className="text-sm text-white/40 mb-2 font-mono">PROMPT</p>
-                <p className="text-white/90 font-mono text-sm whitespace-pre-wrap">{`Let's do a mock salary negotiation. You play the hiring manager for [company type] hiring a [role]. Be realistic—push back, use common objections, test my responses. I'll negotiate. After each exchange, briefly coach me on what I did well and what I could improve.
-
-Start by making me an offer of $[below my target].`}</p>
-              </div>
-              <p className="text-white/50 text-sm">
-                <strong className="text-white/70">Run this 5-10 times.</strong> By the end, you&apos;ll have heard 
-                every objection and practiced your responses until they&apos;re automatic.
-              </p>
-            </section>
-
-            <section>
-              <h2 className="text-2xl font-bold mb-4">Step 6: Negotiate Beyond Base Salary</h2>
-              <p className="text-white/70 mb-4">If base salary is stuck, expand the conversation:</p>
-              <div className="bg-white/5 border border-white/10 rounded-lg p-4 mb-4">
-                <p className="text-sm text-white/40 mb-2 font-mono">PROMPT</p>
-                <p className="text-white/90 font-mono text-sm whitespace-pre-wrap">{`The company won't budge on base salary ($[X]). Help me negotiate these alternatives:
-1. Signing bonus
-2. Annual bonus target increase
-3. Extra PTO days
-4. Equity/stock options
-5. Earlier performance review
-6. Remote work flexibility
-7. Professional development budget
-8. Title upgrade
-
-For each, give me the ask and the justification.`}</p>
-              </div>
-            </section>
-
-            <section>
-              <h2 className="text-2xl font-bold mb-4">Real Numbers: What&apos;s Negotiable</h2>
               <ul className="space-y-2 text-white/70">
                 <li className="flex gap-3">
                   <span className="text-emerald-400">•</span>
-                  <strong>Signing bonus:</strong> $5K-25K mid-level, $25K-100K+ senior/exec
+                  Market rate for your role, level, and location
                 </li>
                 <li className="flex gap-3">
                   <span className="text-emerald-400">•</span>
-                  <strong>Extra PTO:</strong> 5-10 additional days is common
+                  The company&apos;s typical salary bands
                 </li>
                 <li className="flex gap-3">
                   <span className="text-emerald-400">•</span>
-                  <strong>Early review:</strong> 6 months instead of 12, with defined raise criteria
+                  Your specific leverage points
+                </li>
+              </ul>
+              <p className="text-white/70 mt-4">
+                AI tools help you gather and analyze this data in minutes.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-bold mb-4">Best AI Tools for Salary Research</h2>
+              
+              <h3 className="text-xl font-semibold mb-3 mt-6">1. ChatGPT + Levels.fyi/Glassdoor</h3>
+              <p className="text-white/70 mb-4">
+                Use ChatGPT to synthesize data from multiple sources:
+              </p>
+              <div className="bg-white/5 border border-white/10 rounded-lg p-4 mb-4">
+                <p className="text-sm text-white/40 mb-2 font-mono">PROMPT</p>
+                <p className="text-white/90 font-mono text-sm whitespace-pre-wrap">{`Based on Glassdoor and Levels.fyi data, what's the typical salary range for a Senior Product Manager in Austin, Texas at a Series B startup? Include base, bonus, and equity.`}</p>
+              </div>
+              <p className="text-white/50 text-sm mb-6">
+                Then verify with the actual sites. ChatGPT gives you a starting framework.
+              </p>
+
+              <h3 className="text-xl font-semibold mb-3">2. Payscale&apos;s Salary Negotiation Guide</h3>
+              <p className="text-white/70 mb-4">
+                Their AI-powered tool calculates your market value based on skills, experience, and location. It&apos;s free and surprisingly accurate.
+              </p>
+
+              <h3 className="text-xl font-semibold mb-3">3. LinkedIn Salary Insights</h3>
+              <p className="text-white/70 mb-4">
+                If you have Premium, the salary insights show you ranges for specific roles at specific companies. Worth it during job searches.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-bold mb-4">Using ChatGPT to Practice Negotiations</h2>
+              <p className="text-white/70 mb-4">
+                The best negotiators practice. Use ChatGPT as your sparring partner:
+              </p>
+              <div className="bg-white/5 border border-white/10 rounded-lg p-4 mb-4">
+                <p className="text-sm text-white/40 mb-2 font-mono">PROMPT</p>
+                <p className="text-white/90 font-mono text-sm whitespace-pre-wrap">{`You're a hiring manager at a tech startup. I'm a candidate who just received an offer of $120K base. I want to negotiate to $140K. Have a realistic negotiation conversation with me. Push back on my asks like a real hiring manager would.`}</p>
+              </div>
+              <p className="text-white/70 mt-4 mb-2">
+                Practice the hard questions:
+              </p>
+              <ul className="space-y-2 text-white/70">
+                <li className="flex gap-3">
+                  <span className="text-emerald-400">•</span>
+                  &quot;That&apos;s above our budget&quot;
                 </li>
                 <li className="flex gap-3">
                   <span className="text-emerald-400">•</span>
-                  <strong>Remote work:</strong> 1-2 extra days per week
+                  &quot;We can&apos;t go higher on base, but we can offer more equity&quot;
                 </li>
                 <li className="flex gap-3">
                   <span className="text-emerald-400">•</span>
-                  <strong>Dev budget:</strong> $2K-10K/year for conferences, courses, certifications
+                  &quot;This is our final offer&quot;
                 </li>
               </ul>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold mb-4">Sample Conversation Flow</h2>
-              <div className="bg-white/5 border border-white/10 rounded-lg p-4 space-y-4">
-                <div>
-                  <p className="text-white/50 text-sm">Them:</p>
-                  <p className="text-white/80">&quot;We&apos;d like to offer you $95,000.&quot;</p>
+              <h2 className="text-2xl font-bold mb-4">The Negotiation Script</h2>
+              <p className="text-white/70 mb-4">
+                Here&apos;s a framework that works:
+              </p>
+              <div className="space-y-4 text-white/70">
+                <div className="bg-white/5 border border-white/10 rounded-lg p-4">
+                  <p className="text-emerald-400 font-semibold mb-2">Step 1: Express enthusiasm</p>
+                  <p>&quot;I&apos;m really excited about this role and the team. Thank you for the offer.&quot;</p>
                 </div>
-                <div>
-                  <p className="text-emerald-400 text-sm">You:</p>
-                  <p className="text-white/80">&quot;Thank you—I&apos;m genuinely excited about this role. Based on my research and the specific experience I&apos;d bring, I was targeting $115,000. Is there flexibility on the compensation?&quot;</p>
+                <div className="bg-white/5 border border-white/10 rounded-lg p-4">
+                  <p className="text-emerald-400 font-semibold mb-2">Step 2: Anchor high (but reasonable)</p>
+                  <p>&quot;Based on my research and experience, I was expecting something closer to [X]. Is there flexibility on the base salary?&quot;</p>
                 </div>
-                <div>
-                  <p className="text-white/50 text-sm">Them:</p>
-                  <p className="text-white/80">&quot;That&apos;s higher than our budget. We could maybe do $100,000.&quot;</p>
+                <div className="bg-white/5 border border-white/10 rounded-lg p-4">
+                  <p className="text-emerald-400 font-semibold mb-2">Step 3: Have a backup ask</p>
+                  <p>If they can&apos;t move on base: &quot;What about signing bonus or additional equity?&quot;</p>
                 </div>
-                <div>
-                  <p className="text-emerald-400 text-sm">You:</p>
-                  <p className="text-white/80">&quot;I appreciate you working with me. If $115K isn&apos;t possible, could we look at the total package? A signing bonus to bridge the gap, or perhaps an accelerated review at 6 months with clear criteria for adjustment?&quot;</p>
-                </div>
-                <div>
-                  <p className="text-white/50 text-sm">Them:</p>
-                  <p className="text-white/80">&quot;We could do a $10K signing bonus.&quot;</p>
-                </div>
-                <div>
-                  <p className="text-emerald-400 text-sm">You:</p>
-                  <p className="text-white/80">&quot;That helps. If we can also add 3 extra PTO days and lock in a 6-month review, I&apos;d be ready to accept.&quot;</p>
+                <div className="bg-white/5 border border-white/10 rounded-lg p-4">
+                  <p className="text-emerald-400 font-semibold mb-2">Step 4: Get it in writing</p>
+                  <p>&quot;Great—can you send over the updated offer letter?&quot;</p>
                 </div>
               </div>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold mb-4">The Psychology of Negotiation</h2>
+              <h2 className="text-2xl font-bold mb-4">What NOT to Say</h2>
               <ul className="space-y-3 text-white/70">
                 <li className="flex gap-3">
-                  <span className="text-emerald-400">1.</span>
-                  <strong>Silence is power.</strong> After stating your number, stop talking. Let them respond.
+                  <span className="text-red-400">✗</span>
+                  <span>&quot;I need more money because of personal expenses&quot; (not their problem)</span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="text-emerald-400">2.</span>
-                  <strong>Enthusiasm is leverage.</strong> Genuine excitement makes them want to close you.
+                  <span className="text-red-400">✗</span>
+                  <span>&quot;My friend at another company makes more&quot; (irrelevant)</span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="text-emerald-400">3.</span>
-                  <strong>Options create confidence.</strong> Even a theoretical other offer changes your posture.
-                </li>
-                <li className="flex gap-3">
-                  <span className="text-emerald-400">4.</span>
-                  <strong>They expect negotiation.</strong> Offers have buffer built in. Not negotiating leaves money on the table.
+                  <span className="text-red-400">✗</span>
+                  <span>&quot;This is my minimum&quot; (backs you into a corner)</span>
                 </li>
               </ul>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold mb-4">Start Your Negotiation Today</h2>
+              <h2 className="text-2xl font-bold mb-4">Negotiation Email Template</h2>
               <p className="text-white/70 mb-4">
-                Copy the prompts above. Run the mock negotiation at least 5 times. Go into your 
-                next salary conversation knowing exactly what you&apos;ll say to every possible response.
+                Sometimes it&apos;s easier to negotiate via email. Here&apos;s a template:
+              </p>
+              <div className="bg-white/5 border border-white/10 rounded-lg p-4 mb-4">
+                <p className="text-sm text-white/40 mb-2 font-mono">EMAIL TEMPLATE</p>
+                <div className="text-white/90 text-sm">
+                  <p className="mb-2"><strong>Subject:</strong> Offer Discussion - [Your Name]</p>
+                  <p className="mb-2">Hi [Recruiter],</p>
+                  <p className="mb-2">Thank you again for the offer to join [Company] as [Role]. I&apos;m genuinely excited about the opportunity.</p>
+                  <p className="mb-2">After reviewing the compensation package and researching market rates for similar roles, I&apos;d like to discuss the base salary. Based on my [X years] of experience and [specific valuable skill], I was hoping we could get closer to [target number].</p>
+                  <p className="mb-2">I&apos;m confident I can deliver significant value in this role, and I&apos;d love to find a number that works for both of us.</p>
+                  <p>Looking forward to your thoughts.</p>
+                </div>
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-bold mb-4">The Numbers That Matter</h2>
+              <ul className="space-y-3 text-white/70">
+                <li className="flex gap-3">
+                  <span className="text-emerald-400 font-bold">71%</span>
+                  <span>of employers expect candidates to negotiate</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-emerald-400 font-bold">10-20%</span>
+                  <span>below what they&apos;re willing to pay—that&apos;s the typical first offer</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-emerald-400 font-bold">$10K+</span>
+                  <span>annual difference between accepting first offer vs. negotiating</span>
+                </li>
+              </ul>
+            </section>
+
+            <div className="bg-gradient-to-r from-emerald-500/20 to-emerald-600/10 border border-emerald-500/30 rounded-xl p-8 my-12">
+              <h3 className="text-xl font-bold mb-3">Salary Negotiation Scripts & Prompts</h3>
+              <p className="text-white/70 mb-4">
+                Get word-for-word scripts for every negotiation scenario—plus research prompts, 
+                counter-offer templates, and follow-up emails.
+              </p>
+              <Link 
+                href="/prompts" 
+                className="inline-block bg-emerald-500 text-black font-semibold px-6 py-3 rounded-lg hover:bg-emerald-400 transition-colors"
+              >
+                Get the Prompt Pack — $19
+              </Link>
+            </div>
+
+            <section>
+              <h2 className="text-2xl font-bold mb-4">Bottom Line</h2>
+              <p className="text-white/70 mb-4">
+                Salary negotiation isn&apos;t about being greedy. It&apos;s about being informed, prepared, and professional. AI tools give you the data and practice you need to walk in confident.
               </p>
               <p className="text-white/70">
-                The people who negotiate earn <strong className="text-emerald-400">$500K+ more</strong> over their careers 
-                than those who don&apos;t. AI just made becoming a negotiator easier than ever.
+                The difference between accepting the first offer and negotiating could be $10,000+ annually. Compound that over a career. Worth spending 30 minutes preparing.
               </p>
             </section>
           </div>
         </article>
 
+        <EmailSignup headline="Get weekly AI job search tips" />
+
         <RelatedGuides 
           guides={[
-            { slug: 'ai-interview-prep', title: 'AI Interview Preparation', description: 'Practice interview questions with AI coaching and feedback.' },
-            { slug: 'chatgpt-resume-prompts', title: 'ChatGPT Resume Prompts', description: 'Copy-paste prompts to improve your resume with AI.' },
-            { slug: 'ai-career-pivot', title: 'AI Career Pivot Guide', description: 'Use AI to plan and execute your career transition.' },
+            { slug: 'chatgpt-mock-interview', title: 'ChatGPT Mock Interview', description: 'Practice interviews with AI feedback' },
+            { slug: 'chatgpt-thank-you-email', title: 'ChatGPT Thank You Email', description: 'Follow up professionally after interviews' },
+            { slug: 'ai-job-search-tools', title: 'AI Job Search Tools', description: 'Best AI tools for job seekers' },
           ]}
         />
       </main>
 
-      <footer className="border-t border-white/10 py-8 px-6 mt-16">
-        <div className="max-w-3xl mx-auto text-center text-white/40 text-sm">
-          © 2025 GetTheJobAI. All rights reserved.
-        </div>
+      <footer className="border-t border-white/10 px-6 py-8 text-center text-white/40 text-sm">
+        <p>© 2025 GetTheJobAI. All rights reserved.</p>
       </footer>
     </div>
   )
