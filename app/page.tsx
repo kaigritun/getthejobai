@@ -51,6 +51,56 @@ export default function Home() {
           </div>
         </div>
 
+        {/* Paid Product Section */}
+        <section className="mt-24 bg-gradient-to-br from-emerald-900/20 to-emerald-800/10 border border-emerald-500/20 rounded-2xl p-8 md:p-12">
+          <div className="flex flex-col md:flex-row gap-8 items-start">
+            <div className="flex-1">
+              <p className="text-emerald-400 font-mono text-xs uppercase tracking-wider mb-3">
+                Premium Resource
+              </p>
+              <h2 className="text-2xl md:text-3xl font-bold mb-4">
+                50+ ChatGPT Prompts for Job Seekers
+              </h2>
+              <p className="text-white/70 mb-6 leading-relaxed">
+                Stop spending hours crafting the perfect prompt. Get 50+ battle-tested prompts 
+                for every stage of your job search — resume optimization, cover letters, 
+                interview prep, salary negotiation, and more.
+              </p>
+              <ul className="space-y-3 mb-8 text-white/80">
+                <li className="flex gap-3">
+                  <span className="text-emerald-400">✓</span>
+                  <span>15 resume prompts that beat ATS systems</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-emerald-400">✓</span>
+                  <span>10 cover letter templates for any industry</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-emerald-400">✓</span>
+                  <span>12 interview prep prompts with mock Q&A</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-emerald-400">✓</span>
+                  <span>8 salary negotiation scripts</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-emerald-400">✓</span>
+                  <span>5 LinkedIn optimization prompts</span>
+                </li>
+              </ul>
+              <div className="flex items-center gap-4">
+                <a 
+                  href="https://buy.stripe.com/fZu8wQ6HMfQqdTPdlI2VG00"
+                  className="bg-emerald-500 hover:bg-emerald-400 text-black font-semibold px-8 py-4 rounded-lg transition-colors text-lg"
+                >
+                  Get Instant Access — $19
+                </a>
+                <span className="text-white/40 text-sm">Instant PDF download</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section className="mt-24">
           <p className="text-white/40 font-mono text-xs uppercase tracking-wider mb-8">
             Popular Guides
