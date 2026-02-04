@@ -129,11 +129,11 @@ export default function Home() {
                 ready: true
               },
               {
-                title: 'Best AI Resume Builders 2025',
+                title: 'Best AI Resume Tools 2026',
                 desc: 'Comparison of top AI tools for job seekers',
                 tag: 'Tools',
-                href: '/guides/best-ai-resume-builders',
-                ready: false
+                href: '/guides/best-ai-resume-tools-2026',
+                ready: true
               },
             ].map((guide) => (
               <Link
@@ -214,7 +214,7 @@ export default function Home() {
       <footer className="border-t border-white/10 mt-24">
         <div className="max-w-5xl mx-auto px-6 py-8">
           <p className="text-sm text-white/40">
-            © 2025 GetTheJobAI. Helping job seekers use AI effectively.
+            © 2026 GetTheJobAI. Helping job seekers use AI effectively.
           </p>
         </div>
       </footer>
