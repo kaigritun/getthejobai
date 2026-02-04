@@ -8,6 +8,20 @@ export const metadata: Metadata = {
 
 const guides = [
   {
+    title: 'AI Resume for Software Engineers (2026 Guide)',
+    desc: 'Use AI to build a software engineer resume that beats ATS. Prompts for bullet points, tech skills, and projects.',
+    tag: 'Resume',
+    href: '/guides/ai-resume-software-engineer',
+    ready: true
+  },
+  {
+    title: 'AI Resume for Nurses & Healthcare Professionals',
+    desc: 'Build a healthcare resume with AI. Prompts for certifications, clinical experience, EMR systems, and specialty-specific tips.',
+    tag: 'Resume',
+    href: '/guides/ai-resume-healthcare',
+    ready: true
+  },
+  {
     title: 'ChatGPT LinkedIn Profile Optimization (2026 Guide)',
     desc: 'Use ChatGPT prompts to optimize your headline, about section, and experience bullets. Get found by recruiters.',
     tag: 'LinkedIn',
