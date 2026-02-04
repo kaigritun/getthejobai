@@ -8,6 +8,13 @@ export const metadata: Metadata = {
 
 const guides = [
   {
+    title: 'AI LinkedIn Optimization: Get Noticed by Recruiters in 2026',
+    desc: 'Use AI to optimize your LinkedIn profile, write engaging posts, craft connection messages, and get found by recruiters. Complete 2026 guide.',
+    tag: 'LinkedIn',
+    href: '/guides/ai-linkedin-optimization',
+    ready: true
+  },
+  {
     title: 'AI Job Search Tools: Complete Guide',
     desc: 'Comprehensive guide to AI tools for job searching. Compare resume builders, job boards, networking tools, and interview prep platforms.',
     tag: 'Tools',
