@@ -8,6 +8,13 @@ export const metadata: Metadata = {
 
 const guides = [
   {
+    title: '50 ChatGPT Interview Prompts: Practice Questions & Answers',
+    desc: 'Copy-paste prompts to practice interview answers. Behavioral questions, salary negotiation, and mock interview scripts.',
+    tag: 'Interview',
+    href: '/guides/chatgpt-interview-prompts',
+    ready: true
+  },
+  {
     title: 'ChatGPT Thank You Email After Interview: Templates & Prompts',
     desc: 'Write perfect interview thank you emails with ChatGPT. Copy-paste prompts, real examples, and timing tips to stand out.',
     tag: 'Interview',
