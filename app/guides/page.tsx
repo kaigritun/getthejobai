@@ -8,6 +8,27 @@ export const metadata: Metadata = {
 
 const guides = [
   {
+    title: 'ChatGPT Thank You Email After Interview: Templates & Prompts',
+    desc: 'Write perfect interview thank you emails with ChatGPT. Copy-paste prompts, real examples, and timing tips to stand out.',
+    tag: 'Interview',
+    href: '/guides/chatgpt-thank-you-email',
+    ready: true
+  },
+  {
+    title: '15 Free AI Tools for Job Search in 2026',
+    desc: 'The best free AI tools for job searching — resume builders, interview prep, and application automation. Actually free, not "free trial".',
+    tag: 'Tools',
+    href: '/guides/free-ai-job-search-tools',
+    ready: true
+  },
+  {
+    title: 'How to Use ChatGPT for Career Advice',
+    desc: 'Get personalized career guidance from ChatGPT. Prompts for career pivots, salary negotiation, skill development, and finding your path.',
+    tag: 'Career',
+    href: '/guides/chatgpt-career-advice',
+    ready: true
+  },
+  {
     title: 'Best AI Resume Tools 2026: Complete Comparison',
     desc: 'Tested 12 AI resume tools. Compare Teal, Rezi, Kickresume, ChatGPT and more. Find the best tool for your needs.',
     tag: 'Tools',
