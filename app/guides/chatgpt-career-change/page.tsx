@@ -3,9 +3,9 @@ import RelatedGuides from '@/components/RelatedGuides'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'ChatGPT for Career Change: Prompts & Strategy (2025) | GetTheJobAI',
-  description: 'Use ChatGPT to pivot your career. Prompts to identify transferable skills, rewrite your resume for a new industry, and land interviews in your target field.',
-  keywords: ['chatgpt career change', 'career pivot ai', 'chatgpt new career', 'ai career transition', 'switch careers with chatgpt'],
+  title: 'How to Use ChatGPT for Career Change: A Practical Guide (2026) | GetTheJobAI',
+  description: 'Use ChatGPT to plan and execute a career change. Learn to assess transferable skills, research industries, rewrite your resume, and craft your career change narrative.',
+  keywords: ['chatgpt career change', 'career pivot ai', 'chatgpt new career', 'ai career transition', 'switch careers with chatgpt', 'career change guide'],
 }
 
 export default function ChatGPTCareerChangePage() {
@@ -37,193 +37,197 @@ export default function ChatGPTCareerChangePage() {
             Career Pivot
           </p>
           <h1 className="text-4xl font-bold mb-6">
-            ChatGPT for Career Change: The Complete Playbook
+            How to Use ChatGPT for Career Change: A Practical Guide
           </h1>
           <p className="text-xl text-white/60 mb-12 leading-relaxed">
-            Thinking of switching industries? ChatGPT can help you identify transferable skills, 
-            reposition your experience, and craft a narrative that gets you interviews.
+            Thinking about changing careers? It&apos;s one of the biggest decisions you&apos;ll make—and AI can help you navigate it more strategically. Here&apos;s how to use ChatGPT to plan and execute a career change in 2026.
           </p>
 
           <div className="space-y-12">
             <section>
-              <h2 className="text-2xl font-bold mb-4">Why AI Makes Career Changes Easier</h2>
+              <h2 className="text-2xl font-bold mb-4">Step 1: Assess Your Transferable Skills</h2>
               <p className="text-white/70 mb-4">
-                The hardest part of a career change isn&apos;t finding jobs—it&apos;s translating your 
-                existing experience into language that resonates with a new industry. ChatGPT excels at this.
-              </p>
-              <ul className="space-y-2 text-white/70">
-                <li className="flex gap-3">
-                  <span className="text-emerald-400">•</span>
-                  Identify skills you didn&apos;t know were valuable
-                </li>
-                <li className="flex gap-3">
-                  <span className="text-emerald-400">•</span>
-                  Reframe your experience for new audiences
-                </li>
-                <li className="flex gap-3">
-                  <span className="text-emerald-400">•</span>
-                  Research industries without starting from scratch
-                </li>
-              </ul>
-            </section>
-
-            <section>
-              <h2 className="text-2xl font-bold mb-4">1. Discover Your Transferable Skills</h2>
-              <p className="text-white/70 mb-4">
-                Most people underestimate how many skills transfer between industries.
+                Most people underestimate how many of their skills transfer to new fields.
               </p>
               <div className="bg-white/5 border border-white/10 rounded-lg p-4 mb-4">
                 <p className="text-sm text-white/40 mb-2 font-mono">PROMPT</p>
-                <p className="text-white/90 font-mono text-sm whitespace-pre-wrap">{`I'm a [CURRENT ROLE] with [X] years of experience looking to transition into [TARGET INDUSTRY/ROLE].
+                <p className="text-white/90 font-mono text-sm whitespace-pre-wrap">{`I currently work as a [current role] and want to transition to [target role/industry]. What transferable skills do I likely have? Be specific about how each skill applies.`}</p>
+              </div>
+              <p className="text-white/50 text-sm">
+                This helps you see your experience through a new lens.
+              </p>
+            </section>
 
-My main responsibilities and achievements:
-- [List 3-5 key things you do/did]
-
-Analyze my background and identify:
-1. Transferable hard skills
-2. Transferable soft skills  
-3. Industry-agnostic achievements
-4. Gaps I should address
-5. How to position my experience for [TARGET ROLE]`}</p>
+            <section>
+              <h2 className="text-2xl font-bold mb-4">Step 2: Research Target Industries</h2>
+              <p className="text-white/70 mb-4">
+                Before committing to a new direction, do your homework.
+              </p>
+              <div className="bg-white/5 border border-white/10 rounded-lg p-4 mb-4">
+                <p className="text-sm text-white/40 mb-2 font-mono">PROMPT</p>
+                <p className="text-white/90 font-mono text-sm whitespace-pre-wrap">{`What are the biggest challenges facing [industry] in 2026? What skills are most in-demand? What does a typical career path look like?`}</p>
+              </div>
+              <div className="bg-white/5 border border-white/10 rounded-lg p-4 mb-4">
+                <p className="text-sm text-white/40 mb-2 font-mono">FOLLOW-UP</p>
+                <p className="text-white/90 font-mono text-sm whitespace-pre-wrap">{`What are the realistic salary ranges for [role] at entry, mid, and senior levels?`}</p>
               </div>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold mb-4">2. Research Your Target Industry</h2>
+              <h2 className="text-2xl font-bold mb-4">Step 3: Identify Your Gaps</h2>
               <p className="text-white/70 mb-4">
-                Get up to speed on industry terminology and expectations fast.
+                Be honest about what you&apos;re missing.
               </p>
               <div className="bg-white/5 border border-white/10 rounded-lg p-4 mb-4">
                 <p className="text-sm text-white/40 mb-2 font-mono">PROMPT</p>
-                <p className="text-white/90 font-mono text-sm whitespace-pre-wrap">{`I'm transitioning from [CURRENT INDUSTRY] to [TARGET INDUSTRY].
+                <p className="text-white/90 font-mono text-sm whitespace-pre-wrap">{`Based on typical [target role] job descriptions, what skills or qualifications am I likely missing coming from [current role]? Prioritize by importance.`}</p>
+              </div>
+              <p className="text-white/50 text-sm">
+                This gives you a learning roadmap.
+              </p>
+            </section>
 
-Give me a crash course covering:
-1. Key terminology I need to know
-2. Industry trends and challenges in 2025
-3. Common career paths and titles
-4. Skills that are highly valued
-5. Red flags or gaps that would concern hiring managers
-6. How people in [MY CURRENT ROLE] typically make this transition successfully`}</p>
+            <section>
+              <h2 className="text-2xl font-bold mb-4">Step 4: Rewrite Your Resume for the Pivot</h2>
+              <p className="text-white/70 mb-4">
+                Your resume needs to tell a new story—one where your past experience leads naturally to your target role.
+              </p>
+              <div className="bg-white/5 border border-white/10 rounded-lg p-4 mb-4">
+                <p className="text-sm text-white/40 mb-2 font-mono">PROMPT</p>
+                <p className="text-white/90 font-mono text-sm whitespace-pre-wrap">{`Rewrite my resume experience from [current role] to emphasize relevance to [target role]. Focus on transferable achievements, not just duties.`}</p>
               </div>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold mb-4">3. Rewrite Your Resume for New Industry</h2>
+              <h2 className="text-2xl font-bold mb-4">Step 5: Prepare Your Narrative</h2>
               <p className="text-white/70 mb-4">
-                Transform industry-specific language into universal value statements.
+                In interviews, you&apos;ll be asked &quot;why the change?&quot; Have a compelling answer.
               </p>
               <div className="bg-white/5 border border-white/10 rounded-lg p-4 mb-4">
                 <p className="text-sm text-white/40 mb-2 font-mono">PROMPT</p>
-                <p className="text-white/90 font-mono text-sm whitespace-pre-wrap">{`Rewrite this resume bullet point for someone transitioning from [CURRENT INDUSTRY] to [TARGET INDUSTRY]:
+                <p className="text-white/90 font-mono text-sm whitespace-pre-wrap">{`Help me articulate why I'm transitioning from [current field] to [target field]. Make it sound authentic and forward-looking, not like I'm running from something.`}</p>
+              </div>
+              <p className="text-white/50 text-sm">
+                Practice this until it flows naturally.
+              </p>
+            </section>
 
-Original: "[YOUR BULLET POINT]"
-
-Requirements:
-- Remove industry-specific jargon
-- Emphasize transferable skills
-- Quantify impact where possible
-- Use terminology that resonates in [TARGET INDUSTRY]`}</p>
+            <section>
+              <h2 className="text-2xl font-bold mb-4">Step 6: Network Into Your Target Industry</h2>
+              <p className="text-white/70 mb-4">
+                Cold applications rarely work for career changers. Warm introductions do.
+              </p>
+              <div className="bg-white/5 border border-white/10 rounded-lg p-4 mb-4">
+                <p className="text-sm text-white/40 mb-2 font-mono">PROMPT</p>
+                <p className="text-white/90 font-mono text-sm whitespace-pre-wrap">{`I'm transitioning from [current] to [target]. What types of people should I network with? What questions should I ask them to learn about the industry?`}</p>
               </div>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold mb-4">4. Craft Your Career Change Narrative</h2>
+              <h2 className="text-2xl font-bold mb-4">Step 7: Consider Intermediate Steps</h2>
               <p className="text-white/70 mb-4">
-                The &quot;why are you switching?&quot; question kills most career changers. Prepare your answer.
+                Sometimes the best career change isn&apos;t direct—it&apos;s a two-step move.
               </p>
               <div className="bg-white/5 border border-white/10 rounded-lg p-4 mb-4">
                 <p className="text-sm text-white/40 mb-2 font-mono">PROMPT</p>
-                <p className="text-white/90 font-mono text-sm whitespace-pre-wrap">{`Help me craft a compelling career change narrative.
-
-Background:
-- Currently: [CURRENT ROLE/INDUSTRY]
-- Target: [TARGET ROLE/INDUSTRY]
-- Why I want to switch: [YOUR REAL REASONS]
-- Connection to new field: [ANY RELEVANT EXPERIENCE, PROJECTS, OR INTERESTS]
-
-Create:
-1. A 30-second elevator pitch
-2. A longer "tell me about yourself" answer (1-2 minutes)
-3. An answer for "why are you leaving your current field?"
-4. How to address the "you don't have direct experience" concern`}</p>
+                <p className="text-white/90 font-mono text-sm whitespace-pre-wrap">{`Is there an intermediate role between [current role] and [target role] that would help me build relevant experience? What bridge roles exist?`}</p>
               </div>
             </section>
-
-            <section>
-              <h2 className="text-2xl font-bold mb-4">5. Network Into Your New Industry</h2>
-              <p className="text-white/70 mb-4">
-                Career changers get hired through connections more than applications.
-              </p>
-              <div className="bg-white/5 border border-white/10 rounded-lg p-4 mb-4">
-                <p className="text-sm text-white/40 mb-2 font-mono">PROMPT</p>
-                <p className="text-white/90 font-mono text-sm whitespace-pre-wrap">{`Write a LinkedIn message to someone in [TARGET INDUSTRY] asking for an informational interview.
-
-My background: [BRIEF BACKGROUND]
-Their role: [THEIR TITLE AT COMPANY]
-What I want to learn: [SPECIFIC QUESTIONS]
-
-The message should:
-- Be under 150 words
-- Show I've done my research
-- Have a specific, easy ask
-- Not feel desperate or salesy`}</p>
-              </div>
-            </section>
-
-            <div className="bg-gradient-to-r from-emerald-500/20 to-emerald-600/10 border border-emerald-500/30 rounded-xl p-8 my-12">
-              <h3 className="text-xl font-bold mb-3">Want All 50+ Career Prompts?</h3>
-              <p className="text-white/70 mb-4">
-                Get the complete ChatGPT Job Search Prompt Pack—including career change prompts, 
-                interview prep, networking templates, and more.
-              </p>
-              <Link 
-                href="/prompts" 
-                className="inline-block bg-emerald-500 text-black font-semibold px-6 py-3 rounded-lg hover:bg-emerald-400 transition-colors"
-              >
-                Get the Prompt Pack — $19
-              </Link>
-            </div>
 
             <section>
               <h2 className="text-2xl font-bold mb-4">Common Career Change Mistakes</h2>
               <ul className="space-y-4 text-white/70">
                 <li className="flex gap-3">
-                  <span className="text-red-400 font-bold">✗</span>
+                  <span className="text-red-400 font-bold">1.</span>
                   <div>
-                    <strong className="text-white">Starting from scratch.</strong> Don&apos;t apply to entry-level roles. 
-                    Your experience has value—position yourself for mid-level roles.
+                    <strong className="text-white">Applying cold to hundreds of jobs</strong> — Your resume won&apos;t make it past ATS without relevant keywords
                   </div>
                 </li>
                 <li className="flex gap-3">
-                  <span className="text-red-400 font-bold">✗</span>
+                  <span className="text-red-400 font-bold">2.</span>
                   <div>
-                    <strong className="text-white">Generic applications.</strong> Career changers must customize 
-                    every application to show fit. Use ChatGPT to tailor each one.
+                    <strong className="text-white">Not building skills first</strong> — Take courses, do projects, get certifications if needed
                   </div>
                 </li>
                 <li className="flex gap-3">
-                  <span className="text-red-400 font-bold">✗</span>
+                  <span className="text-red-400 font-bold">3.</span>
                   <div>
-                    <strong className="text-white">No bridge experience.</strong> Do a project, volunteer, or 
-                    freelance in your target field before applying full-time.
+                    <strong className="text-white">Underselling yourself</strong> — Your experience has value, even if it&apos;s not a direct match
+                  </div>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-red-400 font-bold">4.</span>
+                  <div>
+                    <strong className="text-white">Waiting until you&apos;re &quot;ready&quot;</strong> — You&apos;ll never feel 100% ready. Start networking now.
                   </div>
                 </li>
               </ul>
             </section>
+
+            <section>
+              <h2 className="text-2xl font-bold mb-4">Tools Beyond ChatGPT</h2>
+              <ul className="space-y-2 text-white/70">
+                <li className="flex gap-3">
+                  <span className="text-emerald-400">•</span>
+                  <span><strong className="text-white">LinkedIn Learning:</strong> Build skills with recognized certificates</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-emerald-400">•</span>
+                  <span><strong className="text-white">Coursera/edX:</strong> University-backed programs for serious credentials</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-emerald-400">•</span>
+                  <span><strong className="text-white">Side projects:</strong> Build a portfolio in your target field</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-emerald-400">•</span>
+                  <span><strong className="text-white">Informational interviews:</strong> Nothing beats talking to people doing what you want to do</span>
+                </li>
+              </ul>
+            </section>
+
+            <section className="bg-gradient-to-r from-emerald-500/20 to-emerald-600/10 border border-emerald-500/30 rounded-xl p-8">
+              <h3 className="text-xl font-bold mb-3">Make It Real This Week</h3>
+              <ul className="space-y-2 text-white/70">
+                <li className="flex gap-3">
+                  <span className="text-emerald-400">1.</span>
+                  Use the prompts above to map out your transferable skills
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-emerald-400">2.</span>
+                  Identify 3 people in your target industry to reach out to
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-emerald-400">3.</span>
+                  Start one course or project that builds relevant experience
+                </li>
+              </ul>
+              <p className="text-white/70 mt-4">
+                Career changes take time. AI helps you move faster and smarter—but you still have to put in the work.
+              </p>
+            </section>
+
+            <p className="text-white/50 italic border-t border-white/10 pt-8">
+              Your past doesn&apos;t define your future. Use every tool available to bridge the gap.
+            </p>
           </div>
         </article>
 
         <RelatedGuides 
           guides={[
-            { slug: 'chatgpt-resume-prompts', title: 'ChatGPT Resume Prompts', description: 'Copy-paste prompts to improve your resume' },
             { slug: 'ai-skills-gap-analysis', title: 'AI Skills Gap Analysis', description: 'Identify skill gaps and close them' },
-            { slug: 'ai-networking-emails', title: 'AI Networking Emails', description: 'Templates for professional outreach' },
+            { slug: 'chatgpt-resume-prompts', title: 'ChatGPT Resume Prompts', description: 'Copy-paste prompts to improve your resume' },
+            { slug: 'ai-networking-tips', title: 'AI Networking Tips', description: 'Expand your professional network with AI' },
           ]}
         />
       </main>
 
-      <footer className="border-t border-white/10 px-6 py-8 text-center text-white/40 text-sm">
-        <p>© 2025 GetTheJobAI. All rights reserved.</p>
+      <footer className="border-t border-white/10 mt-24">
+        <div className="max-w-5xl mx-auto px-6 py-8">
+          <p className="text-sm text-white/40">
+            © 2026 GetTheJobAI. Helping job seekers use AI effectively.
+          </p>
+        </div>
       </footer>
     </div>
   )
