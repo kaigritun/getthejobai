@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import EmailSignup from '@/components/EmailSignup'
 import RelatedGuides from '@/components/RelatedGuides'
 import type { Metadata } from 'next'
 
@@ -367,6 +368,11 @@ Give me:
                 Get past the bots. Get to the humans. Get the job.
               </p>
             </section>
+
+            <EmailSignup 
+              headline="Get ATS optimization tips weekly"
+              buttonText="Subscribe"
+            />
 
             <section className="bg-emerald-500/10 border border-emerald-500/30 rounded-lg p-6">
               <h2 className="text-xl font-bold mb-3">Next Steps</h2>
