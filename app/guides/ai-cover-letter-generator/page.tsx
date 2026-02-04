@@ -292,6 +292,20 @@ Focus on how my experience directly addresses their requirements. Don't use gene
               </p>
             </section>
 
+            <section className="bg-gradient-to-r from-emerald-500/20 to-emerald-600/10 border border-emerald-500/30 rounded-lg p-6">
+              <h2 className="text-xl font-bold mb-3">Get 50 More Cover Letter &amp; Job Search Prompts</h2>
+              <p className="text-white/70 mb-4">
+                Want the complete prompt pack? 50 ChatGPT prompts for resumes, cover letters, 
+                LinkedIn, interviews, salary negotiation, and follow-ups.
+              </p>
+              <Link 
+                href="/prompts"
+                className="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-black font-semibold px-6 py-3 rounded-lg transition-colors"
+              >
+                Get 50 ChatGPT Prompts — $19 →
+              </Link>
+            </section>
+
             <section className="bg-emerald-500/10 border border-emerald-500/30 rounded-lg p-6">
               <h2 className="text-xl font-bold mb-3">Next Steps</h2>
               <p className="text-white/70 mb-4">

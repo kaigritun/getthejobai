@@ -8,6 +8,20 @@ export const metadata: Metadata = {
 
 const guides = [
   {
+    title: 'ChatGPT LinkedIn Profile Optimization (2026 Guide)',
+    desc: 'Use ChatGPT prompts to optimize your headline, about section, and experience bullets. Get found by recruiters.',
+    tag: 'LinkedIn',
+    href: '/guides/chatgpt-linkedin-profile',
+    ready: true
+  },
+  {
+    title: 'ChatGPT Interview Preparation Guide',
+    desc: 'Use ChatGPT for interview prep: analyze job descriptions, prepare STAR stories, practice questions, and nail your interviews.',
+    tag: 'Interview',
+    href: '/guides/chatgpt-interview-preparation',
+    ready: true
+  },
+  {
     title: 'AI LinkedIn Optimization: Get Noticed by Recruiters in 2026',
     desc: 'Use AI to optimize your LinkedIn profile, write engaging posts, craft connection messages, and get found by recruiters. Complete 2026 guide.',
     tag: 'LinkedIn',
