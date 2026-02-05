@@ -10,22 +10,8 @@ export const metadata: Metadata = {
 
 export default function AILinkedInOptimizationPage() {
   return (
-    <div className="min-h-screen bg-[#0c0c0c] text-white">
-      <nav className="border-b border-white/10 px-6 py-4">
-        <div className="max-w-5xl mx-auto flex justify-between items-center">
-          <Link href="/" className="font-semibold text-lg hover:text-emerald-400 transition-colors">
-            GetTheJobAI
-          </Link>
-          <div className="flex gap-6 text-sm text-white/60">
-            <Link href="/guides" className="hover:text-white transition-colors">Guides</Link>
-            <Link href="/tools" className="hover:text-white transition-colors">Tools</Link>
-            <Link href="/prompts" className="hover:text-white transition-colors">Prompts</Link>
-          </div>
-        </div>
-      </nav>
-
-      <main className="max-w-3xl mx-auto px-6 py-16">
-        <Link 
+    <div className="max-w-3xl mx-auto px-6 py-16">
+      <Link 
           href="/guides" 
           className="text-sm text-white/50 hover:text-white transition-colors mb-8 inline-block"
         >
@@ -234,13 +220,6 @@ No "I'd love to pick your brain" or "I came across your profile."`}</p>
             { slug: 'chatgpt-cover-letter-prompts', title: 'Cover Letter Prompts', description: 'Generate cover letters that get interviews' },
           ]}
         />
-      </main>
-
-      <footer className="border-t border-white/10 px-6 py-12">
-        <div className="max-w-5xl mx-auto text-center text-white/40 text-sm">
-          <p>© 2026 GetTheJobAI. Land your dream job with AI.</p>
-        </div>
-      </footer>
     </div>
   )
 }

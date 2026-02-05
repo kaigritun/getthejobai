@@ -10,22 +10,8 @@ export const metadata: Metadata = {
 
 export default function JobSearchAutomationPage() {
   return (
-    <div className="min-h-screen bg-[#0c0c0c] text-white">
-      <nav className="border-b border-white/10 px-6 py-4">
-        <div className="max-w-5xl mx-auto flex justify-between items-center">
-          <Link href="/" className="font-semibold text-lg hover:text-emerald-400 transition-colors">
-            GetTheJobAI
-          </Link>
-          <div className="flex gap-6 text-sm text-white/60">
-            <Link href="/guides" className="hover:text-white transition-colors">Guides</Link>
-            <Link href="/tools" className="hover:text-white transition-colors">Tools</Link>
-            <Link href="/prompts" className="hover:text-white transition-colors">Prompts</Link>
-          </div>
-        </div>
-      </nav>
-
-      <main className="max-w-3xl mx-auto px-6 py-16">
-        <Link 
+    <div className="max-w-3xl mx-auto px-6 py-16">
+      <Link 
           href="/guides" 
           className="text-sm text-white/50 hover:text-white transition-colors mb-8 inline-block"
         >
@@ -307,13 +293,6 @@ Keep it under 250 words. Conversational tone, not corporate speak.`}</p>
             </Link>
           </div>
         </div>
-      </main>
-
-      <footer className="border-t border-white/10 px-6 py-8 mt-16">
-        <div className="max-w-5xl mx-auto text-center text-white/40 text-sm">
-          <p>© 2026 GetTheJobAI. Land your next job with AI.</p>
-        </div>
-      </footer>
     </div>
   )
 }
