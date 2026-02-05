@@ -439,6 +439,176 @@ Best regards,
   outputLabel: 'Your Thank You Email',
 }
 
+// ============ INTERVIEW TOOLS ============
+
+export const interviewAnswerGenerator: GeneratorTool = {
+  slug: 'interview-answer-generator',
+  name: 'Interview Answer Generator',
+  description: 'Generate compelling STAR-method answers for common interview questions',
+  category: 'Interview',
+  type: 'generator',
+  seo: {
+    title: 'Free Interview Answer Generator | STAR Method Responses',
+    description: 'Create powerful interview answers using the STAR method. Get tailored responses for behavioral questions.',
+  },
+  fields: [
+    {
+      id: 'question',
+      label: 'Interview Question',
+      type: 'select',
+      options: [
+        { value: 'tell-me-about-yourself', label: 'Tell me about yourself' },
+        { value: 'greatest-strength', label: 'What is your greatest strength?' },
+        { value: 'greatest-weakness', label: 'What is your greatest weakness?' },
+        { value: 'challenge-overcome', label: 'Tell me about a challenge you overcame' },
+        { value: 'conflict-resolution', label: 'Describe a time you resolved a conflict' },
+        { value: 'leadership', label: 'Tell me about a time you showed leadership' },
+        { value: 'failure', label: 'Tell me about a time you failed' },
+        { value: 'why-this-company', label: 'Why do you want to work here?' },
+      ],
+      required: true,
+    },
+    { id: 'role', label: 'Target Role', type: 'text', placeholder: 'Software Engineer', required: true },
+    { id: 'situation', label: 'Brief Situation/Context', type: 'textarea', placeholder: 'At my previous company, we had a critical deadline...', required: true },
+    { id: 'action', label: 'Actions You Took', type: 'textarea', placeholder: 'I organized daily standups and prioritized tasks...', required: true },
+    { id: 'result', label: 'Results Achieved', type: 'text', placeholder: 'Delivered project 2 weeks early, saved $50K', required: true },
+  ],
+  template: `**STAR Method Answer**
+
+**Situation:**
+{{situation}}
+
+**Task:**
+As the {{role}}, I needed to address this challenge and deliver results.
+
+**Action:**
+{{action}}
+
+**Result:**
+{{result}}
+
+---
+
+**Polished Response:**
+
+"{{situation}} As part of my role, {{action}} The outcome was significant: {{result}}. This experience taught me the importance of taking initiative and focusing on measurable outcomes."`,
+  outputLabel: 'Your STAR Method Answer',
+}
+
+export const salaryNegotiationGenerator: GeneratorTool = {
+  slug: 'salary-negotiation-script',
+  name: 'Salary Negotiation Script Generator',
+  description: 'Get a personalized script to negotiate your salary confidently',
+  category: 'Negotiation',
+  type: 'generator',
+  seo: {
+    title: 'Free Salary Negotiation Script | Negotiate Your Offer',
+    description: 'Generate a professional salary negotiation script. Get the compensation you deserve with proven negotiation tactics.',
+  },
+  fields: [
+    { id: 'currentOffer', label: 'Current Offer', type: 'text', placeholder: '$85,000', required: true },
+    { id: 'targetSalary', label: 'Target Salary', type: 'text', placeholder: '$95,000', required: true },
+    { id: 'role', label: 'Job Title', type: 'text', placeholder: 'Senior Product Manager', required: true },
+    { id: 'company', label: 'Company', type: 'text', placeholder: 'Acme Corp', required: true },
+    { id: 'experience', label: 'Years of Experience', type: 'text', placeholder: '7 years', required: true },
+    { id: 'uniqueValue', label: 'Your Unique Value', type: 'textarea', placeholder: 'I have direct experience scaling products from 0 to 1M users...', required: true },
+  ],
+  template: `**Salary Negotiation Script**
+
+---
+
+**Opening (Express Enthusiasm First):**
+
+"Thank you so much for the offer. I'm genuinely excited about the {{role}} position at {{company}} and the opportunity to contribute to the team."
+
+---
+
+**The Ask:**
+
+"I've done research on market rates for {{role}} positions with {{experience}} experience, and I was hoping we could discuss the compensation. Based on my background and {{uniqueValue}}, I was targeting something closer to {{targetSalary}}."
+
+---
+
+**If They Push Back:**
+
+"I understand there may be budget constraints. Are there other components we could discuss, such as a signing bonus, additional equity, flexible work arrangements, or an accelerated review timeline?"
+
+---
+
+**Closing:**
+
+"I'm confident we can find something that works for both of us. I'm committed to bringing value to {{company}} and excited to get started."
+
+---
+
+**Key Tips:**
+• Never give a number first if you can help it
+• Always negotiate - 70% of employers expect it
+• Get the offer in writing before accepting
+• Consider total compensation, not just base salary`,
+  outputLabel: 'Your Negotiation Script',
+}
+
+export const jobSearchTrackerScore: ScoreTool = {
+  slug: 'job-search-tracker-score',
+  name: 'Job Search Organization Score',
+  description: 'Rate how organized your job search is and get tips to improve',
+  category: 'Job Search',
+  type: 'score',
+  seo: {
+    title: 'Job Search Organization Score | Track Your Progress',
+    description: 'Find out if your job search is organized for success. Get personalized tips to improve your job hunting strategy.',
+  },
+  inputLabel: 'Describe Your Current Job Search Process',
+  inputPlaceholder: 'Describe how you are tracking applications, following up, networking, etc...',
+  criteria: [
+    {
+      name: 'Application Tracking',
+      weight: 20,
+      keywords: ['spreadsheet', 'tracker', 'notion', 'airtable', 'list', 'database', 'log', 'record', 'tracking', 'organized'],
+      description: 'Using a system to track all applications and their status',
+    },
+    {
+      name: 'Follow-Up System',
+      weight: 20,
+      keywords: ['follow up', 'followup', 'reminder', 'calendar', 'schedule', 'check in', 'reach out', 'email again', 'weekly'],
+      description: 'Systematic follow-up process for applications',
+    },
+    {
+      name: 'Networking Activity',
+      weight: 20,
+      keywords: ['linkedin', 'network', 'connect', 'reach out', 'coffee chat', 'informational', 'referral', 'introduction', 'event', 'meetup'],
+      description: 'Active networking and relationship building',
+    },
+    {
+      name: 'Target Companies',
+      weight: 15,
+      keywords: ['target', 'wishlist', 'dream companies', 'research', 'priority', 'top choice', 'tier', 'focus', 'specific'],
+      description: 'Defined list of target companies to pursue',
+    },
+    {
+      name: 'Daily/Weekly Goals',
+      weight: 15,
+      keywords: ['daily', 'weekly', 'goal', 'applications per', 'per day', 'per week', 'routine', 'schedule', 'consistent'],
+      description: 'Clear goals for application volume and activity',
+    },
+    {
+      name: 'Interview Prep',
+      weight: 10,
+      keywords: ['practice', 'mock', 'prepare', 'research company', 'questions', 'star method', 'behavioral', 'prep'],
+      description: 'Systematic interview preparation process',
+    },
+  ],
+  tips: [
+    'Use a spreadsheet or tool like Notion/Airtable to track every application',
+    'Set calendar reminders to follow up 1 week after applying',
+    'Aim to send 5-10 quality applications per day, not 50 spray-and-pray',
+    'Spend 30% of job search time networking, not just applying',
+    'Research every company before you apply - customize each application',
+    'Practice STAR method answers for common behavioral questions',
+  ],
+}
+
 // ============ ALL TOOLS ============
 
 export const allTools: Tool[] = [
@@ -449,6 +619,9 @@ export const allTools: Tool[] = [
   elevatorPitchGenerator,
   linkedinHeadlineGenerator,
   thankYouEmailGenerator,
+  interviewAnswerGenerator,
+  salaryNegotiationGenerator,
+  jobSearchTrackerScore,
 ]
 
 export function getToolBySlug(slug: string): Tool | undefined {
