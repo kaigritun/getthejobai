@@ -31,12 +31,13 @@ export default function Home() {
           </Link>
         </div>
         
-        {/* Email Signup */}
+        {/* Email Signup - A/B testing enabled */}
         <div className="mt-12">
           <EmailSignup 
             headline="Get weekly AI job search tips" 
             description="Free weekly tips on using AI to land your dream job."
-            buttonText="Get Free Tips" 
+            buttonText="Get Free Tips"
+            abTestCta={true}
           />
         </div>
       </div>
@@ -167,14 +168,15 @@ export default function Home() {
         </div>
       </section>
       
-      {/* Final CTA */}
+      {/* Final CTA - A/B testing enabled */}
       <section className="mt-24 border-t border-white/10 pt-16">
         <div className="max-w-xl">
           <h2 className="text-2xl font-bold mb-4">Stay ahead of the competition</h2>
           <EmailSignup 
             headline="Free AI job search tips, weekly" 
             description="Join thousands of job seekers using AI to land better jobs, faster."
-            buttonText="Subscribe Free" 
+            buttonText="Subscribe Free"
+            abTestCta={true}
           />
         </div>
       </section>
