@@ -609,6 +609,402 @@ export const jobSearchTrackerScore: ScoreTool = {
   ],
 }
 
+// ============ NETWORKING TOOLS ============
+
+export const networkingMessageGenerator: GeneratorTool = {
+  slug: 'networking-message-generator',
+  name: 'Networking Message Generator',
+  description: 'Create personalized LinkedIn connection requests and follow-up messages',
+  category: 'Networking',
+  type: 'generator',
+  seo: {
+    title: 'Free LinkedIn Networking Message Generator | Connection Templates',
+    description: 'Generate personalized LinkedIn connection requests that get accepted. Templates for cold outreach, informational interviews, and follow-ups.',
+  },
+  fields: [
+    { id: 'name', label: 'Their Name', type: 'text', placeholder: 'Sarah Chen', required: true },
+    { id: 'role', label: 'Their Role/Title', type: 'text', placeholder: 'VP of Engineering at Stripe', required: true },
+    { id: 'connection_reason', label: 'How You Found Them / Connection Point', type: 'text', placeholder: 'Saw your talk at ReactConf, read your blog post...', required: true },
+    { id: 'your_role', label: 'Your Role/Background', type: 'text', placeholder: 'Software engineer transitioning to tech leadership', required: true },
+    { id: 'ask', label: 'What You Want', type: 'select', options: [
+      { value: 'connect', label: 'Just connect / stay in touch' },
+      { value: 'advice', label: 'Career advice / informational interview' },
+      { value: 'referral', label: 'Job referral / introduction' },
+      { value: 'mentor', label: 'Mentorship relationship' },
+    ], required: true },
+  ],
+  template: `📨 CONNECTION REQUEST (under 300 chars)
+
+Hi {{name}}, {{connection_reason}}. As a {{your_role}}, I'd love to connect and learn more about your journey. No ask — just admire your work!
+
+---
+
+📧 FOLLOW-UP MESSAGE (after connected)
+
+Hi {{name}},
+
+Thanks for connecting! I've been following your work as {{role}} and really appreciated [specific thing].
+
+I'm currently a {{your_role}}, and I'm curious about [topic related to their expertise].
+
+Would you have 15-20 minutes for a quick call in the next few weeks? I'd love to hear your perspective.
+
+Totally understand if you're too busy — appreciate the connection either way!
+
+Best,
+[Your name]
+
+---
+
+💡 TIPS
+• Keep connection requests SHORT (LinkedIn cuts at 300 chars)
+• Reference something SPECIFIC (not "I admire your work")
+• Make it easy to say yes (15 min, flexible timing)
+• Have a clear but soft ask — don't demand, invite`,
+  outputLabel: 'Your Networking Messages',
+}
+
+export const followUpEmailGenerator: GeneratorTool = {
+  slug: 'follow-up-email-generator',
+  name: 'Job Application Follow-Up Generator',
+  description: 'Create professional follow-up emails for job applications',
+  category: 'Job Search',
+  type: 'generator',
+  seo: {
+    title: 'Free Job Application Follow-Up Email Generator | Stand Out',
+    description: 'Generate professional follow-up emails after applying or interviewing. Templates for 1-week, 2-week, and final follow-ups.',
+  },
+  fields: [
+    { id: 'company', label: 'Company Name', type: 'text', placeholder: 'Google', required: true },
+    { id: 'role', label: 'Position Applied For', type: 'text', placeholder: 'Senior Product Manager', required: true },
+    { id: 'contact', label: 'Contact Name (if known)', type: 'text', placeholder: 'Sarah / Hiring Manager' },
+    { id: 'days_since', label: 'Days Since Application/Interview', type: 'select', options: [
+      { value: '7', label: '1 week' },
+      { value: '14', label: '2 weeks' },
+      { value: '21', label: '3+ weeks' },
+    ], required: true },
+    { id: 'stage', label: 'Application Stage', type: 'select', options: [
+      { value: 'applied', label: 'Applied, no response' },
+      { value: 'screened', label: 'Had recruiter screen' },
+      { value: 'interviewed', label: 'Had interview, awaiting decision' },
+    ], required: true },
+  ],
+  template: `📧 FOLLOW-UP EMAIL
+
+Subject: Following up on {{role}} application - {{company}}
+
+Hi {{contact}},
+
+I hope this finds you well. I wanted to follow up on my application for the {{role}} position at {{company}}.
+
+I'm very excited about this opportunity and believe my background in [relevant skill] would allow me to make an immediate impact on your team.
+
+I understand you're likely reviewing many candidates, but I wanted to reiterate my strong interest. If there's any additional information I can provide, please don't hesitate to reach out.
+
+Thank you for your time and consideration.
+
+Best regards,
+[Your name]
+[Your phone]
+[Your LinkedIn]
+
+---
+
+💡 FOLLOW-UP BEST PRACTICES
+
+Timing:
+• First follow-up: 1 week after applying
+• Second follow-up: 2 weeks after first
+• Final follow-up: 3-4 weeks (then move on)
+
+Tips:
+• Keep it SHORT (under 100 words)
+• Add value if possible (relevant article, new achievement)
+• Reference the specific role and date applied
+• Make it easy to respond (one simple question)
+• Know when to stop (after 2-3 follow-ups)`,
+  outputLabel: 'Your Follow-Up Email',
+}
+
+export const techResumeScore: ScoreTool = {
+  slug: 'tech-resume-score',
+  name: 'Tech Resume Score Calculator',
+  description: 'Specialized resume analysis for software engineering and tech roles',
+  category: 'Resume',
+  type: 'score',
+  seo: {
+    title: 'Tech Resume Score Calculator | Software Engineer Resume Analysis',
+    description: 'Get specialized feedback on your tech resume. Optimized for software engineering, data science, and technical roles.',
+  },
+  inputLabel: 'Paste Your Tech Resume',
+  inputPlaceholder: 'Paste your software engineering, data science, or technical resume...',
+  criteria: [
+    {
+      name: 'Technical Skills Section',
+      weight: 20,
+      keywords: ['python', 'javascript', 'typescript', 'react', 'node', 'java', 'go', 'rust', 'sql', 'nosql', 'aws', 'gcp', 'azure', 'docker', 'kubernetes', 'terraform', 'git', 'ci/cd', 'graphql', 'rest', 'microservices'],
+      description: 'Clear technical skills section with relevant technologies',
+    },
+    {
+      name: 'Quantified Impact',
+      weight: 25,
+      keywords: ['%', 'reduced', 'improved', 'increased', 'scaled', 'x', '10x', '2x', 'latency', 'performance', 'users', 'requests', 'uptime', 'million', 'thousand', 'ms', 'seconds'],
+      description: 'Measurable technical achievements (performance, scale, impact)',
+    },
+    {
+      name: 'System Design',
+      weight: 15,
+      keywords: ['architected', 'designed', 'built', 'scalable', 'distributed', 'system', 'infrastructure', 'api', 'database', 'cache', 'queue', 'event-driven', 'microservice'],
+      description: 'Evidence of system design and architecture work',
+    },
+    {
+      name: 'Leadership & Collaboration',
+      weight: 15,
+      keywords: ['led', 'mentored', 'team', 'collaborated', 'cross-functional', 'code review', 'pair programming', 'onboarded', 'interviewed'],
+      description: 'Team collaboration and technical leadership',
+    },
+    {
+      name: 'Projects & Open Source',
+      weight: 10,
+      keywords: ['github', 'open source', 'side project', 'portfolio', 'personal project', 'contribution', 'maintainer', 'stars'],
+      description: 'Personal projects or open source contributions',
+    },
+    {
+      name: 'Education & Continuous Learning',
+      weight: 15,
+      keywords: ['degree', 'computer science', 'bootcamp', 'certification', 'course', 'aws certified', 'google cloud', 'learning', 'coursera', 'udemy'],
+      description: 'Relevant education and continuous learning',
+    },
+  ],
+  tips: [
+    'Lead with your tech stack in the first bullet of each role',
+    'Quantify EVERYTHING: latency improvements, scale numbers, team sizes',
+    'Include GitHub link with active contributions',
+    'Mention specific technologies used in each project',
+    'Add a "Projects" section for side projects and open source',
+    'Keep it to 1 page if <5 years experience, 2 max otherwise',
+  ],
+}
+
+export const executiveResumeScore: ScoreTool = {
+  slug: 'executive-resume-score',
+  name: 'Executive Resume Score Calculator',
+  description: 'Resume analysis for senior leadership and executive positions',
+  category: 'Resume',
+  type: 'score',
+  seo: {
+    title: 'Executive Resume Score | Leadership Resume Analysis',
+    description: 'Get executive-level resume feedback. Optimized for VP, C-suite, and senior leadership positions.',
+  },
+  inputLabel: 'Paste Your Executive Resume',
+  inputPlaceholder: 'Paste your executive or senior leadership resume...',
+  criteria: [
+    {
+      name: 'Executive Summary',
+      weight: 20,
+      keywords: ['executive', 'leader', 'ceo', 'cto', 'cfo', 'vp', 'director', 'president', 'chief', 'head of', 'general manager', 'years leadership'],
+      description: 'Strong executive summary with leadership positioning',
+    },
+    {
+      name: 'Business Impact',
+      weight: 25,
+      keywords: ['revenue', 'profit', 'growth', '$', 'million', 'billion', 'market share', 'valuation', 'roi', 'p&l', 'budget', 'cost reduction', 'ebitda'],
+      description: 'Quantified business and financial impact',
+    },
+    {
+      name: 'Team Building',
+      weight: 15,
+      keywords: ['built team', 'hired', 'scaled', 'organization', 'direct reports', 'headcount', 'restructured', 'turnaround', 'culture', 'retention'],
+      description: 'Team building and organizational leadership',
+    },
+    {
+      name: 'Strategic Initiatives',
+      weight: 20,
+      keywords: ['strategy', 'transformation', 'initiative', 'vision', 'roadmap', 'm&a', 'acquisition', 'partnership', 'expansion', 'launch', 'pivot'],
+      description: 'Strategic planning and major initiatives',
+    },
+    {
+      name: 'Board & Stakeholder',
+      weight: 10,
+      keywords: ['board', 'investor', 'stakeholder', 'shareholder', 'fundraising', 'series', 'ipo', 'presentation', 'c-suite', 'executive team'],
+      description: 'Board and stakeholder engagement',
+    },
+    {
+      name: 'Industry Recognition',
+      weight: 10,
+      keywords: ['award', 'recognition', 'speaker', 'thought leader', 'publication', 'forbes', 'fortune', 'advisory', 'board member'],
+      description: 'Industry recognition and thought leadership',
+    },
+  ],
+  tips: [
+    'Lead with an executive summary (3-4 sentences positioning you)',
+    'Include P&L responsibility and revenue/budget numbers',
+    'Show progression: teams you built, organizations you scaled',
+    'Highlight strategic wins: M&A, market expansion, turnarounds',
+    'Add board memberships, advisory roles, speaking engagements',
+    '2 pages max — executives read fast',
+  ],
+}
+
+export const careerChangeQuiz: QuizTool = {
+  slug: 'career-change-quiz',
+  name: 'Career Change Readiness Quiz',
+  description: 'Find out if you\'re ready to make a career change and what path fits you',
+  category: 'Career',
+  type: 'quiz',
+  seo: {
+    title: 'Career Change Quiz | Are You Ready to Switch Careers?',
+    description: 'Take our free quiz to assess your readiness for a career change. Get personalized advice on timing, approach, and next steps.',
+  },
+  questions: [
+    {
+      id: 'motivation',
+      question: 'Why do you want to change careers?',
+      options: [
+        { value: 'unhappy', label: 'I\'m unhappy in my current role', points: { ready: 2, research: 1, stay: 0 } },
+        { value: 'growth', label: 'I want more growth opportunities', points: { ready: 3, research: 2, stay: 1 } },
+        { value: 'passion', label: 'I want to pursue my passion', points: { ready: 2, research: 3, stay: 0 } },
+        { value: 'money', label: 'I want to earn more money', points: { ready: 1, research: 2, stay: 2 } },
+      ],
+    },
+    {
+      id: 'research',
+      question: 'How much do you know about your target field?',
+      options: [
+        { value: 'none', label: 'Very little — just interested', points: { ready: 0, research: 3, stay: 1 } },
+        { value: 'some', label: 'Some research, talked to a few people', points: { ready: 2, research: 2, stay: 0 } },
+        { value: 'deep', label: 'Deep research, have a clear path', points: { ready: 3, research: 0, stay: 0 } },
+        { value: 'experience', label: 'Already doing it as a side project', points: { ready: 3, research: 0, stay: 0 } },
+      ],
+    },
+    {
+      id: 'finances',
+      question: 'What\'s your financial situation?',
+      options: [
+        { value: 'tight', label: 'Paycheck to paycheck, can\'t afford risk', points: { ready: 0, research: 2, stay: 3 } },
+        { value: 'some', label: '3-6 months savings', points: { ready: 2, research: 2, stay: 1 } },
+        { value: 'comfortable', label: '6-12 months runway', points: { ready: 3, research: 1, stay: 0 } },
+        { value: 'secure', label: '12+ months or partner income', points: { ready: 3, research: 0, stay: 0 } },
+      ],
+    },
+    {
+      id: 'skills',
+      question: 'How transferable are your current skills?',
+      options: [
+        { value: 'none', label: 'Very different field, need new skills', points: { ready: 1, research: 3, stay: 1 } },
+        { value: 'some', label: 'Some overlap, need upskilling', points: { ready: 2, research: 2, stay: 0 } },
+        { value: 'most', label: 'Most skills transfer, minor gaps', points: { ready: 3, research: 1, stay: 0 } },
+        { value: 'all', label: 'Highly transferable, just new context', points: { ready: 3, research: 0, stay: 0 } },
+      ],
+    },
+    {
+      id: 'timing',
+      question: 'What\'s your timeline?',
+      options: [
+        { value: 'asap', label: 'As soon as possible', points: { ready: 2, research: 2, stay: 1 } },
+        { value: 'months', label: '3-6 months', points: { ready: 3, research: 1, stay: 0 } },
+        { value: 'year', label: '6-12 months', points: { ready: 2, research: 2, stay: 0 } },
+        { value: 'exploring', label: 'Just exploring, no rush', points: { ready: 0, research: 3, stay: 1 } },
+      ],
+    },
+  ],
+  results: [
+    {
+      id: 'ready',
+      title: 'Ready to Make the Leap!',
+      description: 'You\'re well-positioned for a career change. You have clear motivation, financial stability, and transferable skills. Time to execute.',
+      recommendations: [
+        'Update your resume with transferable skills framing',
+        'Start applying to roles while still employed',
+        'Network heavily in your target industry',
+        'Consider a bridge role if big jump seems risky',
+      ],
+    },
+    {
+      id: 'research',
+      title: 'More Research Needed',
+      description: 'You have good instincts but need more information before jumping. Take 2-3 months to validate your target path.',
+      recommendations: [
+        'Conduct 5-10 informational interviews in your target field',
+        'Take a course or start a side project in the new area',
+        'Build your financial runway to 6+ months',
+        'Identify which skills you need and start building them',
+      ],
+    },
+    {
+      id: 'stay',
+      title: 'Optimize Before You Exit',
+      description: 'The grass might not be greener. Consider improving your current situation before a dramatic change.',
+      recommendations: [
+        'Try to fix what\'s broken in your current role first',
+        'Ask for new projects, lateral moves, or promotions',
+        'Build savings to create more future optionality',
+        'Keep exploring but don\'t make hasty decisions',
+      ],
+    },
+  ],
+}
+
+export const referenceRequestGenerator: GeneratorTool = {
+  slug: 'reference-request-generator',
+  name: 'Reference Request Generator',
+  description: 'Ask former colleagues for references and recommendations professionally',
+  category: 'Networking',
+  type: 'generator',
+  seo: {
+    title: 'Free Reference Request Generator | Ask for Recommendations',
+    description: 'Generate professional messages to ask for job references and LinkedIn recommendations. Templates that make it easy to say yes.',
+  },
+  fields: [
+    { id: 'name', label: 'Reference\'s Name', type: 'text', placeholder: 'John Smith', required: true },
+    { id: 'relationship', label: 'Your Relationship', type: 'select', options: [
+      { value: 'manager', label: 'Former Manager' },
+      { value: 'colleague', label: 'Former Colleague' },
+      { value: 'report', label: 'Former Direct Report' },
+      { value: 'client', label: 'Former Client' },
+      { value: 'professor', label: 'Professor / Teacher' },
+    ], required: true },
+    { id: 'company', label: 'Company Where You Worked Together', type: 'text', placeholder: 'Acme Corp', required: true },
+    { id: 'project', label: 'Key Project You Worked On Together', type: 'text', placeholder: 'The Q3 product launch', required: true },
+    { id: 'target_role', label: 'Role You\'re Applying For', type: 'text', placeholder: 'Senior Product Manager at Google' },
+  ],
+  template: `📧 REFERENCE REQUEST EMAIL
+
+Subject: Quick favor — would you be a reference?
+
+Hi {{name}},
+
+I hope you're doing well! I'm reaching out because I'm currently exploring new opportunities, including a {{target_role}} position.
+
+I always valued working with you at {{company}}, especially on {{project}}. Your perspective on my work would mean a lot.
+
+Would you be comfortable serving as a reference? I'd be happy to:
+• Provide context on the roles I'm applying for
+• Share my updated resume
+• Prep you on key points to highlight
+
+No pressure at all if you're too busy — I completely understand.
+
+Thanks so much,
+[Your name]
+
+---
+
+💼 LINKEDIN RECOMMENDATION REQUEST
+
+Hi {{name}}, I hope you're doing well! I'm updating my LinkedIn and would really appreciate a recommendation from you. Our work together at {{company}} on {{project}} was some of my best work, and your perspective would carry a lot of weight. If you have 5 minutes, I'd be grateful. Happy to return the favor!
+
+---
+
+💡 TIPS
+• Give them an out ("no pressure if you're busy")
+• Make it easy (offer to provide talking points)
+• Be specific about what to highlight
+• Offer to reciprocate
+• Ask 2+ weeks before you need them`,
+  outputLabel: 'Your Reference Request',
+}
+
 // ============ ALL TOOLS ============
 
 export const allTools: Tool[] = [
@@ -622,6 +1018,12 @@ export const allTools: Tool[] = [
   interviewAnswerGenerator,
   salaryNegotiationGenerator,
   jobSearchTrackerScore,
+  networkingMessageGenerator,
+  followUpEmailGenerator,
+  techResumeScore,
+  executiveResumeScore,
+  careerChangeQuiz,
+  referenceRequestGenerator,
 ]
 
 export function getToolBySlug(slug: string): Tool | undefined {
