@@ -3269,6 +3269,125 @@ Thanks,
   ],
 }
 
+export const careerTransitionScore: ScoreTool = {
+  slug: 'career-transition-score',
+  name: 'Career Transition Score',
+  description: 'Rate how well you position your career change to employers',
+  category: 'Career Change',
+  type: 'score',
+  seo: {
+    title: 'Career Transition Score | Position Your Career Change Effectively',
+    description: 'Get feedback on how you explain your career transition. Make your change sound like a strategic move, not a desperate pivot.',
+  },
+  inputLabel: 'Paste Your Career Transition Pitch',
+  inputPlaceholder: `I'm transitioning from teaching to UX design because...
+
+After 5 years as a high school teacher, I'm moving into UX because I've always been passionate about how people learn through interfaces. 
+
+Teaching gave me:
+- Deep user empathy (understanding diverse learner needs)
+- Communication skills (explaining complex concepts simply)
+- Data-driven iteration (adjusting based on student performance)
+
+I've completed a UX bootcamp, built 3 portfolio projects, and am particularly excited about educational tech products where I can combine both skill sets...`,
+  criteria: [
+    { name: 'Clear Connection', weight: 25, keywords: ['because', 'led me', 'natural progression', 'builds on', 'applies', 'transferable', 'combines'], description: 'Shows logical connection between old and new career' },
+    { name: 'Transferable Skills', weight: 25, keywords: ['skills', 'experience', 'gave me', 'learned', 'developed', 'strengthened', 'empathy', 'communication', 'leadership'], description: 'Highlights relevant transferable skills' },
+    { name: 'New Skills/Credentials', weight: 20, keywords: ['bootcamp', 'certificate', 'learned', 'course', 'portfolio', 'projects', 'self-taught', 'training'], description: 'Shows investment in new career' },
+    { name: 'Forward Focus', weight: 15, keywords: ['excited', 'looking forward', 'opportunity', 'passion', 'interested in', 'future', 'goal'], description: 'Enthusiasm for new direction, not just leaving old one' },
+    { name: 'Specificity', weight: 15, keywords: ['specifically', 'particularly', 'example', 'for instance', 'such as', 'projects', 'companies'], description: 'Specific about target role/industry' },
+  ],
+  tips: [
+    'Frame the change as evolution, not escape',
+    'Lead with transferable skills, not credentials',
+    'Show you\'ve invested in learning the new field',
+    'Be specific about why THIS career, not just "something new"',
+    'Explain what you bring that career-changers uniquely offer',
+    'Prepare a 30-second version for interviews',
+    'Don\'t apologize for the change — own it confidently',
+  ],
+}
+
+export const jobDescriptionAnalyzer: ScoreTool = {
+  slug: 'job-description-analyzer',
+  name: 'Job Description Analyzer',
+  description: 'Decode job postings to understand what employers really want',
+  category: 'Job Search',
+  type: 'score',
+  seo: {
+    title: 'Job Description Analyzer | Decode What Employers Really Want',
+    description: 'Paste a job description to identify must-haves vs nice-to-haves, red flags, and how to position your application.',
+  },
+  inputLabel: 'Paste the Job Description',
+  inputPlaceholder: `Senior Product Manager - Fintech Startup
+
+We're looking for a passionate, scrappy PM to join our fast-paced team!
+
+Requirements:
+- 5+ years product management experience
+- Strong analytical skills and data-driven mindset
+- Experience with agile methodologies
+- Excellent communication skills
+- MBA preferred
+- Fintech experience a plus
+- Must be comfortable with ambiguity
+- Wear multiple hats in a startup environment...`,
+  criteria: [
+    { name: 'Clear Requirements', weight: 20, keywords: ['years', 'experience', 'required', 'must have', 'minimum', 'bachelor', 'degree'], description: 'Has specific, measurable requirements' },
+    { name: 'Growth Signals', weight: 20, keywords: ['growth', 'scale', 'expand', 'build', 'launch', 'new', 'innovative', 'opportunity'], description: 'Indicates company is growing' },
+    { name: 'Red Flag Density', weight: 20, keywords: ['fast-paced', 'wear many hats', 'scrappy', 'hustle', 'flexible hours', 'competitive salary', 'work hard play hard'], description: 'Startup speak that may signal overwork' },
+    { name: 'Compensation Clarity', weight: 20, keywords: ['salary', '$', 'range', 'compensation', 'benefits', 'equity', 'bonus'], description: 'Transparent about pay' },
+    { name: 'Role Definition', weight: 20, keywords: ['responsibilities', 'you will', 'own', 'lead', 'manage', 'report to', 'team of'], description: 'Clear scope and responsibilities' },
+  ],
+  tips: [
+    '"5+ years required" often means 3+ is fine if you\'re strong',
+    '"MBA preferred" = not actually required',
+    '"Fast-paced" + "wear many hats" + "scrappy" = probably understaffed',
+    'No salary listed? It\'s probably below market',
+    'Count "nice to haves" — if you hit 60%+ you\'re likely qualified',
+    '"Competitive salary" means nothing — ask for the range',
+    'Long requirements list? They\'re describing a unicorn that doesn\'t exist',
+    'Check company reviews on Glassdoor for context',
+  ],
+}
+
+export const resignationLetterGenerator: GeneratorTool = {
+  slug: 'resignation-letter-generator',
+  name: 'Resignation Letter Generator',
+  description: 'Generate a professional resignation letter that maintains relationships',
+  category: 'Career Transitions',
+  type: 'generator',
+  seo: {
+    title: 'Free Resignation Letter Generator | Leave on Good Terms',
+    description: 'Create a professional resignation letter that keeps bridges intact. Customize for your situation and timeline.',
+  },
+  fields: [
+    { id: 'manager_name', label: 'Manager\'s Name', type: 'text', placeholder: 'Sarah Johnson', required: true },
+    { id: 'company_name', label: 'Company Name', type: 'text', placeholder: 'Acme Corp', required: true },
+    { id: 'last_day', label: 'Last Day of Work', type: 'text', placeholder: 'February 28, 2026', required: true },
+    { id: 'tenure', label: 'Time at Company', type: 'text', placeholder: '2 years', required: false },
+    { id: 'highlight', label: 'One Positive Highlight (optional)', type: 'text', placeholder: 'Leading the product launch', required: false },
+    { id: 'tone', label: 'Tone', type: 'select', options: [
+      { value: 'warm', label: 'Warm & Grateful' },
+      { value: 'professional', label: 'Professional & Neutral' },
+      { value: 'brief', label: 'Brief & Direct' },
+    ], required: true },
+  ],
+  template: `Dear {{manager_name}},
+
+I am writing to formally notify you of my resignation from {{company_name}}, effective {{last_day}}.
+
+{{#if tenure}}Over the past {{tenure}}, {{/if}}I have valued the opportunities for professional growth and development here.{{#if highlight}} {{highlight}} was a particular highlight of my time with the team.{{/if}}
+
+I am committed to ensuring a smooth transition and am happy to help train my replacement or document my current projects during the remaining time.
+
+Thank you for the support and opportunities you have provided. I wish {{company_name}} continued success.
+
+Sincerely,
+[Your Name]`,
+  outputLabel: 'Your Resignation Letter',
+}
+
 // ============ ALL TOOLS ============
 
 export const allTools: Tool[] = [
@@ -3336,6 +3455,9 @@ export const allTools: Tool[] = [
   videoInterviewScore,
   salaryBenchmarkScore,
   linkedinMessageScore,
+  careerTransitionScore,
+  jobDescriptionAnalyzer,
+  resignationLetterGenerator,
 ]
 
 export function getToolBySlug(slug: string): Tool | undefined {
