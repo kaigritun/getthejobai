@@ -3465,6 +3465,152 @@ Best,
   outputLabel: 'Your Negotiation Email',
 }
 
+export const jobOfferTrackerGenerator: GeneratorTool = {
+  slug: 'job-offer-tracker-generator',
+  name: 'Job Offer Tracker Generator',
+  description: 'Create a comparison matrix to track and evaluate multiple job offers',
+  category: 'Job Search',
+  type: 'generator',
+  seo: {
+    title: 'Job Offer Tracker Generator | Compare Multiple Offers',
+    description: 'Generate a professional job offer comparison tracker. Evaluate salary, benefits, growth, and culture across multiple offers.',
+  },
+  fields: [
+    { id: 'offer1_company', label: 'Company 1 Name', type: 'text', placeholder: 'Google', required: true },
+    { id: 'offer1_salary', label: 'Company 1 Base Salary', type: 'text', placeholder: '$150,000', required: true },
+    { id: 'offer2_company', label: 'Company 2 Name', type: 'text', placeholder: 'Meta', required: true },
+    { id: 'offer2_salary', label: 'Company 2 Base Salary', type: 'text', placeholder: '$160,000', required: true },
+    { id: 'priorities', label: 'Your Top 3 Priorities', type: 'textarea', placeholder: '1. Work-life balance\n2. Career growth\n3. Compensation', required: true },
+  ],
+  template: `# Job Offer Comparison: {{offer1_company}} vs {{offer2_company}}
+
+## Compensation Summary
+| Factor | {{offer1_company}} | {{offer2_company}} |
+|--------|-------------------|-------------------|
+| Base Salary | {{offer1_salary}} | {{offer2_salary}} |
+| Bonus (est.) | ___ | ___ |
+| Equity/RSUs | ___ | ___ |
+| Sign-on | ___ | ___ |
+| **Total Comp** | ___ | ___ |
+
+## Benefits Comparison
+| Benefit | {{offer1_company}} | {{offer2_company}} |
+|---------|-------------------|-------------------|
+| Health Insurance | ___ | ___ |
+| 401k Match | ___ | ___ |
+| PTO Days | ___ | ___ |
+| Remote Policy | ___ | ___ |
+| Parental Leave | ___ | ___ |
+
+## Your Priorities Analysis
+{{priorities}}
+
+### How Each Offer Scores:
+- {{offer1_company}}: Rate 1-10 on each priority
+- {{offer2_company}}: Rate 1-10 on each priority
+
+## Red Flags to Investigate
+- [ ] Why is this position open?
+- [ ] What happened to the last person?
+- [ ] What does success look like in 6 months?
+- [ ] What's the team's turnover rate?
+
+## Decision Framework
+1. Calculate total compensation (not just base)
+2. Weight by your priorities
+3. Trust your gut on culture fit
+4. Consider 3-year trajectory, not just day 1`,
+  outputLabel: 'Your Offer Comparison Tracker',
+}
+
+export const linkedinGroupEngagementScore: ScoreTool = {
+  slug: 'linkedin-group-engagement-score',
+  name: 'LinkedIn Group Engagement Score',
+  description: 'Rate your LinkedIn group strategy for networking and job opportunities',
+  category: 'LinkedIn',
+  type: 'score',
+  seo: {
+    title: 'LinkedIn Group Engagement Score | Networking Strategy',
+    description: 'Score your LinkedIn group engagement strategy. Find out if you\'re leveraging groups for job opportunities effectively.',
+  },
+  inputLabel: 'Describe Your LinkedIn Group Activity',
+  inputPlaceholder: `Groups I'm in:
+- Product Management Network (50k members) - post weekly
+- Tech Recruiters Hub (20k members) - comment daily
+- Startup Founders (10k members) - lurk
+
+My typical posts:
+- Share industry articles with my take
+- Ask thoughtful questions about trends
+- Occasionally share job search updates
+
+Engagement I get:
+- 5-10 likes per post
+- 2-3 meaningful comments
+- 1 recruiter DM per month...`,
+  criteria: [
+    { name: 'Strategic Group Selection', weight: 25, keywords: ['recruiter', 'hiring', 'industry', 'niche', 'active', 'engaged', 'relevant', 'target', 'decision makers'], description: 'Joined groups where hiring managers and recruiters are active' },
+    { name: 'Consistent Engagement', weight: 25, keywords: ['daily', 'weekly', 'regular', 'consistent', 'comment', 'post', 'engage', 'participate', 'respond'], description: 'Shows up regularly with valuable contributions' },
+    { name: 'Value-First Content', weight: 20, keywords: ['share', 'insight', 'question', 'help', 'advice', 'resource', 'thoughtful', 'perspective', 'experience'], description: 'Contributes value before asking for anything' },
+    { name: 'Relationship Building', weight: 20, keywords: ['connect', 'DM', 'message', 'relationship', 'follow up', 'conversation', 'coffee', 'call'], description: 'Turns group interactions into real connections' },
+    { name: 'Visibility Results', weight: 10, keywords: ['recruiter', 'reach out', 'opportunity', 'interview', 'referral', 'connection', 'view', 'profile'], description: 'Group activity leading to tangible opportunities' },
+  ],
+  tips: [
+    'Quality > quantity: 3 active niche groups > 20 dead ones',
+    'Find groups where recruiters post jobs — that\'s where they hang out',
+    'Comment on others\' posts before posting your own (builds credibility)',
+    'Share your job search openly — groups can rally to help',
+    'Move valuable connections from groups to 1:1 (DM → coffee chat)',
+    'Post original insights, not just reshared content',
+    'Monday-Thursday posts get 2x more engagement than weekends',
+    'Ask questions that invite discussion — people love giving advice',
+  ],
+}
+
+export const interviewThankYouScore: ScoreTool = {
+  slug: 'interview-thank-you-score',
+  name: 'Interview Thank You Score',
+  description: 'Rate your post-interview thank you note for maximum impact',
+  category: 'Interview',
+  type: 'score',
+  seo: {
+    title: 'Interview Thank You Score | Perfect Your Follow-Up',
+    description: 'Score your interview thank you email. Get feedback on timing, personalization, and impact to stand out from other candidates.',
+  },
+  inputLabel: 'Paste Your Thank You Note',
+  inputPlaceholder: `Subject: Thank you — excited about the Product Manager role
+
+Hi Sarah,
+
+Thank you for taking the time to speak with me today about the Product Manager position at Acme Corp.
+
+I was particularly excited to hear about your team's focus on AI-powered features. Our conversation about balancing user needs with technical constraints really resonated — it's exactly the type of challenge I tackled at my previous role when we launched the recommendation engine that increased user engagement by 40%.
+
+I'm confident my experience leading cross-functional teams and shipping 0-to-1 products would help accelerate your roadmap. I'd love to contribute to the vision you shared for Q3.
+
+Looking forward to the next steps. Please don't hesitate to reach out if you need any additional information.
+
+Best,
+Alex Chen`,
+  criteria: [
+    { name: 'Timely & Professional', weight: 15, keywords: ['thank', 'time', 'today', 'yesterday', 'appreciate', 'grateful', 'pleasure', 'enjoyed'], description: 'Sent within 24 hours with professional tone' },
+    { name: 'Personalized Reference', weight: 25, keywords: ['discussed', 'mentioned', 'conversation', 'you said', 'your point', 'we talked', 'you shared', 'interested in'], description: 'References specific conversation details' },
+    { name: 'Value Reinforcement', weight: 25, keywords: ['experience', 'skills', 'background', 'achieve', 'contribute', 'deliver', 'help', 'bring', '%', 'results'], description: 'Reinforces key qualifications with proof' },
+    { name: 'Genuine Enthusiasm', weight: 20, keywords: ['excited', 'eager', 'enthusiastic', 'thrilled', 'looking forward', 'passionate', 'inspired', 'confident'], description: 'Shows authentic interest without being over-the-top' },
+    { name: 'Clear Call to Action', weight: 15, keywords: ['next steps', 'follow up', 'additional', 'questions', 'reach out', 'looking forward', 'happy to', 'let me know'], description: 'Ends with clear path forward' },
+  ],
+  tips: [
+    'Send within 24 hours — ideally same day while fresh in their mind',
+    'Reference ONE specific thing from the conversation (proves you listened)',
+    'Reinforce your top selling point with a quick proof point',
+    'Keep it under 150 words — busy people skim',
+    'Send to each interviewer individually with personalized notes',
+    'Avoid generic "great conversation" — be specific or don\'t bother',
+    'If you forgot to mention something, this is your chance',
+    'Match their communication style (formal vs casual)',
+  ],
+}
+
 export const interviewDressQuiz: QuizTool = {
   slug: 'interview-dress-quiz',
   name: 'Interview Dress Code Quiz',
@@ -3621,6 +3767,9 @@ export const allTools: Tool[] = [
   coverLetterHookScore,
   salaryNegotiationEmailGenerator,
   interviewDressQuiz,
+  jobOfferTrackerGenerator,
+  linkedinGroupEngagementScore,
+  interviewThankYouScore,
 ]
 
 export function getToolBySlug(slug: string): Tool | undefined {
