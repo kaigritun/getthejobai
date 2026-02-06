@@ -3030,6 +3030,121 @@ export const remoteWorkReadinessQuiz: QuizTool = {
   ],
 }
 
+// ============ INTERVIEW STORYTELLING ============
+
+export const interviewStorytellingScore: ScoreTool = {
+  slug: 'interview-storytelling-score',
+  name: 'Interview Storytelling Score',
+  description: 'Rate your STAR method interview stories for impact',
+  category: 'Interview Prep',
+  type: 'score',
+  seo: {
+    title: 'Interview Storytelling Score | Tell Better STAR Stories',
+    description: 'Score your interview stories using the STAR method. Make your behavioral answers memorable and impactful.',
+  },
+  inputLabel: 'Paste Your STAR Story',
+  inputPlaceholder: `Question: Tell me about a time you dealt with conflict at work.
+
+Situation: Two senior engineers on my team had fundamentally different approaches to our database architecture migration.
+
+Task: As the tech lead, I needed to resolve the conflict and keep the project on track without damaging relationships.
+
+Action: I scheduled individual 1:1s to understand each perspective. Then I organized a technical design review where both presented their approaches with data. I created evaluation criteria tied to our project goals and facilitated a decision-making session.
+
+Result: We chose a hybrid approach that incorporated strengths from both proposals. The migration completed 10% under budget, and both engineers later told me they appreciated the fair process.`,
+  criteria: [
+    { name: 'Clear Situation', weight: 20, keywords: ['situation', 'context', 'team', 'company', 'project', 'challenge', 'problem', 'when'], description: 'Sets clear context (who, what, when, where)' },
+    { name: 'Specific Task', weight: 15, keywords: ['responsible', 'task', 'role', 'needed to', 'my job', 'assigned', 'goal'], description: 'Your specific responsibility is clear' },
+    { name: 'Detailed Actions', weight: 30, keywords: ['I', 'organized', 'created', 'scheduled', 'built', 'led', 'developed', 'implemented', 'designed', 'facilitated'], description: 'Shows YOUR specific actions (not "we")' },
+    { name: 'Quantified Results', weight: 25, keywords: ['%', '$', 'increased', 'decreased', 'improved', 'saved', 'resulted', 'outcome', 'impact', 'success'], description: 'Measurable outcome or clear success' },
+    { name: 'Concise Length', weight: 10, keywords: [], description: '60-90 seconds when spoken (200-300 words)' },
+  ],
+  tips: [
+    'Keep situation/task brief (20%), focus on action/result (80%)',
+    'Use "I" not "we" — show YOUR contribution',
+    'Include at least one number in your result',
+    'End on the positive outcome, not the challenge',
+    'Practice out loud — aim for 60-90 seconds',
+    'Have 5-7 stories ready that can answer multiple questions',
+  ],
+}
+
+export const linkedinPostScore: ScoreTool = {
+  slug: 'linkedin-post-score',
+  name: 'LinkedIn Post Score',
+  description: 'Rate your LinkedIn posts for engagement and professional impact',
+  category: 'Personal Brand',
+  type: 'score',
+  seo: {
+    title: 'LinkedIn Post Score | Get More Engagement',
+    description: 'Score your LinkedIn post before publishing. Optimize for engagement, credibility, and professional visibility.',
+  },
+  inputLabel: 'Paste Your LinkedIn Post',
+  inputPlaceholder: `I got rejected from 47 jobs before landing my dream role at Google.
+
+Here's what I learned:
+
+1. Personalize every application (templates are obvious)
+2. Follow up — 3 of my interviews came from follow-up emails
+3. Track everything in a spreadsheet
+4. Treat each rejection as data, not failure
+5. Your network matters more than your resume
+
+The job that hired me? A LinkedIn connection referred me.
+
+Stop applying into the void. Start building relationships.
+
+What's your biggest job search lesson? 👇`,
+  criteria: [
+    { name: 'Hook', weight: 25, keywords: ['I', 'got', 'learned', 'made', 'discovered', 'realized', 'truth', 'secret', 'mistake', 'rejected', 'hired', 'promoted'], description: 'First 2 lines grab attention' },
+    { name: 'Value/Insight', weight: 25, keywords: ['learned', 'lesson', 'tip', 'advice', 'how', 'why', 'because', 'strategy', 'mistake', 'insight'], description: 'Provides genuine value to readers' },
+    { name: 'Readability', weight: 20, keywords: [], description: 'Short paragraphs, white space, easy to skim' },
+    { name: 'Personal Story', weight: 15, keywords: ['I', 'my', 'me', 'experience', 'story', 'when I', 'personally'], description: 'Includes personal experience or perspective' },
+    { name: 'Engagement CTA', weight: 15, keywords: ['?', 'what', 'how', 'your', 'comment', 'share', 'thoughts', 'agree', 'disagree'], description: 'Invites discussion or shares' },
+  ],
+  tips: [
+    'First 2 lines appear in feed — make them count',
+    'Use white space — one thought per line',
+    'Share failures and learnings, not just wins',
+    'End with a question to boost comments',
+    'Best times: Tuesday-Thursday, 7-9 AM or 12-2 PM',
+    'No external links in main post (kills reach)',
+  ],
+}
+
+export const internshipApplicationScore: ScoreTool = {
+  slug: 'internship-application-score',
+  name: 'Internship Application Score',
+  description: 'Rate your internship application materials as a student',
+  category: 'Students',
+  type: 'score',
+  seo: {
+    title: 'Internship Application Score | Student Resume & Cover Letter',
+    description: 'Score your internship application. Get feedback on how to highlight projects, coursework, and potential when you lack work experience.',
+  },
+  inputLabel: 'Paste Your Application Materials',
+  inputPlaceholder: `Resume Summary:
+Computer Science student at UC Berkeley (GPA: 3.7) seeking Summer 2026 SWE internship. Built full-stack projects using React, Node.js, and PostgreSQL. Led 4-person team in hackathon winning project...
+
+Cover Letter excerpt:
+I'm excited to apply for the Software Engineering Internship at [Company]. Your work on [specific product] aligns with my interest in [relevant area]. In my coursework and projects, I've developed skills in [relevant tech]...`,
+  criteria: [
+    { name: 'Projects Highlighted', weight: 30, keywords: ['built', 'created', 'developed', 'project', 'hackathon', 'portfolio', 'github', 'deployed', 'users', 'app'], description: 'Showcases hands-on project work' },
+    { name: 'Relevant Skills', weight: 25, keywords: ['python', 'java', 'react', 'node', 'sql', 'aws', 'git', 'api', 'machine learning', 'data'], description: 'Lists relevant technical skills' },
+    { name: 'Company Research', weight: 20, keywords: ['your', 'company', 'product', 'mission', 'team', 'interested', 'excited', 'specific'], description: 'Shows knowledge of the specific company' },
+    { name: 'Transferable Experience', weight: 15, keywords: ['leadership', 'team', 'club', 'volunteer', 'research', 'ta', 'teaching', 'organized'], description: 'Highlights non-work experiences' },
+    { name: 'Enthusiasm', weight: 10, keywords: ['excited', 'passionate', 'eager', 'interested', 'motivated', 'curious', 'love'], description: 'Shows genuine enthusiasm for the role' },
+  ],
+  tips: [
+    'Projects > GPA — show what you\'ve built',
+    'Include GitHub links to your best work',
+    'Quantify everything: "4-person team", "500 users", "3 weeks"',
+    'Leadership in clubs/orgs counts as experience',
+    'Research the company\'s tech stack and mention it',
+    'Tailor each cover letter — generic = rejected',
+  ],
+}
+
 // ============ ALL TOOLS ============
 
 export const allTools: Tool[] = [
@@ -3091,6 +3206,9 @@ export const allTools: Tool[] = [
   jobHoppingExplanationScore,
   technicalInterviewPrepScore,
   remoteWorkReadinessQuiz,
+  interviewStorytellingScore,
+  linkedinPostScore,
+  internshipApplicationScore,
 ]
 
 export function getToolBySlug(slug: string): Tool | undefined {
