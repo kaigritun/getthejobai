@@ -3145,6 +3145,130 @@ I'm excited to apply for the Software Engineering Internship at [Company]. Your 
   ],
 }
 
+// ============ VIDEO INTERVIEW PREP ============
+
+export const videoInterviewScore: ScoreTool = {
+  slug: 'video-interview-score',
+  name: 'Video Interview Score',
+  description: 'Rate your video interview setup and presence',
+  category: 'Interview Prep',
+  type: 'score',
+  seo: {
+    title: 'Video Interview Score | Ace Your Remote Interview',
+    description: 'Score your video interview setup and answers. Get feedback on lighting, background, audio, and professional presence.',
+  },
+  inputLabel: 'Describe Your Video Interview Setup',
+  inputPlaceholder: `My setup:
+- Using laptop webcam, eye level with face
+- Ring light behind laptop for lighting
+- Plain wall background with a bookshelf visible
+- Quiet room, using AirPods for audio
+- Test call showed good audio/video quality
+
+For answers, I practice looking at the camera not the screen. I keep notes taped below the webcam for talking points...`,
+  criteria: [
+    { name: 'Camera Setup', weight: 20, keywords: ['webcam', 'eye level', 'external', 'camera', 'angle', 'laptop', 'stand', 'position'], description: 'Camera at eye level, stable, good quality' },
+    { name: 'Lighting', weight: 20, keywords: ['light', 'ring', 'natural', 'window', 'bright', 'face', 'shadow', 'backlit'], description: 'Face well-lit without harsh shadows' },
+    { name: 'Background', weight: 15, keywords: ['background', 'wall', 'clean', 'tidy', 'professional', 'bookshelf', 'plant', 'blur', 'virtual'], description: 'Professional, distraction-free background' },
+    { name: 'Audio', weight: 20, keywords: ['mic', 'microphone', 'headphones', 'airpods', 'quiet', 'echo', 'test', 'audio'], description: 'Clear audio, minimal background noise' },
+    { name: 'Eye Contact', weight: 15, keywords: ['camera', 'eye', 'look', 'contact', 'notes', 'screen', 'practice'], description: 'Looking at camera, not at screen' },
+    { name: 'Test Run', weight: 10, keywords: ['test', 'practice', 'trial', 'check', 'verify', 'rehearse'], description: 'Has tested setup before interview' },
+  ],
+  tips: [
+    'Test video/audio 24 hours before — not 5 minutes',
+    'Put camera at eye level (stack books under laptop)',
+    'Face a window for natural lighting, or use ring light',
+    'Look at camera when speaking, not the interviewer\'s face',
+    'Use wired headphones to avoid bluetooth delays',
+    'Tape key talking points just below your camera',
+    'Close all other apps to prevent notifications',
+    'Have a phone charger and backup wifi hotspot ready',
+  ],
+}
+
+export const salaryBenchmarkScore: ScoreTool = {
+  slug: 'salary-benchmark-score',
+  name: 'Salary Benchmarking Score',
+  description: 'Rate how well you\'ve researched market compensation',
+  category: 'Salary',
+  type: 'score',
+  seo: {
+    title: 'Salary Benchmarking Score | Know Your Market Value',
+    description: 'Score your salary research before negotiating. Ensure you have the data to back up your compensation ask.',
+  },
+  inputLabel: 'Describe Your Salary Research',
+  inputPlaceholder: `Role: Senior Product Manager in NYC
+
+My research:
+- Levels.fyi: $180-220k base for similar roles at comparable companies
+- Glassdoor: Average $165k, range $140-200k
+- Blind: saw posts from similar roles ranging $190-240k total comp
+- Talked to 2 people at similar companies: they said $180-200k is standard
+- Company's own job posting didn't list range but similar roles on LinkedIn did
+
+My ask: $195k base + equity
+
+Reasoning: Above Glassdoor average but within Levels.fyi range. My 6 years experience is above average for the role...`,
+  criteria: [
+    { name: 'Multiple Sources', weight: 25, keywords: ['levels', 'glassdoor', 'blind', 'linkedin', 'payscale', 'indeed', 'comparably', 'salary.com', 'sources'], description: 'Used 3+ data sources' },
+    { name: 'Market-Specific', weight: 20, keywords: ['nyc', 'sf', 'seattle', 'remote', 'location', 'market', 'city', 'region', 'cost of living'], description: 'Adjusts for location/market' },
+    { name: 'Role Match', weight: 20, keywords: ['similar', 'same level', 'comparable', 'title', 'seniority', 'years', 'experience', 'scope'], description: 'Compares to similar roles and experience' },
+    { name: 'Total Comp View', weight: 15, keywords: ['equity', 'stock', 'bonus', 'total', 'benefits', 'RSU', '401k', 'signing'], description: 'Considers full compensation package' },
+    { name: 'Personal Network', weight: 10, keywords: ['talked', 'asked', 'friend', 'contact', 'someone at', 'network', 'referred'], description: 'Got real data from personal connections' },
+    { name: 'Clear Target', weight: 10, keywords: ['target', 'ask', 'range', 'minimum', 'ideal', 'would accept', 'walk away'], description: 'Has specific target and range defined' },
+  ],
+  tips: [
+    'Use Levels.fyi for tech, not Glassdoor (more accurate)',
+    'Blind anonymous posts are gold for real comp data',
+    'Always adjust for location — SF ≠ Austin',
+    'Total comp matters more than base (equity, bonus)',
+    'Know your walk-away number before negotiating',
+    'Ask your network directly — people share if asked privately',
+    'Research company-specific comp bands if possible',
+    'Factor in years of experience vs role level requirements',
+  ],
+}
+
+export const linkedinMessageScore: ScoreTool = {
+  slug: 'linkedin-message-score',
+  name: 'LinkedIn Message Score',
+  description: 'Rate your LinkedIn messages to recruiters and hiring managers',
+  category: 'Networking',
+  type: 'score',
+  seo: {
+    title: 'LinkedIn Message Score | Write Messages That Get Replies',
+    description: 'Score your LinkedIn outreach messages. Learn what makes recruiters and hiring managers respond.',
+  },
+  inputLabel: 'Paste Your LinkedIn Message',
+  inputPlaceholder: `Hi Sarah,
+
+I noticed [Company] is growing the data team — congrats on the Series C!
+
+I've spent 4 years building ML pipelines at [Current Company], most recently leading the recommendation system that increased engagement 40%.
+
+I'd love to learn more about the ML Engineering role. Would you have 15 minutes this week or next?
+
+Thanks,
+[Name]`,
+  criteria: [
+    { name: 'Personalization', weight: 25, keywords: ['noticed', 'saw', 'read', 'your post', 'congrats', 'impressed', 'interested in', 'specifically'], description: 'Shows you researched them/company' },
+    { name: 'Brevity', weight: 20, keywords: [], description: 'Under 100 words, easy to read on mobile' },
+    { name: 'Value/Credibility', weight: 25, keywords: ['built', 'led', 'achieved', 'increased', 'managed', 'years', 'experience', '%', 'results'], description: 'Quickly establishes why you\'re worth a reply' },
+    { name: 'Clear Ask', weight: 20, keywords: ['15 minutes', 'chat', 'call', 'coffee', 'learn more', 'would you', 'available'], description: 'Specific, easy-to-accept request' },
+    { name: 'Professional Tone', weight: 10, keywords: ['hi', 'thanks', 'appreciate', 'grateful', 'looking forward'], description: 'Polite but not overly formal' },
+  ],
+  tips: [
+    'Under 100 words — they\'re reading on their phone',
+    'Open with something personal (their post, company news, mutual connection)',
+    'One achievement with a number > paragraph of experience',
+    'End with specific ask: "15 minutes this week?"',
+    'No attachments in first message — just the hook',
+    'Don\'t say "I know you\'re busy" — everyone says it',
+    'Follow up once after 1 week, then move on',
+    'Best time to send: Tuesday-Thursday, 8-10 AM their time',
+  ],
+}
+
 // ============ ALL TOOLS ============
 
 export const allTools: Tool[] = [
@@ -3209,6 +3333,9 @@ export const allTools: Tool[] = [
   interviewStorytellingScore,
   linkedinPostScore,
   internshipApplicationScore,
+  videoInterviewScore,
+  salaryBenchmarkScore,
+  linkedinMessageScore,
 ]
 
 export function getToolBySlug(slug: string): Tool | undefined {
