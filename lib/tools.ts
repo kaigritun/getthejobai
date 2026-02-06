@@ -3868,6 +3868,213 @@ export const remoteInterviewSetupScore: ScoreTool = {
   ],
 }
 
+// ============ PERSONAL BRAND SCORE ============
+
+export const personalBrandScore: ScoreTool = {
+  slug: 'personal-brand-score',
+  name: 'Personal Brand Score',
+  description: 'Evaluate your personal branding consistency and visibility across platforms',
+  category: 'Personal Branding',
+  type: 'score',
+  seo: {
+    title: 'Personal Brand Score | Professional Presence Assessment',
+    description: 'Assess your personal brand strength across LinkedIn, portfolios, and social media. Get actionable feedback to build a memorable professional presence.',
+  },
+  inputLabel: 'Describe Your Personal Brand',
+  inputPlaceholder: 'Share your LinkedIn headline, bio, website/portfolio links, social media presence, content you create, and how you present yourself professionally...',
+  criteria: [
+    {
+      name: 'Consistent Identity',
+      weight: 25,
+      keywords: ['consistent', 'same', 'unified', 'brand', 'photo', 'headshot', 'name', 'handle', 'username', 'logo', 'colors', 'style'],
+      description: 'Same professional identity across all platforms',
+    },
+    {
+      name: 'Clear Positioning',
+      weight: 25,
+      keywords: ['specialist', 'expert', 'known for', 'focus', 'niche', 'help', 'target', 'audience', 'specific', 'unique', 'differentiated'],
+      description: 'Clear what you do and who you serve',
+    },
+    {
+      name: 'Content & Visibility',
+      weight: 20,
+      keywords: ['posts', 'articles', 'blog', 'podcast', 'videos', 'speaking', 'content', 'share', 'publish', 'newsletter', 'thought leader'],
+      description: 'Regular content that demonstrates expertise',
+    },
+    {
+      name: 'Social Proof',
+      weight: 15,
+      keywords: ['followers', 'connections', 'testimonials', 'endorsements', 'recommendations', 'awards', 'featured', 'published', 'media', 'press'],
+      description: 'Evidence others recognize your expertise',
+    },
+    {
+      name: 'Professional Polish',
+      weight: 15,
+      keywords: ['professional', 'photo', 'headshot', 'website', 'portfolio', 'domain', 'email', 'signature', 'business card', 'design'],
+      description: 'Polished presentation and materials',
+    },
+  ],
+  tips: [
+    'Use the same professional headshot everywhere — recognition builds trust',
+    'Your LinkedIn headline is prime real estate — lead with value, not job title',
+    'Pick one platform to be great at rather than being mediocre everywhere',
+    'Consistency beats perfection — post regularly even if it\'s not perfect',
+    'Your unique perspective is your brand — don\'t try to sound like everyone else',
+    'Google yourself monthly — manage what comes up in searches',
+    'A personal website with your name domain is the foundation of personal branding',
+    'Engage with others\' content as much as you create your own — visibility goes both ways',
+  ],
+}
+
+// ============ INTERVIEW CONFIDENCE QUIZ ============
+
+export const interviewConfidenceQuiz: QuizTool = {
+  slug: 'interview-confidence-quiz',
+  name: 'Interview Confidence Quiz',
+  description: 'Assess your interview mindset and get tips to boost confidence',
+  category: 'Interview Prep',
+  type: 'quiz',
+  seo: {
+    title: 'Interview Confidence Quiz | Assess Your Interview Mindset',
+    description: 'Discover your interview confidence level and get personalized strategies to feel more prepared and self-assured.',
+  },
+  questions: [
+    {
+      id: 'prep',
+      question: 'How do you typically prepare for interviews?',
+      options: [
+        { value: 'extensive', label: 'Thorough research on company, role, and prepared answers', points: { confident: 3, anxious: 0 } },
+        { value: 'moderate', label: 'Review job description and think about responses', points: { confident: 2, anxious: 1 } },
+        { value: 'minimal', label: 'Skim the job post the night before', points: { confident: 1, anxious: 2 } },
+        { value: 'none', label: 'Wing it and hope for the best', points: { confident: 0, anxious: 3 } },
+      ],
+    },
+    {
+      id: 'nervousness',
+      question: 'How do you feel the morning of an interview?',
+      options: [
+        { value: 'excited', label: 'Excited — it\'s a chance to show what I can do', points: { confident: 3, anxious: 0 } },
+        { value: 'calm', label: 'Calm with mild butterflies', points: { confident: 2, anxious: 1 } },
+        { value: 'nervous', label: 'Nervous and rehearsing answers in my head', points: { confident: 1, anxious: 2 } },
+        { value: 'dreading', label: 'Dreading it and considering canceling', points: { confident: 0, anxious: 3 } },
+      ],
+    },
+    {
+      id: 'failure',
+      question: 'How do you handle rejection after interviews?',
+      options: [
+        { value: 'learn', label: 'Ask for feedback and improve for next time', points: { confident: 3, anxious: 0 } },
+        { value: 'reflect', label: 'Disappointed but move on quickly', points: { confident: 2, anxious: 1 } },
+        { value: 'doubt', label: 'Question my qualifications for days', points: { confident: 1, anxious: 2 } },
+        { value: 'avoid', label: 'Feel devastated and avoid applying again', points: { confident: 0, anxious: 3 } },
+      ],
+    },
+    {
+      id: 'questions',
+      question: 'When asked a question you don\'t know the answer to:',
+      options: [
+        { value: 'honest', label: 'Acknowledge it honestly and share how I\'d find out', points: { confident: 3, anxious: 0 } },
+        { value: 'pivot', label: 'Redirect to a related topic I know well', points: { confident: 2, anxious: 1 } },
+        { value: 'bluff', label: 'Try to bluff through with vague answers', points: { confident: 1, anxious: 2 } },
+        { value: 'freeze', label: 'Freeze up and apologize repeatedly', points: { confident: 0, anxious: 3 } },
+      ],
+    },
+  ],
+  results: [
+    {
+      id: 'confident',
+      title: 'Interview Pro',
+      description: 'You approach interviews with healthy confidence. You\'re well-prepared and view interviews as mutual conversations.',
+      recommendations: [
+        'Keep doing mock interviews to stay sharp',
+        'Help others practice — teaching reinforces your skills',
+        'Focus on company culture fit in your research',
+        'Use your confidence to negotiate effectively',
+      ],
+    },
+    {
+      id: 'anxious',
+      title: 'Confidence Builder',
+      description: 'Interview anxiety is holding you back from showing your true potential. The good news: confidence can be built.',
+      recommendations: [
+        'Do 5+ mock interviews before real ones — familiarity reduces anxiety',
+        'Prepare 10 stories using the STAR method you can adapt to any question',
+        'Practice power poses for 2 minutes before interviews (research shows it helps)',
+        'Reframe interviews as conversations, not interrogations — you\'re evaluating them too',
+        'Focus on what you\'ll learn regardless of outcome',
+      ],
+    },
+  ],
+}
+
+// ============ LINKEDIN ABOUT SECTION GENERATOR ============
+
+export const linkedinAboutGenerator: GeneratorTool = {
+  slug: 'linkedin-about-generator',
+  name: 'LinkedIn About Section Generator',
+  description: 'Create a compelling LinkedIn About section that tells your professional story',
+  category: 'LinkedIn',
+  type: 'generator',
+  seo: {
+    title: 'LinkedIn About Section Generator | Professional Summary Writer',
+    description: 'Generate a compelling LinkedIn About section that showcases your expertise and attracts opportunities. Free AI-powered tool.',
+  },
+  fields: [
+    {
+      id: 'role',
+      label: 'Current Role/Title',
+      type: 'text',
+      placeholder: 'e.g., Senior Product Manager, Full-Stack Developer',
+      required: true,
+    },
+    {
+      id: 'expertise',
+      label: 'Key Expertise Areas',
+      type: 'textarea',
+      placeholder: 'e.g., B2B SaaS, product strategy, cross-functional leadership, data-driven decision making',
+      required: true,
+    },
+    {
+      id: 'achievements',
+      label: 'Top 2-3 Achievements',
+      type: 'textarea',
+      placeholder: 'e.g., Launched product used by 500k users, Grew team from 3 to 15, Increased revenue 40% YoY',
+      required: true,
+    },
+    {
+      id: 'passion',
+      label: 'What Drives You',
+      type: 'textarea',
+      placeholder: 'e.g., Building products that simplify complex workflows, mentoring early-career professionals',
+    },
+    {
+      id: 'looking',
+      label: 'What You\'re Looking For (optional)',
+      type: 'select',
+      options: [
+        { value: 'opportunities', label: 'Open to new opportunities' },
+        { value: 'networking', label: 'Networking and connecting' },
+        { value: 'hiring', label: 'Hiring for my team' },
+        { value: 'none', label: 'Not looking for anything specific' },
+      ],
+    },
+  ],
+  template: `As a {{role}}, I specialize in {{expertise}}.
+
+What I've accomplished:
+{{achievements}}
+
+What drives me:
+{{passion}}
+
+{{#if looking === 'opportunities'}}I'm currently exploring new opportunities where I can make a meaningful impact. Let's connect if you're building something exciting.{{/if}}
+{{#if looking === 'networking'}}I'm always interested in connecting with like-minded professionals. Feel free to reach out!{{/if}}
+{{#if looking === 'hiring'}}I'm building my team and looking for talented people to join. DM me if you're interested.{{/if}}
+
+📬 Best way to reach me: Connect here or email me directly.`,
+  outputLabel: 'Your LinkedIn About Section',
+}
+
 // ============ ALL TOOLS ============
 
 export const allTools: Tool[] = [
@@ -3947,6 +4154,9 @@ export const allTools: Tool[] = [
   careerGoalsAssessmentScore,
   freelanceToFullTimeScore,
   remoteInterviewSetupScore,
+  personalBrandScore,
+  interviewConfidenceQuiz,
+  linkedinAboutGenerator,
 ]
 
 export function getToolBySlug(slug: string): Tool | undefined {
