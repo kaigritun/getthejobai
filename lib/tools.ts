@@ -2438,6 +2438,175 @@ Best,
   ],
 }
 
+// ============ PROMOTION & GROWTH TOOLS ============
+
+export const promotionRequestScore: ScoreTool = {
+  slug: 'promotion-request-score',
+  name: 'Promotion Request Score',
+  description: 'Rate your promotion or raise request before sending to your manager',
+  category: 'Career Growth',
+  type: 'score',
+  seo: {
+    title: 'Promotion Request Score | Get That Raise',
+    description: 'Score your promotion request. Learn what makes managers say yes to raises and title bumps.',
+  },
+  inputLabel: 'Paste Your Promotion Request',
+  inputPlaceholder: `Hi [Manager],
+
+I'd like to discuss my career progression and potential promotion to Senior Engineer.
+
+Over the past 18 months, I've:
+- Led the migration to TypeScript, reducing bugs by 40%
+- Mentored 3 junior developers
+- Delivered the payments integration 2 weeks early
+
+I've researched market rates and believe a title change and 15% salary increase reflects my contributions.
+
+I'd love to discuss this when you have time.`,
+  criteria: [
+    { name: 'Quantified Achievements', weight: 30, keywords: ['%', 'increased', 'reduced', 'delivered', 'saved', 'led', 'grew', '$', 'revenue', 'customers'], description: 'Concrete metrics showing your impact' },
+    { name: 'Business Alignment', weight: 25, keywords: ['company', 'team', 'goals', 'OKR', 'initiative', 'strategy', 'roadmap', 'priority'], description: 'Shows how your work supports business goals' },
+    { name: 'Market Research', weight: 15, keywords: ['market', 'research', 'rate', 'benchmark', 'industry', 'competitive', 'data'], description: 'References external data or market rates' },
+    { name: 'Clear Ask', weight: 20, keywords: ['promotion', 'raise', 'title', 'increase', 'salary', 'senior', 'level', 'compensation'], description: 'States exactly what you want' },
+    { name: 'Professional Tone', weight: 10, keywords: ['discuss', 'appreciate', 'value', 'opportunity', 'contribute'], description: 'Confident but not demanding' },
+  ],
+  tips: [
+    'Document wins throughout the year, not just at review time',
+    'Tie your achievements to company metrics and goals',
+    'Research market rates for your role and location',
+    'Ask for a specific title and compensation number',
+    'Schedule the conversation - don\'t ambush your manager',
+  ],
+}
+
+export const jobApplicationTrackerGenerator: GeneratorTool = {
+  slug: 'job-application-tracker-generator',
+  name: 'Job Application Tracker Generator',
+  description: 'Create a personalized job search tracking system',
+  category: 'Job Search',
+  type: 'generator',
+  seo: {
+    title: 'Job Application Tracker Generator | Organize Your Search',
+    description: 'Generate a customized job application tracking template. Stay organized and never lose track of where you applied.',
+  },
+  fields: [
+    { id: 'target_role', label: 'Target Role', type: 'text', placeholder: 'e.g., Senior Product Manager', required: true },
+    { id: 'industry', label: 'Target Industry', type: 'select', options: [
+      { value: 'tech', label: 'Technology' },
+      { value: 'finance', label: 'Finance' },
+      { value: 'healthcare', label: 'Healthcare' },
+      { value: 'consulting', label: 'Consulting' },
+      { value: 'other', label: 'Other' },
+    ], required: true },
+    { id: 'weekly_target', label: 'Applications Per Week', type: 'select', options: [
+      { value: '5', label: '5 (Quality Focus)' },
+      { value: '10', label: '10 (Balanced)' },
+      { value: '20', label: '20+ (Volume Focus)' },
+    ], required: true },
+  ],
+  template: `# {{target_role}} Job Search Tracker
+
+## Weekly Target: {{weekly_target}} applications
+
+### Application Pipeline
+
+| Company | Role | Applied | Status | Next Step | Follow-up Date |
+|---------|------|---------|--------|-----------|----------------|
+| [Company] | {{target_role}} | [Date] | Applied | Wait 1 week | [Date] |
+
+### Status Key
+- 📝 Applied - Waiting for response
+- 📞 Phone Screen - Initial call scheduled
+- 💻 Technical - Technical interview stage
+- 🎯 Onsite - Final rounds
+- ✅ Offer - Received offer
+- ❌ Rejected - Didn't move forward
+
+### {{industry}} Target Companies
+1. [Research top companies in {{industry}}]
+2. [Add dream companies here]
+3. [Include realistic targets]
+
+### Weekly Review Questions
+- How many applications did I submit? (Target: {{weekly_target}})
+- What response rate am I seeing?
+- Which applications got callbacks?
+- What patterns do I notice in rejections?
+
+### Key Dates
+- Week 1 Start: [Date]
+- 30-day check-in: [Date]
+- 90-day reassess: [Date]`,
+  outputLabel: 'Your Job Search Tracker',
+}
+
+export const careerVisionGenerator: GeneratorTool = {
+  slug: 'career-vision-generator',
+  name: 'Career Vision Statement Generator',
+  description: 'Create a compelling 5-year career vision statement',
+  category: 'Career Growth',
+  type: 'generator',
+  seo: {
+    title: 'Career Vision Statement Generator | Define Your Future',
+    description: 'Generate a clear, motivating career vision statement. Know where you\'re going and how to get there.',
+  },
+  fields: [
+    { id: 'current_role', label: 'Current Role', type: 'text', placeholder: 'e.g., Product Manager at a startup', required: true },
+    { id: 'target_role', label: '5-Year Target Role', type: 'text', placeholder: 'e.g., VP of Product at a growth-stage company', required: true },
+    { id: 'core_strength', label: 'Core Strength', type: 'select', options: [
+      { value: 'technical', label: 'Technical Excellence' },
+      { value: 'leadership', label: 'People Leadership' },
+      { value: 'strategy', label: 'Strategic Thinking' },
+      { value: 'execution', label: 'Execution & Delivery' },
+      { value: 'innovation', label: 'Innovation & Creativity' },
+    ], required: true },
+    { id: 'impact_area', label: 'Desired Impact', type: 'textarea', placeholder: 'What change do you want to create? e.g., Make AI accessible to small businesses', required: true },
+  ],
+  template: `# Career Vision Statement
+
+## Where I Am Today
+**Current Role:** {{current_role}}
+**Core Strength:** {{core_strength}}
+
+## Where I'm Going
+**5-Year Target:** {{target_role}}
+
+## My Purpose
+I want to {{impact_area}}
+
+## Vision Statement
+In 5 years, I will be a {{target_role}}, leveraging my {{core_strength}} to {{impact_area}}. I will be known for turning complex challenges into elegant solutions and building teams that ship products users love.
+
+## Key Milestones
+
+### Year 1: Foundation
+- [ ] Master current role fundamentals
+- [ ] Build expertise in {{core_strength}}
+- [ ] Identify mentor in target field
+
+### Year 2-3: Growth
+- [ ] Take on stretch assignments
+- [ ] Lead a significant initiative
+- [ ] Expand network in target industry
+
+### Year 4-5: Transition
+- [ ] Position for target role
+- [ ] Build reputation as {{core_strength}} expert
+- [ ] Achieve {{target_role}} or equivalent
+
+## Daily Actions That Support This Vision
+1. Spend 30 min/day on skill development
+2. Connect with 2 new people weekly
+3. Document wins and learnings
+4. Seek feedback proactively
+
+## Review Schedule
+- Monthly: Check progress against milestones
+- Quarterly: Adjust goals based on learnings
+- Annually: Revisit and update full vision`,
+  outputLabel: 'Your Career Vision Statement',
+}
+
 // ============ ALL TOOLS ============
 
 export const allTools: Tool[] = [
@@ -2487,6 +2656,9 @@ export const allTools: Tool[] = [
   referralRequestScore,
   interviewQuestionBankGenerator,
   networkingFollowUpScore,
+  promotionRequestScore,
+  jobApplicationTrackerGenerator,
+  careerVisionGenerator,
 ]
 
 export function getToolBySlug(slug: string): Tool | undefined {
