@@ -2540,6 +2540,158 @@ export const jobApplicationTrackerGenerator: GeneratorTool = {
   outputLabel: 'Your Job Search Tracker',
 }
 
+export const accomplishmentsScore: ScoreTool = {
+  slug: 'accomplishments-score',
+  name: 'Accomplishments Statement Score',
+  description: 'Rate your resume achievement bullets for impact and clarity',
+  category: 'Resume',
+  type: 'score',
+  seo: {
+    title: 'Accomplishments Statement Score | Rate Your Achievement Bullets',
+    description: 'Score your resume accomplishments for impact, metrics, and action verbs. Turn job duties into compelling achievements.',
+  },
+  inputLabel: 'Your Accomplishment Statement',
+  inputPlaceholder: 'Paste a resume bullet point, e.g., "Led team to increase revenue by 40% through new customer acquisition strategy"',
+  criteria: [
+    { name: 'Action Verb', weight: 20, keywords: ['led', 'developed', 'created', 'increased', 'reduced', 'managed', 'built', 'launched', 'implemented', 'designed', 'achieved', 'delivered', 'drove', 'spearheaded', 'orchestrated'], description: 'Strong action verb at the start' },
+    { name: 'Quantified Impact', weight: 30, keywords: ['%', 'percent', '$', 'million', 'thousand', 'doubled', 'tripled', '2x', '3x', '10x', 'increased by', 'reduced by', 'saved', 'generated'], description: 'Includes specific numbers or metrics' },
+    { name: 'Business Impact', weight: 25, keywords: ['revenue', 'profit', 'cost', 'efficiency', 'productivity', 'customer', 'user', 'retention', 'growth', 'conversion', 'satisfaction', 'NPS'], description: 'Shows business value' },
+    { name: 'Specificity', weight: 15, keywords: ['by implementing', 'through', 'resulting in', 'which led to', 'by creating', 'using', 'via'], description: 'Explains how the result was achieved' },
+    { name: 'Clarity', weight: 10, keywords: [], description: 'Clear, concise, and easy to understand' },
+  ],
+  tips: [
+    'Start every bullet with a strong action verb (Led, Built, Drove)',
+    'Include numbers whenever possible (%, $, time saved)',
+    'Show business impact: revenue, users, efficiency',
+    'Explain HOW you achieved results, not just what you did',
+    'Keep each bullet to 1-2 lines max',
+  ],
+}
+
+export const jobBoardStrategyQuiz: QuizTool = {
+  slug: 'job-board-strategy-quiz',
+  name: 'Job Board Strategy Quiz',
+  description: 'Discover which job boards match your career goals and industry',
+  category: 'Job Search',
+  type: 'quiz',
+  seo: {
+    title: 'Job Board Strategy Quiz | Find the Best Job Boards for You',
+    description: 'Stop wasting time on the wrong job boards. Take this quiz to find where your dream jobs are actually posted.',
+  },
+  questions: [
+    { id: 'industry', question: 'What industry are you targeting?', options: [
+      { value: 'tech', label: 'Tech / Software', points: { linkedin: 2, wellfound: 3, levels: 3 } },
+      { value: 'finance', label: 'Finance / Banking', points: { linkedin: 3, indeed: 2, glassdoor: 2 } },
+      { value: 'healthcare', label: 'Healthcare', points: { indeed: 3, linkedin: 2, healthcarejobs: 3 } },
+      { value: 'creative', label: 'Creative / Design', points: { behance: 3, dribbble: 3, linkedin: 2 } },
+      { value: 'general', label: 'Multiple / Not Sure', points: { linkedin: 3, indeed: 3, glassdoor: 2 } },
+    ]},
+    { id: 'experience', question: 'What\'s your experience level?', options: [
+      { value: 'entry', label: 'Entry Level (0-2 years)', points: { linkedin: 2, handshake: 3, indeed: 2 } },
+      { value: 'mid', label: 'Mid Level (3-7 years)', points: { linkedin: 3, glassdoor: 2, levels: 2 } },
+      { value: 'senior', label: 'Senior (8+ years)', points: { linkedin: 3, levels: 3, exec: 2 } },
+      { value: 'executive', label: 'Executive', points: { linkedin: 2, exec: 3, network: 3 } },
+    ]},
+    { id: 'company_size', question: 'What size company interests you?', options: [
+      { value: 'startup', label: 'Startups', points: { wellfound: 3, ycombinator: 3, linkedin: 1 } },
+      { value: 'midsize', label: 'Mid-size (100-1000)', points: { linkedin: 3, glassdoor: 2, indeed: 2 } },
+      { value: 'enterprise', label: 'Large Enterprise', points: { linkedin: 3, company_careers: 3, glassdoor: 2 } },
+      { value: 'any', label: 'Open to All', points: { linkedin: 3, indeed: 2, glassdoor: 2 } },
+    ]},
+    { id: 'priority', question: 'What matters most in your search?', options: [
+      { value: 'salary', label: 'Salary Transparency', points: { levels: 3, glassdoor: 3, linkedin: 1 } },
+      { value: 'culture', label: 'Company Culture', points: { glassdoor: 3, linkedin: 2, blind: 2 } },
+      { value: 'remote', label: 'Remote Work', points: { weworkremotely: 3, remoteok: 3, flexjobs: 3 } },
+      { value: 'growth', label: 'Career Growth', points: { linkedin: 3, levels: 2, glassdoor: 2 } },
+    ]},
+  ],
+  results: [
+    { id: 'linkedin', title: 'LinkedIn First', description: 'LinkedIn should be your primary platform. Most roles in your category are posted here, and recruiters actively source candidates.', recommendations: ['Optimize your LinkedIn profile', 'Set job alerts for target roles', 'Connect with recruiters in your industry', 'Apply to jobs within first 24 hours'] },
+    { id: 'wellfound', title: 'Startup Job Boards', description: 'Wellfound (formerly AngelList) and Y Combinator\'s Work at a Startup are your best bets for finding startup opportunities.', recommendations: ['Create a detailed Wellfound profile', 'Browse YC companies hiring', 'Follow startup newsletters', 'Network at startup events'] },
+    { id: 'levels', title: 'Levels.fyi + Blind', description: 'For competitive tech salaries and insider info, Levels.fyi and Blind are essential. Great for understanding compensation.', recommendations: ['Research salary ranges on Levels', 'Read Blind for company insights', 'Use salary data in negotiations', 'Target companies with strong comp'] },
+    { id: 'remote', title: 'Remote-First Boards', description: 'WeWorkRemotely, Remote OK, and FlexJobs specialize in distributed work. Perfect for location-independent roles.', recommendations: ['Apply on WeWorkRemotely', 'Check Remote OK daily', 'Consider FlexJobs premium', 'Highlight remote experience'] },
+    { id: 'glassdoor', title: 'Glassdoor + Indeed', description: 'For comprehensive job listings and company reviews, Glassdoor and Indeed cover the broadest range of opportunities.', recommendations: ['Set up Glassdoor alerts', 'Research company reviews', 'Use Indeed\'s easy apply wisely', 'Read interview experiences'] },
+  ],
+}
+
+export const linkedinProfileOptimizer: GeneratorTool = {
+  slug: 'linkedin-profile-optimizer',
+  name: 'LinkedIn Profile Section Generator',
+  description: 'Generate optimized LinkedIn About and Experience sections',
+  category: 'LinkedIn',
+  type: 'generator',
+  seo: {
+    title: 'LinkedIn Profile Section Generator | Optimize Your Profile',
+    description: 'Generate compelling LinkedIn About and Experience sections that attract recruiters and opportunities.',
+  },
+  fields: [
+    { id: 'current_title', label: 'Current/Target Title', type: 'text', placeholder: 'e.g., Senior Product Manager', required: true },
+    { id: 'years_experience', label: 'Years of Experience', type: 'select', options: [
+      { value: '0-2', label: '0-2 years' },
+      { value: '3-5', label: '3-5 years' },
+      { value: '6-10', label: '6-10 years' },
+      { value: '10+', label: '10+ years' },
+    ], required: true },
+    { id: 'key_skills', label: 'Top 3 Skills', type: 'text', placeholder: 'e.g., Product Strategy, User Research, Agile', required: true },
+    { id: 'achievement', label: 'Biggest Achievement', type: 'textarea', placeholder: 'e.g., Launched product that grew to 1M users', required: true },
+    { id: 'looking_for', label: 'What You\'re Looking For', type: 'text', placeholder: 'e.g., Senior PM roles at B2B SaaS companies', required: true },
+  ],
+  template: `# LinkedIn Profile Optimization
+
+## About Section (Copy This)
+
+{{current_title}} with {{years_experience}} years turning complex problems into products users love.
+
+**What I do:**
+I specialize in {{key_skills}}, with a track record of {{achievement}}.
+
+**What drives me:**
+Building products that make a real difference. I thrive at the intersection of user needs and business goals.
+
+**What I'm looking for:**
+{{looking_for}}. Let's connect if you're building something interesting.
+
+📬 Open to conversations: [your email]
+
+---
+
+## Experience Section Tips
+
+**Headline Formula:**
+{{current_title}} | {{key_skills}} | {{achievement}}
+
+**Experience Bullets:**
+- Lead with impact: "Drove..." "Launched..." "Grew..."
+- Include numbers: "Increased X by Y%"
+- Show scope: "Managed team of X" or "Served X users"
+
+**Example bullet for your achievement:**
+• {{achievement}}
+
+---
+
+## Profile Optimization Checklist
+
+- [ ] Professional headshot (face takes up 60% of frame)
+- [ ] Background image relevant to your industry
+- [ ] Headline uses target keywords: {{current_title}}
+- [ ] About section tells your story (copy above)
+- [ ] Featured section showcases best work
+- [ ] Experience has 3-5 bullets per role
+- [ ] Skills section has top 3: {{key_skills}}
+- [ ] Open to Work badge (if applicable)
+
+---
+
+## Keywords to Include (For Search)
+
+Based on your profile, include these keywords throughout:
+- {{current_title}}
+- {{key_skills}}
+- Related: strategy, leadership, growth, innovation`,
+  outputLabel: 'Your Optimized LinkedIn Profile',
+}
+
 export const careerVisionGenerator: GeneratorTool = {
   slug: 'career-vision-generator',
   name: 'Career Vision Statement Generator',
@@ -2659,6 +2811,9 @@ export const allTools: Tool[] = [
   promotionRequestScore,
   jobApplicationTrackerGenerator,
   careerVisionGenerator,
+  accomplishmentsScore,
+  jobBoardStrategyQuiz,
+  linkedinProfileOptimizer,
 ]
 
 export function getToolBySlug(slug: string): Tool | undefined {
