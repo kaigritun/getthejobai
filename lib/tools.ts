@@ -3388,6 +3388,166 @@ Sincerely,
   outputLabel: 'Your Resignation Letter',
 }
 
+// ============ NEW TOOLS (Feb 6 PM) ============
+
+export const coverLetterHookScore: ScoreTool = {
+  slug: 'cover-letter-hook-score',
+  name: 'Cover Letter Hook Score',
+  description: 'Rate your cover letter opening line - make them keep reading',
+  category: 'Cover Letter',
+  type: 'score',
+  seo: {
+    title: 'Cover Letter Hook Score | Write Openers That Get Read',
+    description: 'Score your cover letter opening paragraph. Learn what makes hiring managers read past the first line.',
+  },
+  inputLabel: 'Paste Your Cover Letter Opening Paragraph',
+  inputPlaceholder: `When I saw the Senior PM role at Stripe, I immediately thought of the checkout flow I redesigned at my current company that increased conversions 23%.
+
+I've spent 5 years obsessing over payment UX, and Stripe's mission to increase the GDP of the internet is exactly why I got into product management in the first place...`,
+  criteria: [
+    { name: 'Specific Hook', weight: 30, keywords: ['when I', 'after seeing', 'noticed', 'immediately', 'your recent', 'reading about', 'specific'], description: 'Opens with specific observation, not generic greeting' },
+    { name: 'Immediate Value', weight: 25, keywords: ['%', 'increased', 'built', 'led', 'achieved', 'delivered', 'launched', 'result'], description: 'Shows value in first 2 sentences' },
+    { name: 'Company Connection', weight: 20, keywords: ['mission', 'product', 'team', 'culture', 'announcement', 'values', 'excited about', 'because'], description: 'Shows genuine interest in this specific company' },
+    { name: 'Confident Tone', weight: 15, keywords: ['I', 'my', 'delivered', 'achieved', 'built', 'led', 'know', 'believe'], description: 'Confident without arrogance' },
+    { name: 'No Filler', weight: 10, keywords: [], description: 'No "I am writing to apply" or "I hope this finds you well"' },
+  ],
+  tips: [
+    'Delete "I am writing to apply for..." — everyone does that',
+    'Start with a hook: specific achievement or observation',
+    'Mention the company in sentence 1, not paragraph 3',
+    'First 30 words determine if they read the rest',
+    'No "I believe" — show, don\'t tell',
+    'Match their energy: startup = bold, corporate = polished',
+    'Numbers in the first paragraph = instant credibility',
+    'Don\'t waste words on pleasantries — get to the point',
+  ],
+}
+
+export const salaryNegotiationEmailGenerator: GeneratorTool = {
+  slug: 'salary-negotiation-email-generator',
+  name: 'Salary Negotiation Email Generator',
+  description: 'Generate professional salary negotiation emails that get results',
+  category: 'Negotiation',
+  type: 'generator',
+  seo: {
+    title: 'Salary Negotiation Email Generator | Counter Offer Templates',
+    description: 'Generate professional salary negotiation emails. Templates for counter offers, competing offers, and more.',
+  },
+  fields: [
+    { id: 'recruiter_name', label: 'Recruiter/Hiring Manager Name', type: 'text', placeholder: 'Jennifer', required: true },
+    { id: 'company', label: 'Company Name', type: 'text', placeholder: 'Acme Inc', required: true },
+    { id: 'role', label: 'Role Title', type: 'text', placeholder: 'Senior Software Engineer', required: true },
+    { id: 'offered_salary', label: 'Offered Salary', type: 'text', placeholder: '$140,000', required: true },
+    { id: 'target_salary', label: 'Your Target Salary', type: 'text', placeholder: '$160,000', required: true },
+    { id: 'leverage', label: 'Your Leverage (experience, competing offer, etc.)', type: 'textarea', placeholder: 'I have a competing offer at $155k, and my 8 years of experience in this exact domain...', required: true },
+    { id: 'tone', label: 'Tone', type: 'select', options: [
+      { value: 'confident', label: 'Confident (strong leverage)' },
+      { value: 'collaborative', label: 'Collaborative (partnership)' },
+      { value: 'enthusiastic', label: 'Enthusiastic (really want this job)' },
+    ], required: true },
+  ],
+  template: `Hi {{recruiter_name}},
+
+Thank you for the offer for the {{role}} position at {{company}} — I'm excited about the opportunity to join the team.
+
+After reviewing the compensation package, I'd like to discuss the base salary. The offer of {{offered_salary}} is below my target of {{target_salary}}, and I want to share why I believe this adjustment is appropriate:
+
+{{leverage}}
+
+I'm confident I can deliver significant value in this role, and I want to make sure we start on a foundation that works for both of us.
+
+Would you be open to discussing this? I'm flexible on the structure (base, signing bonus, equity) and want to find something that works for everyone.
+
+Looking forward to your thoughts.
+
+Best,
+[Your Name]`,
+  outputLabel: 'Your Negotiation Email',
+}
+
+export const interviewDressQuiz: QuizTool = {
+  slug: 'interview-dress-quiz',
+  name: 'Interview Dress Code Quiz',
+  description: 'Find out what to wear to your interview based on company culture',
+  category: 'Interview',
+  type: 'quiz',
+  seo: {
+    title: 'Interview Dress Code Quiz | What to Wear to Your Interview',
+    description: 'Take this quick quiz to find out exactly what to wear to your job interview based on company type and role.',
+  },
+  questions: [
+    {
+      id: 'company_type',
+      question: 'What type of company are you interviewing at?',
+      options: [
+        { value: 'startup', label: 'Early-stage startup (< 50 people)', points: { casual: 3, smart: 1, formal: 0 } },
+        { value: 'tech', label: 'Tech company (Google, Meta, etc.)', points: { casual: 2, smart: 2, formal: 0 } },
+        { value: 'corporate', label: 'Traditional corporate (banking, consulting)', points: { casual: 0, smart: 1, formal: 3 } },
+        { value: 'creative', label: 'Creative agency or media', points: { casual: 2, smart: 2, formal: 0 } },
+        { value: 'government', label: 'Government or non-profit', points: { casual: 0, smart: 2, formal: 2 } },
+      ],
+    },
+    {
+      id: 'role_level',
+      question: 'What level is the role?',
+      options: [
+        { value: 'entry', label: 'Entry level / intern', points: { casual: 1, smart: 2, formal: 1 } },
+        { value: 'mid', label: 'Mid-level individual contributor', points: { casual: 1, smart: 2, formal: 1 } },
+        { value: 'senior', label: 'Senior / Staff level', points: { casual: 1, smart: 2, formal: 1 } },
+        { value: 'leadership', label: 'Director / VP / C-level', points: { casual: 0, smart: 2, formal: 2 } },
+      ],
+    },
+    {
+      id: 'interview_type',
+      question: 'What type of interview is it?',
+      options: [
+        { value: 'video', label: 'Video call (remote)', points: { casual: 2, smart: 2, formal: 0 } },
+        { value: 'onsite', label: 'On-site at office', points: { casual: 1, smart: 2, formal: 1 } },
+        { value: 'coffee', label: 'Informal coffee/lunch', points: { casual: 2, smart: 2, formal: 0 } },
+        { value: 'panel', label: 'Panel interview', points: { casual: 0, smart: 2, formal: 2 } },
+      ],
+    },
+  ],
+  results: [
+    {
+      id: 'casual',
+      title: 'Smart Casual',
+      description: 'Go with clean, polished casual: nice jeans + button-down or clean sweater. Skip the suit — you\'ll look out of place.',
+      recommendations: [
+        'Clean dark jeans or chinos',
+        'Button-down shirt or quality sweater',
+        'Clean sneakers or loafers (no beat-up shoes)',
+        'For video: focus on the top half — solid colors work best',
+        'Avoid: graphic tees, shorts, flip flops',
+      ],
+    },
+    {
+      id: 'smart',
+      title: 'Business Casual',
+      description: 'The safe middle ground: dress pants/skirt + nice top. Look put-together without being overdressed.',
+      recommendations: [
+        'Dress pants, chinos, or professional skirt',
+        'Button-down, blouse, or professional top',
+        'Blazer optional but recommended for leadership roles',
+        'Closed-toe shoes (oxfords, loafers, or modest heels)',
+        'Avoid: jeans, sneakers, overly casual',
+      ],
+    },
+    {
+      id: 'formal',
+      title: 'Business Professional',
+      description: 'This calls for the full professional look. Suit up — they expect it.',
+      recommendations: [
+        'Full suit in navy, charcoal, or black',
+        'Pressed dress shirt in white or light blue',
+        'Conservative tie (men) or professional accessories',
+        'Polished dress shoes',
+        'Minimal jewelry and cologne/perfume',
+      ],
+    },
+  ],
+}
+
 // ============ ALL TOOLS ============
 
 export const allTools: Tool[] = [
@@ -3458,6 +3618,9 @@ export const allTools: Tool[] = [
   careerTransitionScore,
   jobDescriptionAnalyzer,
   resignationLetterGenerator,
+  coverLetterHookScore,
+  salaryNegotiationEmailGenerator,
+  interviewDressQuiz,
 ]
 
 export function getToolBySlug(slug: string): Tool | undefined {
