@@ -2304,6 +2304,140 @@ Areas for growth: I want to develop more cross-functional leadership skills.`,
   ],
 }
 
+export const referralRequestScore: ScoreTool = {
+  slug: 'referral-request-score',
+  name: 'Referral Request Score',
+  description: 'Rate your referral request message for maximum success',
+  category: 'Networking',
+  type: 'score',
+  seo: {
+    title: 'Referral Request Score | Get More Job Referrals',
+    description: 'Score your referral request message. Learn what makes people say yes to referring you.',
+  },
+  inputLabel: 'Paste Your Referral Request Message',
+  inputPlaceholder: `Hi Sarah,
+
+I hope you're doing well! I saw that Acme Corp is hiring for a Senior Engineer role, and I know you've been there for a few years now.
+
+I've been following the company's work on distributed systems, and my experience scaling payment infrastructure at my current role feels like a strong fit.
+
+Would you be open to a quick chat about what the team is like? And if you think I'd be a good fit, I'd really appreciate a referral.
+
+Happy to share my resume or any other materials that would help.
+
+Thanks so much!`,
+  criteria: [
+    { name: 'Personal Connection', weight: 25, keywords: ['remember', 'we', 'together', 'met', 'worked', 'know', 'your', 'you'], description: 'References shared history or connection' },
+    { name: 'Specific Role', weight: 20, keywords: ['role', 'position', 'job', 'opportunity', 'opening', 'team', 'hiring'], description: 'Names the specific job or team' },
+    { name: 'Value Proposition', weight: 25, keywords: ['experience', 'skills', 'background', 'fit', 'qualified', 'achieved', 'led', 'built'], description: 'Explains why you are a good fit' },
+    { name: 'Easy Ask', weight: 15, keywords: ['resume', 'materials', 'link', 'linkedin', 'help', 'easy', 'quick'], description: 'Makes it easy for them to help' },
+    { name: 'Professional Tone', weight: 15, keywords: ['appreciate', 'thank', 'grateful', 'understand', 'no pressure', 'either way'], description: 'Respectful and not pushy' },
+  ],
+  tips: [
+    'Lead with your relationship, not the ask',
+    'Be specific about the role and why you want it',
+    'Make their job easy - include resume/LinkedIn',
+    'Give them an out - no pressure is more effective',
+    'Follow up with thanks regardless of outcome',
+  ],
+}
+
+export const interviewQuestionBankGenerator: GeneratorTool = {
+  slug: 'interview-question-bank-generator',
+  name: 'Interview Question Bank Generator',
+  description: 'Get role-specific interview questions to practice',
+  category: 'Interview Prep',
+  type: 'generator',
+  seo: {
+    title: 'Interview Question Bank Generator | Practice Questions by Role',
+    description: 'Generate a personalized bank of interview questions for your target role. Practice the questions that matter most.',
+  },
+  fields: [
+    { id: 'role', label: 'Target Role', type: 'text', placeholder: 'e.g., Product Manager, Software Engineer', required: true },
+    { id: 'level', label: 'Level', type: 'select', options: [
+      { value: 'entry', label: 'Entry Level' },
+      { value: 'mid', label: 'Mid Level' },
+      { value: 'senior', label: 'Senior' },
+      { value: 'lead', label: 'Lead/Staff' },
+      { value: 'director', label: 'Director+' },
+    ], required: true },
+    { id: 'company_type', label: 'Company Type', type: 'select', options: [
+      { value: 'startup', label: 'Startup' },
+      { value: 'growth', label: 'Growth Stage' },
+      { value: 'enterprise', label: 'Enterprise' },
+      { value: 'faang', label: 'FAANG/Big Tech' },
+    ], required: true },
+  ],
+  template: `# Interview Question Bank: {{role}} ({{level}})
+Company Type: {{company_type}}
+
+## Behavioral Questions (prepare 2-3 STAR stories each)
+1. Tell me about a time you faced a major setback. How did you handle it?
+2. Describe a situation where you had to influence without authority.
+3. Give an example of when you had to make a decision with incomplete information.
+4. Tell me about your biggest professional failure and what you learned.
+5. Describe a time you disagreed with your manager. What happened?
+
+## Role-Specific Questions
+1. What's your approach to [key responsibility for {{role}}]?
+2. How do you prioritize when everything is urgent?
+3. Walk me through how you'd handle [common scenario for {{role}}].
+4. What metrics do you use to measure success in your work?
+5. How do you stay current in your field?
+
+## Culture Fit Questions
+1. Why are you interested in a {{company_type}} environment?
+2. How do you handle ambiguity and changing priorities?
+3. What kind of team dynamic brings out your best work?
+4. Where do you see yourself in 3-5 years?
+
+## Questions to Ask Them
+1. What does success look like in the first 90 days?
+2. What's the biggest challenge the team is facing right now?
+3. How does the team give and receive feedback?
+4. What's something you wish you knew before joining?`,
+  outputLabel: 'Your Interview Question Bank',
+}
+
+export const networkingFollowUpScore: ScoreTool = {
+  slug: 'networking-follow-up-score',
+  name: 'Networking Follow-Up Score',
+  description: 'Rate your post-meeting follow-up message',
+  category: 'Networking',
+  type: 'score',
+  seo: {
+    title: 'Networking Follow-Up Score | Turn Meetings Into Relationships',
+    description: 'Score your networking follow-up email. Learn what makes people want to stay in touch.',
+  },
+  inputLabel: 'Paste Your Follow-Up Message',
+  inputPlaceholder: `Hi Alex,
+
+Great meeting you at the product meetup last night! I really enjoyed our conversation about building PLG motions at enterprise companies.
+
+Your point about starting with a wedge use case really resonated - I've been thinking about how to apply that at my current company.
+
+I'd love to continue the conversation. Happy to share some resources on the usage-based pricing models we discussed if you're interested.
+
+Let me know if you'd ever want to grab coffee - I'm usually free Friday mornings.
+
+Best,
+[Name]`,
+  criteria: [
+    { name: 'Specific Reference', weight: 30, keywords: ['discussed', 'mentioned', 'point', 'conversation', 'talked', 'said', 'shared', 'your'], description: 'References something specific from your conversation' },
+    { name: 'Timely Send', weight: 15, keywords: ['yesterday', 'last night', 'today', 'this morning', 'earlier'], description: 'Sent within 24-48 hours (inferred from content)' },
+    { name: 'Value Add', weight: 25, keywords: ['resource', 'article', 'share', 'thought', 'idea', 'helpful', 'intro', 'connect'], description: 'Offers something valuable to them' },
+    { name: 'Clear Next Step', weight: 20, keywords: ['coffee', 'call', 'chat', 'meet', 'catch up', 'continue', 'follow up'], description: 'Suggests a concrete next action' },
+    { name: 'Warm Tone', weight: 10, keywords: ['enjoyed', 'great', 'pleasure', 'glad', 'looking forward', 'appreciate'], description: 'Genuine and warm, not transactional' },
+  ],
+  tips: [
+    'Send within 24 hours while memory is fresh',
+    'Reference a specific moment or topic from your chat',
+    'Offer value before asking for anything',
+    'Make the next step low-friction (coffee vs. "pick your brain")',
+    'Connect on LinkedIn with a personalized note',
+  ],
+}
+
 // ============ ALL TOOLS ============
 
 export const allTools: Tool[] = [
@@ -2350,6 +2484,9 @@ export const allTools: Tool[] = [
   exitInterviewScore,
   workplaceConflictScore,
   performanceReviewSelfScore,
+  referralRequestScore,
+  interviewQuestionBankGenerator,
+  networkingFollowUpScore,
 ]
 
 export function getToolBySlug(slug: string): Tool | undefined {
