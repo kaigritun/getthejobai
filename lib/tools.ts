@@ -4075,6 +4075,92 @@ What drives me:
   outputLabel: 'Your LinkedIn About Section',
 }
 
+// ============ NEW TOOLS 2026-02-06 PM ============
+
+export const jobFairFollowUpScore: ScoreTool = {
+  slug: 'job-fair-follow-up-score',
+  name: 'Job Fair Follow-Up Score',
+  description: 'Rate your career fair follow-up emails to stand out from hundreds of applicants',
+  category: 'Networking',
+  type: 'score',
+  seo: {
+    title: 'Job Fair Follow-Up Email Score | Stand Out After Career Fairs',
+    description: 'Score your career fair follow-up emails. Get feedback on personalization, timing, and professional appeal.',
+  },
+  inputLabel: 'Paste Your Follow-Up Email',
+  inputPlaceholder: 'Paste the follow-up email you plan to send after the career fair...',
+  criteria: [
+    { name: 'Specific Reference', weight: 25, keywords: ['we discussed', 'you mentioned', 'our conversation', 'talked about', 'at the fair', 'your booth', 'at the event'], description: 'References your specific conversation' },
+    { name: 'Memorable Hook', weight: 20, keywords: ['I was the', 'wearing', 'asked about', 'interested in', 'mentioned my', 'background in'], description: 'Helps them remember who you are' },
+    { name: 'Value Proposition', weight: 20, keywords: ['experience', 'skills', 'background', 'passionate', 'contribute', 'bring', 'excited'], description: 'Reinforces why you\'re a great fit' },
+    { name: 'Clear Ask', weight: 20, keywords: ['interview', 'call', 'meeting', 'chat', 'discuss', 'opportunity', 'next steps', 'application'], description: 'Specific next step requested' },
+    { name: 'Professional Tone', weight: 15, keywords: ['thank you', 'appreciate', 'pleasure', 'look forward', 'best regards', 'sincerely'], description: 'Professional but not stiff' },
+  ],
+  tips: [
+    'Send within 24-48 hours while they still remember you',
+    'Include something specific from your conversation',
+    'Attach your resume even if you handed them one',
+    'Keep it under 150 words',
+    'Connect on LinkedIn with a personalized note',
+  ],
+}
+
+export const linkedinHeadlineScore: ScoreTool = {
+  slug: 'linkedin-headline-score',
+  name: 'LinkedIn Headline Score',
+  description: 'Optimize the most important 120 characters of your LinkedIn profile',
+  category: 'LinkedIn',
+  type: 'score',
+  seo: {
+    title: 'LinkedIn Headline Score | Optimize Your 120 Characters',
+    description: 'Score your LinkedIn headline for maximum impact. Get more profile views and recruiter attention.',
+  },
+  inputLabel: 'Paste Your LinkedIn Headline',
+  inputPlaceholder: 'e.g., "Senior Product Manager | B2B SaaS | Scaled products from 0 to $10M ARR"',
+  criteria: [
+    { name: 'Clear Role', weight: 25, keywords: ['manager', 'engineer', 'designer', 'analyst', 'director', 'lead', 'specialist', 'consultant', 'founder', 'developer'], description: 'States your role clearly' },
+    { name: 'Searchable Keywords', weight: 25, keywords: ['SaaS', 'AI', 'machine learning', 'product', 'growth', 'marketing', 'data', 'UX', 'frontend', 'backend'], description: 'Keywords recruiters search for' },
+    { name: 'Results/Numbers', weight: 20, keywords: ['$', 'M', 'K', '%', 'years', 'companies', 'products', 'users', 'revenue'], description: 'Quantified achievements' },
+    { name: 'Value Statement', weight: 15, keywords: ['help', 'build', 'grow', 'scale', 'transform', 'optimize', 'drive', 'deliver'], description: 'What you do for companies' },
+    { name: 'Differentiation', weight: 15, keywords: ['ex-', 'former', 'top', '2x', '3x', 'certified', 'award', 'featured'], description: 'What makes you unique' },
+  ],
+  tips: [
+    'Lead with your most searchable role title',
+    'Include industry/niche (B2B SaaS, fintech)',
+    'Add one impressive number or result',
+    'Avoid cliches like "passionate" or "results-driven"',
+    'Use | or • to separate sections',
+  ],
+}
+
+export const executiveSummaryScore: ScoreTool = {
+  slug: 'executive-summary-score',
+  name: 'Executive Summary Score',
+  description: 'Rate your executive resume summary for C-suite and VP-level positions',
+  category: 'Resume',
+  type: 'score',
+  seo: {
+    title: 'Executive Summary Score | C-Suite Resume Analysis',
+    description: 'Score your executive resume summary. Optimize for VP, Director, and C-level positions.',
+  },
+  inputLabel: 'Paste Your Executive Summary',
+  inputPlaceholder: 'Paste your professional summary or executive profile section...',
+  criteria: [
+    { name: 'Leadership Scope', weight: 25, keywords: ['led', 'managed', 'oversaw', 'directed', 'built', 'transformed', 'team of', 'organization', 'division', 'global'], description: 'Demonstrates leadership scale' },
+    { name: 'Business Impact', weight: 25, keywords: ['$', 'M', 'million', 'billion', 'revenue', 'profit', 'growth', 'market share', 'valuation'], description: 'Quantified business outcomes' },
+    { name: 'Strategic Vision', weight: 20, keywords: ['strategy', 'vision', 'roadmap', 'transformation', 'turnaround', 'scale', 'innovation', 'go-to-market'], description: 'Strategic thinking' },
+    { name: 'Industry Credibility', weight: 15, keywords: ['Fortune', 'startup', 'enterprise', 'public', 'private equity', 'VC-backed', 'years'], description: 'Relevant experience' },
+    { name: 'Executive Presence', weight: 15, keywords: ['board', 'investor', 'stakeholder', 'C-suite', 'cross-functional', 'P&L', 'budget'], description: 'Executive-level communication' },
+  ],
+  tips: [
+    'Lead with your biggest number (revenue, team size, growth %)',
+    'Include company types: "Fortune 500" or "Series B startup"',
+    'Focus on outcomes, not responsibilities',
+    'Keep to 3-4 sentences',
+    'Mention P&L ownership or board experience if relevant',
+  ],
+}
+
 // ============ ALL TOOLS ============
 
 export const allTools: Tool[] = [
@@ -4157,6 +4243,9 @@ export const allTools: Tool[] = [
   personalBrandScore,
   interviewConfidenceQuiz,
   linkedinAboutGenerator,
+  jobFairFollowUpScore,
+  linkedinHeadlineScore,
+  executiveSummaryScore,
 ]
 
 export function getToolBySlug(slug: string): Tool | undefined {
