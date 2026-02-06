@@ -85,9 +85,6 @@ export default function Footer() {
           <p className="text-sm text-white/40">
             © 2026 GetTheJobAI. Helping job seekers use AI effectively.
           </p>
-          <p className="text-sm text-white/40">
-            Made with AI, for humans.
-          </p>
         </div>
       </div>
     </footer>
