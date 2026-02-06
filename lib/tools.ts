@@ -2098,6 +2098,111 @@ Thanks so much,
   outputLabel: 'Your Recommendation Request',
 }
 
+// ============ JOB SEARCH TOOLS ============
+
+export const coldEmailGeneratorHiring: GeneratorTool = {
+  slug: 'cold-email-generator-hiring-manager',
+  name: 'Cold Email to Hiring Manager',
+  description: 'Generate personalized cold emails to reach hiring managers directly',
+  category: 'Networking',
+  type: 'generator',
+  seo: {
+    title: 'Cold Email Generator for Hiring Managers | Bypass HR',
+    description: 'Create compelling cold emails that get responses from hiring managers. Stand out from applicants.',
+  },
+  fields: [
+    { id: 'name', label: 'Hiring Manager Name', type: 'text', placeholder: 'Alex Thompson', required: true },
+    { id: 'company', label: 'Company Name', type: 'text', placeholder: 'Acme Corp', required: true },
+    { id: 'role', label: 'Target Role', type: 'text', placeholder: 'Senior Product Manager', required: true },
+    { id: 'hook', label: 'Why This Company?', type: 'textarea', placeholder: 'What specifically interests you about them (product, mission, growth)' },
+    { id: 'value', label: 'Key Value You Bring', type: 'text', placeholder: 'Scaled B2B SaaS product from $1M to $10M ARR' },
+  ],
+  template: `📧 COLD EMAIL TO HIRING MANAGER
+
+Subject: Quick note about {{role}} — not a generic pitch
+
+Hi {{name}},
+
+{{hook}}
+
+I noticed you're hiring for {{role}} at {{company}}. Rather than just applying through the portal, I wanted to reach out directly because {{value}}.
+
+I'd love to share a few ideas on how I could contribute — happy to keep it to 15 minutes if you're open to a quick call.
+
+Either way, excited to see what you're building at {{company}}.
+
+Best,
+[Your name]
+
+💡 TIPS:
+• Send Tue-Thu, 8-10 AM their time
+• Follow up once after 1 week
+• Find their email via Hunter.io or LinkedIn Sales Navigator`,
+  outputLabel: 'Your Cold Email',
+}
+
+export const jobSearchStrategyQuiz: QuizTool = {
+  slug: 'job-search-strategy-quiz',
+  name: 'Job Search Strategy Quiz',
+  description: 'Discover your optimal job search strategy based on your situation',
+  category: 'Job Search',
+  type: 'quiz',
+  seo: {
+    title: 'Job Search Strategy Quiz | Find Your Best Approach',
+    description: 'Take this quiz to discover the most effective job search strategy for your situation, industry, and goals.',
+  },
+  questions: [
+    { id: 'urgency', question: 'How urgent is your job search?', options: [
+      { value: 'asap', label: 'Need a job ASAP (within 30 days)', points: { volume: 3, targeted: 0, network: 0 } },
+      { value: 'moderate', label: 'Actively looking (2-3 months)', points: { volume: 1, targeted: 2, network: 0 } },
+      { value: 'passive', label: 'Exploring options, no rush', points: { volume: 0, targeted: 1, network: 2 } },
+    ]},
+    { id: 'network', question: 'How strong is your professional network?', options: [
+      { value: 'strong', label: 'Know people at target companies', points: { volume: 0, targeted: 1, network: 3 } },
+      { value: 'moderate', label: 'Some connections, could reach out', points: { volume: 1, targeted: 2, network: 1 } },
+      { value: 'weak', label: 'Starting fresh in this industry', points: { volume: 2, targeted: 1, network: 0 } },
+    ]},
+    { id: 'specificity', question: 'How specific is your target role?', options: [
+      { value: 'specific', label: 'Exact role and company list', points: { volume: 0, targeted: 3, network: 1 } },
+      { value: 'flexible', label: 'Open to similar roles', points: { volume: 2, targeted: 1, network: 1 } },
+      { value: 'exploring', label: 'Figuring out what I want', points: { volume: 1, targeted: 0, network: 2 } },
+    ]},
+  ],
+  results: [
+    { id: 'volume', title: 'Volume Strategy', description: 'Apply to many positions quickly while maintaining quality.', recommendations: ['Apply to 10-20 jobs per week', 'Use quick-apply on LinkedIn/Indeed', 'Track everything in a spreadsheet', 'Optimize resume for ATS'] },
+    { id: 'targeted', title: 'Targeted Strategy', description: 'Focus on fewer, highly-customized applications.', recommendations: ['Research each company deeply', 'Customize resume and cover letter', 'Connect with employees before applying', 'Apply to 5-10 carefully selected roles per week'] },
+    { id: 'network', title: 'Network Strategy', description: 'Leverage relationships to find hidden opportunities.', recommendations: ['Schedule 5+ coffee chats per week', 'Reach out to former colleagues', 'Attend industry events', 'Ask for warm introductions'] },
+  ],
+}
+
+export const careerNarrativeScore: ScoreTool = {
+  slug: 'career-narrative-score',
+  name: 'Career Narrative Score',
+  description: 'Rate how well you tell your career story in interviews and networking',
+  category: 'Interview',
+  type: 'score',
+  seo: {
+    title: 'Career Narrative Score | Tell Your Story Better',
+    description: 'Get feedback on your career story. Learn to articulate your journey in interviews and networking.',
+  },
+  inputLabel: 'Describe Your Career Journey',
+  inputPlaceholder: 'Write your "tell me about yourself" answer or career summary...',
+  criteria: [
+    { name: 'Clear Progression', weight: 25, keywords: ['then', 'next', 'led to', 'transitioned', 'grew', 'promoted', 'moved', 'joined', 'started'], description: 'Shows logical career progression' },
+    { name: 'Consistent Theme', weight: 20, keywords: ['passionate about', 'focused on', 'always', 'throughout', 'core', 'driven by', 'mission'], description: 'Thread connecting your experiences' },
+    { name: 'Key Achievements', weight: 25, keywords: ['achieved', 'built', 'led', 'created', 'increased', 'reduced', 'launched', '%', '$', 'million'], description: 'Highlights major accomplishments' },
+    { name: 'Future Vision', weight: 15, keywords: ['looking for', 'excited about', 'want to', 'goal', 'next', 'future', 'grow'], description: 'Clear direction for next role' },
+    { name: 'Appropriate Length', weight: 15, keywords: [], description: '60-90 seconds when spoken (~150-200 words)' },
+  ],
+  tips: [
+    'Structure: Past → Present → Future',
+    'Keep it under 2 minutes when spoken',
+    'Highlight 2-3 key achievements, not everything',
+    'Connect your story to the target role',
+    'Practice until it sounds natural, not rehearsed',
+  ],
+}
+
 // ============ ALL TOOLS ============
 
 export const allTools: Tool[] = [
@@ -2138,6 +2243,9 @@ export const allTools: Tool[] = [
   portfolioReviewScore,
   interviewReadinessQuiz,
   recommendationRequestGenerator,
+  coldEmailGeneratorHiring,
+  jobSearchStrategyQuiz,
+  careerNarrativeScore,
 ]
 
 export function getToolBySlug(slug: string): Tool | undefined {
