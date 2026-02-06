@@ -1369,6 +1369,184 @@ Sarah`,
   ],
 }
 
+// ============ REMOTE & ATS TOOLS ============
+
+export const remoteJobApplicationScore: ScoreTool = {
+  slug: 'remote-job-application-score',
+  name: 'Remote Job Application Score',
+  description: 'Optimize your application for remote-first companies and distributed teams',
+  category: 'Remote Work',
+  type: 'score',
+  seo: {
+    title: 'Remote Job Application Score | Land Remote Work Faster',
+    description: 'Score your application for remote positions. Get feedback on async communication signals, home office setup, and remote work experience.',
+  },
+  inputLabel: 'Paste Your Resume or Application',
+  inputPlaceholder: 'Paste your resume or cover letter for a remote position...',
+  criteria: [
+    {
+      name: 'Remote Experience',
+      weight: 25,
+      keywords: ['remote', 'distributed', 'virtual', 'work from home', 'wfh', 'async', 'timezone', 'remote-first'],
+      description: 'Evidence of successful remote work experience',
+    },
+    {
+      name: 'Async Communication',
+      weight: 20,
+      keywords: ['written', 'documentation', 'async', 'slack', 'notion', 'confluence', 'loom', 'recorded', 'clear communication'],
+      description: 'Strong written and asynchronous communication skills',
+    },
+    {
+      name: 'Self-Management',
+      weight: 20,
+      keywords: ['self-motivated', 'independent', 'proactive', 'self-starter', 'autonomous', 'initiative', 'organized'],
+      description: 'Ability to work independently without supervision',
+    },
+    {
+      name: 'Tools & Tech',
+      weight: 15,
+      keywords: ['zoom', 'slack', 'notion', 'linear', 'github', 'figma', 'google workspace', 'microsoft teams', 'asana', 'jira'],
+      description: 'Familiarity with remote collaboration tools',
+    },
+    {
+      name: 'Results Focus',
+      weight: 20,
+      keywords: ['delivered', 'achieved', 'completed', 'shipped', 'launched', 'results', 'outcome', 'impact', 'metric'],
+      description: 'Output-focused language showing results over presence',
+    },
+  ],
+  tips: [
+    'Mention specific remote tools you use daily',
+    'Highlight async communication wins (documentation, written updates)',
+    'Show timezone flexibility or overlap with target company',
+    'Include results you achieved while working remotely',
+    'Mention your home office setup if relevant',
+  ],
+}
+
+export const atsKeywordScore: ScoreTool = {
+  slug: 'ats-keyword-score',
+  name: 'ATS Keyword Optimizer',
+  description: 'Check if your resume has the keywords to pass Applicant Tracking Systems',
+  category: 'Resume',
+  type: 'score',
+  seo: {
+    title: 'ATS Keyword Optimizer | Beat Applicant Tracking Systems',
+    description: 'Check if your resume will pass ATS filters. Get keyword optimization tips to increase your chances of reaching human reviewers.',
+  },
+  inputLabel: 'Paste Your Resume + Job Description',
+  inputPlaceholder: `MY RESUME:
+[Paste your resume here]
+
+---
+
+JOB DESCRIPTION:
+[Paste the target job description here]`,
+  criteria: [
+    {
+      name: 'Job Title Match',
+      weight: 20,
+      keywords: ['engineer', 'manager', 'analyst', 'developer', 'designer', 'specialist', 'coordinator', 'director', 'lead', 'senior'],
+      description: 'Resume includes variations of target job title',
+    },
+    {
+      name: 'Hard Skills',
+      weight: 30,
+      keywords: ['python', 'javascript', 'sql', 'excel', 'salesforce', 'tableau', 'aws', 'react', 'node', 'java', 'figma', 'adobe', 'sap'],
+      description: 'Technical skills mentioned in job description appear in resume',
+    },
+    {
+      name: 'Soft Skills',
+      weight: 15,
+      keywords: ['leadership', 'communication', 'collaboration', 'problem-solving', 'analytical', 'strategic', 'team player', 'detail-oriented'],
+      description: 'Soft skills from job description are represented',
+    },
+    {
+      name: 'Industry Terms',
+      weight: 20,
+      keywords: ['b2b', 'saas', 'enterprise', 'startup', 'healthcare', 'fintech', 'e-commerce', 'agile', 'scrum', 'lean'],
+      description: 'Industry-specific terminology matches',
+    },
+    {
+      name: 'ATS-Friendly Format',
+      weight: 15,
+      keywords: ['experience', 'education', 'skills', 'summary', 'work history', 'professional'],
+      description: 'Uses standard section headers ATS can parse',
+    },
+  ],
+  tips: [
+    'Copy exact phrases from job description into your resume',
+    'Use standard section headers (Experience, Education, Skills)',
+    'Avoid tables, graphics, or fancy formatting',
+    'Include both spelled-out and acronym versions (Search Engine Optimization, SEO)',
+    'Match the job title or close variations in your headline',
+  ],
+}
+
+export const recruiterEmailScore: ScoreTool = {
+  slug: 'recruiter-email-score',
+  name: 'Recruiter Outreach Email Score',
+  description: 'Score your cold emails to recruiters for response likelihood',
+  category: 'Networking',
+  type: 'score',
+  seo: {
+    title: 'Recruiter Email Score | Get Responses from Recruiters',
+    description: 'Score your cold emails to recruiters. Get feedback on subject lines, personalization, and response likelihood.',
+  },
+  inputLabel: 'Paste Your Recruiter Email',
+  inputPlaceholder: `Subject: Senior Engineer interested in opportunities at [Company]
+
+Hi Sarah,
+
+I noticed you recruit for engineering roles at Stripe. I'm a senior backend engineer with 6 years of experience in payments systems - very aligned with what you're building.
+
+Most recently, I led the team that processed $2B in transactions at my current company.
+
+Would love to chat if you have any relevant openings. I've attached my resume for reference.
+
+Best,
+Alex`,
+  criteria: [
+    {
+      name: 'Subject Line',
+      weight: 15,
+      keywords: ['subject:', 're:', 'senior', 'engineer', 'interested', 'referral', 'introduction', 'opportunity'],
+      description: 'Clear, specific subject line that gets opened',
+    },
+    {
+      name: 'Personalization',
+      weight: 25,
+      keywords: ['noticed', 'saw', 'your', 'you recruit', 'your company', 'your team', 'at', 'for'],
+      description: 'Shows you researched them specifically',
+    },
+    {
+      name: 'Value Upfront',
+      weight: 25,
+      keywords: ['years', 'experience', 'led', 'built', 'managed', 'specialized', 'expert', '$', '%', 'increased', 'achieved'],
+      description: 'Leads with relevant experience and achievements',
+    },
+    {
+      name: 'Brevity',
+      weight: 15,
+      keywords: [],
+      description: 'Short and scannable (under 150 words ideal)',
+    },
+    {
+      name: 'Clear Ask',
+      weight: 20,
+      keywords: ['chat', 'call', 'discuss', 'openings', 'opportunities', 'connect', 'available', 'interested'],
+      description: 'Specific, easy-to-action request',
+    },
+  ],
+  tips: [
+    'Keep it under 150 words - recruiters skim',
+    'Lead with your most impressive achievement',
+    'Reference their company/team specifically',
+    'Include a specific ask (15-min call, not "let me know")',
+    'Avoid attachments in first email - share resume if they respond',
+  ],
+}
+
 // ============ ALL TOOLS ============
 
 export const allTools: Tool[] = [
@@ -1394,6 +1572,9 @@ export const allTools: Tool[] = [
   linkedinConnectionScore,
   jobDescriptionDecoder,
   referenceRequestScore,
+  remoteJobApplicationScore,
+  atsKeywordScore,
+  recruiterEmailScore,
 ]
 
 export function getToolBySlug(slug: string): Tool | undefined {
