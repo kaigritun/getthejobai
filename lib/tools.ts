@@ -1547,6 +1547,148 @@ Alex`,
   ],
 }
 
+// ============ NETWORKING & NEGOTIATION TOOLS ============
+
+export const informationalInterviewGenerator: GeneratorTool = {
+  slug: 'informational-interview-generator',
+  name: 'Informational Interview Script Generator',
+  description: 'Prepare for informational interviews with thoughtful questions',
+  category: 'Networking',
+  type: 'generator',
+  seo: {
+    title: 'Free Informational Interview Script | Networking Questions',
+    description: 'Generate professional questions for informational interviews. Build relationships and learn about careers.',
+  },
+  fields: [
+    { id: 'person_name', label: 'Person\'s Name', type: 'text', placeholder: 'Sarah Chen', required: true },
+    { id: 'role', label: 'Their Role', type: 'text', placeholder: 'VP of Product at Stripe', required: true },
+    { id: 'your_interest', label: 'Why You\'re Interested', type: 'text', placeholder: 'Transitioning to product management', required: true },
+    { id: 'your_background', label: 'Your Background', type: 'text', placeholder: '5 years as software engineer', required: true },
+  ],
+  template: `📋 INFORMATIONAL INTERVIEW SCRIPT
+
+Meeting with: {{person_name}} ({{role}})
+
+🎯 OPENING
+"Thank you for taking the time to meet with me. A bit about me: {{your_background}}. I'm interested in {{your_interest}}."
+
+❓ CAREER PATH QUESTIONS
+1. "How did you get to your current role? What was your path?"
+2. "What skills were most important in getting you here?"
+3. "If starting over today, what would you do differently?"
+
+❓ ROLE-SPECIFIC QUESTIONS
+4. "What does a typical day or week look like for you?"
+5. "What's most rewarding? Most challenging?"
+
+❓ ADVICE QUESTIONS
+6. "Given my background, what advice would you have?"
+7. "Any resources or people you'd recommend I connect with?"
+
+🎯 CLOSING
+"This has been incredibly helpful. Would it be okay if I kept you updated on my progress?"
+
+📧 FOLLOW-UP (send within 24 hours)
+Subject: Thank you — great conversation!
+
+Hi {{person_name}}, thank you again for your time today. Your insights on [topic] were valuable. I'll follow up on your advice to [action]. Best, [Name]`,
+  outputLabel: 'Your Interview Script',
+}
+
+export const counterOfferGenerator: GeneratorTool = {
+  slug: 'counter-offer-generator',
+  name: 'Counter Offer Email Generator',
+  description: 'Professionally counter a job offer to negotiate better compensation',
+  category: 'Negotiation',
+  type: 'generator',
+  seo: {
+    title: 'Free Counter Offer Email Generator | Salary Negotiation',
+    description: 'Generate a professional counter offer email to negotiate your job offer.',
+  },
+  fields: [
+    { id: 'hiring_manager', label: 'Hiring Manager Name', type: 'text', placeholder: 'Jennifer Smith', required: true },
+    { id: 'company', label: 'Company Name', type: 'text', placeholder: 'Acme Corp', required: true },
+    { id: 'role', label: 'Position Title', type: 'text', placeholder: 'Senior Software Engineer', required: true },
+    { id: 'offered_salary', label: 'Offered Salary', type: 'text', placeholder: '$120,000', required: true },
+    { id: 'target_salary', label: 'Your Counter', type: 'text', placeholder: '$140,000', required: true },
+    { id: 'justification', label: 'Key Justification', type: 'textarea', placeholder: 'Market research, competing offers, specific value...', required: true },
+  ],
+  template: `📧 COUNTER OFFER EMAIL
+
+Subject: {{role}} Offer — Follow-up Discussion
+
+Dear {{hiring_manager}},
+
+Thank you for the offer for the {{role}} position at {{company}}. I'm excited about the opportunity.
+
+After careful consideration, I'd like to discuss the compensation. While I'm enthusiastic about the role, I was hoping we could explore a base salary closer to {{target_salary}}.
+
+My reasoning:
+{{justification}}
+
+I'm flexible on specifics and happy to explore creative solutions like signing bonus, equity, or performance-based adjustments.
+
+Thank you for your understanding.
+
+Best regards,
+[Your name]
+
+💡 TIPS:
+• Express enthusiasm first
+• Provide specific justification
+• Be collaborative, not adversarial
+• Show flexibility on HOW to get there`,
+  outputLabel: 'Your Counter Offer',
+}
+
+export const rejectionResponseGenerator: GeneratorTool = {
+  slug: 'rejection-response-generator',
+  name: 'Job Rejection Response Generator',
+  description: 'Respond professionally to job rejections and maintain relationships',
+  category: 'Job Search',
+  type: 'generator',
+  seo: {
+    title: 'Free Job Rejection Response Generator | Professional Thank You',
+    description: 'Generate a professional response to job rejections. Maintain relationships for future opportunities.',
+  },
+  fields: [
+    { id: 'contact_name', label: 'Contact Name', type: 'text', placeholder: 'Jennifer Smith', required: true },
+    { id: 'company', label: 'Company Name', type: 'text', placeholder: 'Acme Corp', required: true },
+    { id: 'role', label: 'Position Applied For', type: 'text', placeholder: 'Senior Product Manager', required: true },
+    { id: 'ask_feedback', label: 'Ask for Feedback?', type: 'select', options: [
+      { value: 'yes', label: 'Yes' },
+      { value: 'no', label: 'No' },
+    ], required: true },
+  ],
+  template: `📧 REJECTION RESPONSE
+
+Subject: Thank you — {{role}} position
+
+Hi {{contact_name}},
+
+Thank you for letting me know about the {{role}} decision. While I'm disappointed, I appreciate you taking the time to update me.
+
+I enjoyed learning about {{company}} and the team. I hope our paths cross again.
+
+[If asking for feedback:]
+If you have a moment, I'd welcome any feedback on my application or interviews.
+
+I'd love to stay in touch. Please keep me in mind if other opportunities come up.
+
+Thank you again!
+
+Best,
+[Your name]
+[LinkedIn URL]
+
+💡 WHY RESPOND:
+• 40% of jobs filled by past applicants
+• Recruiters move companies
+• Most people don't respond gracefully
+• The selected candidate might not work out`,
+  outputLabel: 'Your Response',
+}
+
 // ============ ALL TOOLS ============
 
 export const allTools: Tool[] = [
@@ -1575,6 +1717,9 @@ export const allTools: Tool[] = [
   remoteJobApplicationScore,
   atsKeywordScore,
   recruiterEmailScore,
+  informationalInterviewGenerator,
+  counterOfferGenerator,
+  rejectionResponseGenerator,
 ]
 
 export function getToolBySlug(slug: string): Tool | undefined {
