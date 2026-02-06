@@ -3694,6 +3694,180 @@ export const interviewDressQuiz: QuizTool = {
   ],
 }
 
+// ============ CAREER GOALS ASSESSMENT ============
+
+export const careerGoalsAssessmentScore: ScoreTool = {
+  slug: 'career-goals-assessment-score',
+  name: 'Career Goals Assessment Score',
+  description: 'Evaluate how well-defined and actionable your career goals are',
+  category: 'Career Planning',
+  type: 'score',
+  seo: {
+    title: 'Career Goals Assessment Score | Rate Your Career Direction',
+    description: 'Assess the clarity and achievability of your career goals. Get actionable feedback on defining your professional path.',
+  },
+  inputLabel: 'Describe Your Career Goals',
+  inputPlaceholder: 'What are your short-term and long-term career goals? Include timeline, target role, industry, and what success looks like to you...',
+  criteria: [
+    {
+      name: 'Specificity',
+      weight: 25,
+      keywords: ['specific', 'role', 'title', 'position', 'company', 'industry', 'sector', 'exact', 'precisely', 'particular'],
+      description: 'Clear, specific goals vs vague aspirations',
+    },
+    {
+      name: 'Timeline',
+      weight: 20,
+      keywords: ['year', 'month', 'by 2024', 'by 2025', 'by 2026', 'by 2027', '6 months', '12 months', '3 years', '5 years', 'deadline', 'timeline'],
+      description: 'Defined timelines and milestones',
+    },
+    {
+      name: 'Measurability',
+      weight: 20,
+      keywords: ['$', 'salary', 'k', '000', 'team', 'reports', 'revenue', 'growth', 'promotion', 'title', 'level', 'senior', 'lead', 'manager', 'director'],
+      description: 'Measurable success criteria',
+    },
+    {
+      name: 'Action Steps',
+      weight: 20,
+      keywords: ['learn', 'skill', 'certification', 'network', 'apply', 'build', 'develop', 'improve', 'practice', 'course', 'training'],
+      description: 'Concrete action steps to achieve goals',
+    },
+    {
+      name: 'Alignment',
+      weight: 15,
+      keywords: ['passion', 'interest', 'values', 'purpose', 'meaningful', 'impact', 'fulfilling', 'enjoy', 'love', 'excited'],
+      description: 'Goals aligned with values and interests',
+    },
+  ],
+  tips: [
+    'Make goals SMART: Specific, Measurable, Achievable, Relevant, Time-bound',
+    'Include both short-term (1 year) and long-term (3-5 years) goals',
+    'Define what success looks like in concrete terms, not just feelings',
+    'Break big goals into quarterly milestones you can track',
+    'Review and adjust goals every 6 months based on progress',
+    'Write down the skills and experiences you need to acquire',
+    'Identify 2-3 people already in your target role to learn from',
+    'Consider both role progression and skill development goals',
+  ],
+}
+
+// ============ FREELANCE TO FULL-TIME TRANSITION ============
+
+export const freelanceToFullTimeScore: ScoreTool = {
+  slug: 'freelance-to-fulltime-score',
+  name: 'Freelance-to-Full-Time Transition Score',
+  description: 'Assess your readiness to transition from freelancing to full-time employment',
+  category: 'Career Transition',
+  type: 'score',
+  seo: {
+    title: 'Freelance to Full-Time Transition Score | Career Change Assessment',
+    description: 'Evaluate your readiness to move from freelancing to traditional employment. Get personalized feedback on positioning your experience.',
+  },
+  inputLabel: 'Describe Your Freelance Experience',
+  inputPlaceholder: 'Share your freelance background: clients, projects, revenue, skills developed, and why you want to transition to full-time...',
+  criteria: [
+    {
+      name: 'Business Results',
+      weight: 25,
+      keywords: ['revenue', '$', 'clients', 'projects', 'delivered', 'completed', 'growth', 'retained', 'repeat', 'referral', 'built', 'launched'],
+      description: 'Quantified business achievements and client outcomes',
+    },
+    {
+      name: 'Professional Skills',
+      weight: 20,
+      keywords: ['managed', 'led', 'collaborated', 'communicated', 'negotiated', 'presented', 'coordinated', 'stakeholder', 'deadline', 'scope'],
+      description: 'Transferable professional skills demonstrated',
+    },
+    {
+      name: 'Technical Expertise',
+      weight: 20,
+      keywords: ['expert', 'proficient', 'skilled', 'specialized', 'certified', 'experienced', 'years', 'tools', 'technologies', 'frameworks'],
+      description: 'Domain expertise and technical capabilities',
+    },
+    {
+      name: 'Team Readiness',
+      weight: 20,
+      keywords: ['team', 'collaborate', 'feedback', 'mentor', 'coach', 'partnership', 'cross-functional', 'agile', 'scrum', 'meetings', 'office'],
+      description: 'Experience working with teams and in structured environments',
+    },
+    {
+      name: 'Transition Clarity',
+      weight: 15,
+      keywords: ['stability', 'benefits', 'growth', 'career', 'learning', 'opportunity', 'culture', 'mission', 'impact', 'scale'],
+      description: 'Clear reasons for transitioning beyond just money',
+    },
+  ],
+  tips: [
+    'Frame freelance work as running a business — you managed clients, projects, and revenue',
+    'Highlight collaborative projects to show you can work in teams',
+    'Quantify your freelance achievements: clients served, revenue generated, retention rates',
+    'Address the "flight risk" concern by explaining your desire for stability and growth',
+    'Show you\'ve worked on long-term engagements, not just one-off gigs',
+    'Emphasize skills gained: sales, negotiation, project management, client communication',
+    'Prepare to discuss why now is the right time for this transition',
+    'Research company cultures that value entrepreneurial thinking and autonomy',
+  ],
+}
+
+// ============ REMOTE INTERVIEW SETUP SCORE ============
+
+export const remoteInterviewSetupScore: ScoreTool = {
+  slug: 'remote-interview-setup-score',
+  name: 'Remote Interview Setup Score',
+  description: 'Rate your video interview environment and technical setup',
+  category: 'Interview Prep',
+  type: 'score',
+  seo: {
+    title: 'Remote Interview Setup Score | Video Interview Checklist',
+    description: 'Evaluate your remote interview setup. Get feedback on lighting, background, audio, and technical preparation.',
+  },
+  inputLabel: 'Describe Your Remote Interview Setup',
+  inputPlaceholder: 'Describe your video interview setup: camera position, lighting, background, audio equipment, internet connection, backup plans, and any recent remote interview experience...',
+  criteria: [
+    {
+      name: 'Video Quality',
+      weight: 25,
+      keywords: ['camera', 'webcam', 'hd', '1080p', '4k', 'eye level', 'centered', 'framed', 'lighting', 'natural light', 'ring light', 'lamp'],
+      description: 'Camera quality and positioning',
+    },
+    {
+      name: 'Audio Setup',
+      weight: 25,
+      keywords: ['microphone', 'headset', 'airpods', 'quiet', 'noise', 'echo', 'muted', 'background noise', 'audio test', 'earbuds'],
+      description: 'Clear audio with minimal background noise',
+    },
+    {
+      name: 'Background & Environment',
+      weight: 20,
+      keywords: ['background', 'clean', 'professional', 'bookshelf', 'neutral', 'blur', 'virtual', 'clutter-free', 'organized', 'wall'],
+      description: 'Professional, distraction-free background',
+    },
+    {
+      name: 'Technical Reliability',
+      weight: 20,
+      keywords: ['internet', 'wifi', 'ethernet', 'mbps', 'stable', 'backup', 'phone', 'hotspot', 'tested', 'zoom', 'teams', 'google meet'],
+      description: 'Reliable internet and tested software',
+    },
+    {
+      name: 'Contingency Planning',
+      weight: 10,
+      keywords: ['backup', 'phone number', 'contact', 'plan b', 'charged', 'battery', 'alternative', 'reschedule', 'prepared'],
+      description: 'Backup plans for technical issues',
+    },
+  ],
+  tips: [
+    'Position camera at eye level — looking up or down creates unflattering angles',
+    'Face a window for natural lighting, never have a window behind you',
+    'Test your setup with a friend 24 hours before the interview',
+    'Use ethernet cable over WiFi when possible for stable connection',
+    'Keep the interviewer\'s contact info handy in case you need to switch to phone',
+    'Close unnecessary apps and browser tabs to free up bandwidth',
+    'Wear professional attire head-to-toe — you might need to stand up',
+    'Have water nearby and silence all notifications on all devices',
+  ],
+}
+
 // ============ ALL TOOLS ============
 
 export const allTools: Tool[] = [
@@ -3770,6 +3944,9 @@ export const allTools: Tool[] = [
   jobOfferTrackerGenerator,
   linkedinGroupEngagementScore,
   interviewThankYouScore,
+  careerGoalsAssessmentScore,
+  freelanceToFullTimeScore,
+  remoteInterviewSetupScore,
 ]
 
 export function getToolBySlug(slug: string): Tool | undefined {
