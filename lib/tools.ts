@@ -4161,6 +4161,97 @@ export const executiveSummaryScore: ScoreTool = {
   ],
 }
 
+// ============ NEW TOOLS 2026-02-06 PM ============
+
+export const phoneScreenPrepScore: ScoreTool = {
+  slug: 'phone-screen-prep-score',
+  name: 'Phone Screen Prep Score',
+  description: 'Rate your preparation for initial phone screenings with recruiters and hiring managers',
+  category: 'Interview',
+  type: 'score',
+  seo: {
+    title: 'Phone Screen Prep Score | Ace Your First Interview',
+    description: 'Score your phone screen preparation. Nail the 15-30 minute initial call that decides if you advance.',
+  },
+  inputLabel: 'Paste Your Phone Screen Notes',
+  inputPlaceholder: 'Paste your research notes, talking points, and questions prepared for the phone screen...',
+  criteria: [
+    { name: 'Company Research', weight: 25, keywords: ['company', 'mission', 'product', 'recent', 'news', 'funding', 'growth', 'culture', 'values'], description: 'Demonstrates company knowledge' },
+    { name: 'Role Understanding', weight: 25, keywords: ['responsibilities', 'requirements', 'team', 'report to', 'day-to-day', 'projects', 'goals'], description: 'Understands the specific role' },
+    { name: 'Elevator Pitch Ready', weight: 20, keywords: ['background', 'experience', 'relevant', 'years', 'accomplishments', 'why', 'interested'], description: '60-second intro prepared' },
+    { name: 'Questions Prepared', weight: 15, keywords: ['question', 'ask', 'curious', 'team', 'growth', 'challenges', 'success'], description: 'Thoughtful questions ready' },
+    { name: 'Logistics Covered', weight: 15, keywords: ['salary', 'range', 'timeline', 'next steps', 'process', 'start date', 'remote', 'hybrid'], description: 'Ready to discuss practical details' },
+  ],
+  tips: [
+    'Have your 60-second pitch memorized but natural',
+    'Research interviewer on LinkedIn before the call',
+    'Prepare 3-5 questions (at least 2 about the role itself)',
+    'Know your salary range before they ask',
+    'Find a quiet spot with good reception',
+  ],
+}
+
+export const careerMentorRequestScore: ScoreTool = {
+  slug: 'career-mentor-request-score',
+  name: 'Career Mentor Request Score',
+  description: 'Rate your outreach messages to potential career mentors',
+  category: 'Networking',
+  type: 'score',
+  seo: {
+    title: 'Career Mentor Request Score | Get Mentorship That Matters',
+    description: 'Score your mentor outreach. Learn to ask for guidance in a way that gets responses.',
+  },
+  inputLabel: 'Paste Your Mentor Request',
+  inputPlaceholder: 'Paste your message asking someone to be a mentor or for career advice...',
+  criteria: [
+    { name: 'Specific Ask', weight: 25, keywords: ['specific', 'one question', '15 minutes', '30 minutes', 'coffee', 'chat', 'one topic', 'advice on'], description: 'Clear, bounded request' },
+    { name: 'Why Them', weight: 25, keywords: ['your', 'article', 'talk', 'work', 'admire', 'career', 'path', 'transition', 'company', 'saw'], description: 'Shows why you chose this person' },
+    { name: 'Your Context', weight: 20, keywords: ['I\'m', 'currently', 'background', 'working on', 'transitioning', 'years', 'looking to'], description: 'Brief relevant background' },
+    { name: 'Low Commitment', weight: 15, keywords: ['quick', 'brief', '15', '20', 'understand if', 'busy', 'no pressure', 'whenever'], description: 'Makes it easy to say yes' },
+    { name: 'Professional Tone', weight: 15, keywords: ['appreciate', 'grateful', 'thank you', 'respect', 'value', 'time'], description: 'Respectful and professional' },
+  ],
+  tips: [
+    'Don\'t ask to "pick your brain" — ask ONE specific question',
+    'Reference their specific work, not generic praise',
+    'Ask for 15-20 minutes, not ongoing mentorship',
+    'Make it easy: "I can work around your schedule"',
+    'Follow up with thanks and an update on how you applied their advice',
+  ],
+}
+
+export const jobAcceptanceEmailGenerator: GeneratorTool = {
+  slug: 'job-acceptance-email-generator',
+  name: 'Job Acceptance Email Generator',
+  description: 'Generate a professional job acceptance email to confirm your new position',
+  category: 'Job Offers',
+  type: 'generator',
+  seo: {
+    title: 'Job Acceptance Email Generator | Professional Acceptance Letter',
+    description: 'Generate a polished job acceptance email. Confirm salary, start date, and start on the right foot.',
+  },
+  fields: [
+    { id: 'hiring_manager', label: 'Hiring Manager Name', type: 'text', placeholder: 'Sarah Chen', required: true },
+    { id: 'company', label: 'Company Name', type: 'text', placeholder: 'Acme Corp', required: true },
+    { id: 'job_title', label: 'Job Title', type: 'text', placeholder: 'Senior Product Manager', required: true },
+    { id: 'salary', label: 'Agreed Salary', type: 'text', placeholder: '$120,000', required: true },
+    { id: 'start_date', label: 'Start Date', type: 'text', placeholder: 'March 15, 2026', required: true },
+    { id: 'other_terms', label: 'Other Key Terms (optional)', type: 'textarea', placeholder: 'Sign-on bonus, equity, remote work arrangement...' },
+  ],
+  template: `Dear {{hiring_manager}},
+
+I am thrilled to formally accept the {{job_title}} position at {{company}}. Thank you for this opportunity.
+
+As discussed, I am accepting the role at a salary of {{salary}} with a start date of {{start_date}}.{{other_terms}}
+
+I'm excited to contribute to the team and look forward to making an impact from day one. Please let me know if there's any paperwork or onboarding materials I should complete before my start date.
+
+Thank you again for this opportunity.
+
+Best regards,
+[Your Name]`,
+  outputLabel: 'Your Job Acceptance Email',
+}
+
 // ============ ALL TOOLS ============
 
 export const allTools: Tool[] = [
@@ -4246,6 +4337,9 @@ export const allTools: Tool[] = [
   jobFairFollowUpScore,
   linkedinHeadlineScore,
   executiveSummaryScore,
+  phoneScreenPrepScore,
+  careerMentorRequestScore,
+  jobAcceptanceEmailGenerator,
 ]
 
 export function getToolBySlug(slug: string): Tool | undefined {
