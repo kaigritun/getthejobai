@@ -1884,6 +1884,110 @@ When asked about salary expectations:
   outputLabel: 'Your Research Checklist',
 }
 
+// ============ BACKGROUND CHECK & CAREER FAIR TOOLS ============
+
+export const backgroundCheckPrepScore: ScoreTool = {
+  slug: 'background-check-prep-score',
+  name: 'Background Check Prep Score',
+  description: 'Prepare for employment background checks and identify potential red flags',
+  category: 'Job Search',
+  type: 'score',
+  seo: {
+    title: 'Background Check Prep Score | Employment Screening Guide',
+    description: 'Prepare for employment background checks. Identify potential issues and know what employers see before they do.',
+  },
+  inputLabel: 'Describe Your Background Situation',
+  inputPlaceholder: 'Include: work history gaps, education, any legal history, credit concerns, previous employer situations, etc.',
+  criteria: [
+    { name: 'Employment History Consistency', weight: 25, keywords: ['consistent', 'accurate', 'dates', 'titles', 'employer', 'verified', 'references', 'match', 'resume'], description: 'Employment dates and titles match across documents' },
+    { name: 'Education Verification', weight: 15, keywords: ['degree', 'graduated', 'university', 'college', 'diploma', 'transcript', 'certification', 'verified'], description: 'Education credentials are accurate and verifiable' },
+    { name: 'Gap Explanations', weight: 20, keywords: ['gap', 'break', 'sabbatical', 'freelance', 'family', 'travel', 'education', 'transition', 'explained'], description: 'Employment gaps have reasonable explanations' },
+    { name: 'Reference Preparation', weight: 20, keywords: ['reference', 'manager', 'supervisor', 'colleague', 'contacted', 'heads up', 'prepared', 'positive'], description: 'References are prepped and will speak positively' },
+    { name: 'Clean Records', weight: 20, keywords: ['clean', 'clear', 'no issues', 'good standing', 'credit', 'criminal', 'driving', 'verified'], description: 'No concerning criminal, credit, or driving records' },
+  ],
+  tips: [
+    'Run your own background check first (Checkr, GoodHire)',
+    'Ensure resume dates match LinkedIn and applications exactly',
+    'Contact references BEFORE applying to give them heads up',
+    'Prepare honest explanations for any gaps or issues',
+    'Be truthful — lies are worse than the truth in background checks',
+  ],
+}
+
+export const careerFairPitchGenerator: GeneratorTool = {
+  slug: 'career-fair-pitch-generator',
+  name: 'Career Fair Pitch Generator',
+  description: 'Create compelling 60-second pitches for career fairs and networking events',
+  category: 'Networking',
+  type: 'generator',
+  seo: {
+    title: 'Career Fair Pitch Generator | Networking Event Intro',
+    description: 'Generate a memorable career fair pitch. Stand out at job fairs and networking events with a polished introduction.',
+  },
+  fields: [
+    { id: 'name', label: 'Your Name', type: 'text', placeholder: 'Alex Chen', required: true },
+    { id: 'background', label: 'Your Background/Major', type: 'text', placeholder: 'Computer Science, 3rd year', required: true },
+    { id: 'experience', label: 'Relevant Experience', type: 'textarea', placeholder: 'Internship at startup, hackathon wins...', required: true },
+    { id: 'target_role', label: 'Role You\'re Seeking', type: 'text', placeholder: 'Software Engineering Intern', required: true },
+    { id: 'why_company', label: 'Why This Company', type: 'text', placeholder: 'Mission, products, culture...', required: true },
+  ],
+  template: `🎯 YOUR CAREER FAIR PITCH (60 seconds)
+
+**OPENING (10 sec)**
+"Hi! I'm {{name}}, {{background}}. I'm excited to talk about {{target_role}} opportunities."
+
+**EXPERIENCE (20 sec)**
+"I've {{experience}}."
+
+**CONNECTION (15 sec)**
+"I'm particularly interested because {{why_company}}."
+
+**CLOSE (15 sec)**
+"I'd love to learn more about what you're looking for. Could I get your contact info to follow up?"
+
+💡 TIPS: Research companies, print 20+ resumes, send thank-you within 24h.`,
+  outputLabel: 'Your Career Fair Pitch',
+}
+
+export const workStyleQuiz: QuizTool = {
+  slug: 'work-style-quiz',
+  name: 'Work Environment Quiz',
+  description: 'Discover your ideal work environment — startup, corporate, remote, or hybrid',
+  category: 'Career',
+  type: 'quiz',
+  seo: {
+    title: 'Work Style Quiz | Find Your Ideal Work Environment',
+    description: 'Discover whether you thrive at startups, corporations, or remote work. Get matched to your ideal work environment.',
+  },
+  questions: [
+    { id: 'structure', question: 'How do you prefer your workday structured?', options: [
+      { value: 'flexible', label: 'Completely flexible', points: { startup: 2, corporate: 0, remote: 3 } },
+      { value: 'some', label: 'Some structure with core hours', points: { startup: 2, corporate: 2, remote: 2 } },
+      { value: 'clear', label: 'Clear 9-5 with predictability', points: { startup: 0, corporate: 3, remote: 1 } },
+    ]},
+    { id: 'risk', question: 'How do you feel about job security vs growth?', options: [
+      { value: 'security', label: 'Stability is my priority', points: { startup: 0, corporate: 3, remote: 1 } },
+      { value: 'growth', label: 'Will trade security for rapid growth', points: { startup: 3, corporate: 0, remote: 2 } },
+      { value: 'equity', label: 'Want ownership/equity potential', points: { startup: 3, corporate: 0, remote: 1 } },
+    ]},
+    { id: 'collaboration', question: 'How do you prefer to collaborate?', options: [
+      { value: 'inperson', label: 'In-person, spontaneous', points: { startup: 2, corporate: 3, remote: 0 } },
+      { value: 'async', label: 'Async communication (Slack, docs)', points: { startup: 1, corporate: 0, remote: 3 } },
+      { value: 'scheduled', label: 'Scheduled meetings, clear agendas', points: { startup: 0, corporate: 3, remote: 2 } },
+    ]},
+    { id: 'scope', question: 'What work scope energizes you?', options: [
+      { value: 'specialist', label: 'Deep expertise in one area', points: { startup: 0, corporate: 3, remote: 2 } },
+      { value: 'generalist', label: 'Wearing many hats, variety', points: { startup: 3, corporate: 0, remote: 2 } },
+      { value: 'impact', label: 'Direct impact on company direction', points: { startup: 3, corporate: 0, remote: 1 } },
+    ]},
+  ],
+  results: [
+    { id: 'startup', title: 'Startup Environment', description: 'You thrive in fast-paced, ambiguous environments with ownership and rapid growth.', recommendations: ['Target Series A-C startups', 'Look for equity packages', 'Ask about runway in interviews'] },
+    { id: 'corporate', title: 'Corporate Environment', description: 'You value stability, clear processes, and deep specialization.', recommendations: ['Target Fortune 500 companies', 'Ask about career pathing', 'Look for mentorship programs'] },
+    { id: 'remote', title: 'Remote-First Environment', description: 'You value autonomy, flexibility, and async work.', recommendations: ['Target remote-first companies', 'Look for async cultures', 'Build work-life routines'] },
+  ],
+}
+
 // ============ ALL TOOLS ============
 
 export const allTools: Tool[] = [
@@ -1918,6 +2022,9 @@ export const allTools: Tool[] = [
   skillsGapAnalyzer,
   behavioralInterviewScore,
   salaryResearchGenerator,
+  backgroundCheckPrepScore,
+  careerFairPitchGenerator,
+  workStyleQuiz,
 ]
 
 export function getToolBySlug(slug: string): Tool | undefined {
