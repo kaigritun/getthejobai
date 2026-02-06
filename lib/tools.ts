@@ -2203,6 +2203,107 @@ export const careerNarrativeScore: ScoreTool = {
   ],
 }
 
+// ============ EXIT & PERFORMANCE TOOLS ============
+
+export const exitInterviewScore: ScoreTool = {
+  slug: 'exit-interview-score',
+  name: 'Exit Interview Response Score',
+  description: 'Prepare professional exit interview answers that maintain relationships',
+  category: 'Career Transitions',
+  type: 'score',
+  seo: {
+    title: 'Exit Interview Score | Leave Jobs Professionally',
+    description: 'Score your exit interview responses. Maintain relationships and leave gracefully while giving honest feedback.',
+  },
+  inputLabel: 'Paste Your Exit Interview Answers',
+  inputPlaceholder: `Q: Why are you leaving?
+A: I've enjoyed my time here and learned a lot, but I received an opportunity that aligns better with my long-term career goals in product management.
+
+Q: What could we improve?
+A: I think the team would benefit from clearer career progression paths. I sometimes felt uncertain about growth opportunities.`,
+  criteria: [
+    { name: 'Professional Tone', weight: 25, keywords: ['appreciate', 'grateful', 'learned', 'enjoyed', 'opportunity', 'growth', 'thankful', 'valued'], description: 'Maintains positive, professional language throughout' },
+    { name: 'Constructive Feedback', weight: 25, keywords: ['suggest', 'improve', 'opportunity', 'could', 'might', 'consider', 'helpful', 'benefit'], description: 'Provides actionable suggestions without being bitter' },
+    { name: 'Forward-Looking', weight: 20, keywords: ['career', 'goals', 'growth', 'opportunity', 'next step', 'future', 'direction', 'path'], description: 'Focuses on future rather than dwelling on negatives' },
+    { name: 'Balanced', weight: 15, keywords: ['both', 'while', 'however', 'also', 'and', 'at the same time', 'that said'], description: 'Balances positives with areas for improvement' },
+    { name: 'Specific Examples', weight: 15, keywords: ['example', 'instance', 'specifically', 'when', 'project', 'situation', 'time'], description: 'Uses specific examples rather than vague complaints' },
+  ],
+  tips: [
+    'Never burn bridges - you may need references later',
+    'Focus on "I" statements, not blame',
+    'Be honest but diplomatic about issues',
+    'Highlight what you learned and appreciated',
+    'Offer constructive suggestions, not complaints',
+  ],
+}
+
+export const workplaceConflictScore: ScoreTool = {
+  slug: 'workplace-conflict-score',
+  name: 'Workplace Conflict Resolution Score',
+  description: 'Rate your conflict resolution stories for interview impact',
+  category: 'Interview',
+  type: 'score',
+  seo: {
+    title: 'Workplace Conflict Score | Interview Answer Analyzer',
+    description: 'Score your conflict resolution examples for behavioral interviews. Show maturity and leadership in difficult situations.',
+  },
+  inputLabel: 'Paste Your Conflict Resolution Story',
+  inputPlaceholder: `Situation: My colleague and I disagreed about the technical approach for a critical feature.
+
+What I did: I scheduled a 1-on-1 to understand their perspective. I discovered they had concerns about scalability that I hadn't considered. We whiteboarded together and found a hybrid solution.
+
+Result: We shipped on time, the solution scaled to 10x our initial projections, and we became better collaborators.`,
+  criteria: [
+    { name: 'Empathy Shown', weight: 25, keywords: ['understood', 'perspective', 'their view', 'listened', 'heard', 'concerns', 'feelings', 'point of view'], description: 'Shows you tried to understand the other side' },
+    { name: 'Initiative Taken', weight: 20, keywords: ['I scheduled', 'I reached out', 'I initiated', 'I suggested', 'I proposed', 'took the lead', 'proactively'], description: 'You took action to resolve, didn\'t wait' },
+    { name: 'Collaborative Solution', weight: 25, keywords: ['together', 'compromise', 'middle ground', 'hybrid', 'combined', 'both', 'win-win', 'collaborated'], description: 'Found a solution that worked for everyone' },
+    { name: 'Professional Throughout', weight: 15, keywords: ['respectful', 'professional', 'calm', 'constructive', 'focused on', 'objective', 'facts'], description: 'Maintained professionalism, no drama' },
+    { name: 'Positive Outcome', weight: 15, keywords: ['resulted', 'outcome', 'now', 'since then', 'improved', 'better', 'successful', 'relationship'], description: 'Clear positive results from the resolution' },
+  ],
+  tips: [
+    'Never badmouth the other person',
+    'Show you tried to understand their perspective first',
+    'Focus on the issue, not personalities',
+    'Highlight the collaborative solution, not "winning"',
+    'Include the improved relationship as an outcome',
+  ],
+}
+
+export const performanceReviewSelfScore: ScoreTool = {
+  slug: 'performance-review-self-score',
+  name: 'Performance Review Self-Assessment Score',
+  description: 'Rate your self-review for impact before submitting',
+  category: 'Career Development',
+  type: 'score',
+  seo: {
+    title: 'Performance Review Score | Self-Assessment Analyzer',
+    description: 'Score your performance review self-assessment. Advocate for yourself effectively and set up promotion conversations.',
+  },
+  inputLabel: 'Paste Your Self-Assessment',
+  inputPlaceholder: `This quarter I led the migration of our payment system to the new platform. Key achievements:
+
+- Completed migration 2 weeks ahead of schedule
+- Zero downtime during cutover (processed $5M during transition)
+- Created documentation that reduced onboarding time by 40%
+- Mentored 2 junior engineers on the new system
+
+Areas for growth: I want to develop more cross-functional leadership skills.`,
+  criteria: [
+    { name: 'Quantified Achievements', weight: 30, keywords: ['%', 'increased', 'decreased', 'reduced', 'saved', '$', 'x', 'weeks', 'days', 'hours', 'team of', 'million'], description: 'Specific numbers and metrics for accomplishments' },
+    { name: 'Business Impact', weight: 25, keywords: ['revenue', 'customers', 'users', 'efficiency', 'saved', 'enabled', 'unblocked', 'delivered', 'launched'], description: 'Connects work to business outcomes' },
+    { name: 'Leadership Signals', weight: 20, keywords: ['led', 'mentored', 'coached', 'initiated', 'proposed', 'drove', 'coordinated', 'organized', 'influenced'], description: 'Shows leadership beyond individual contribution' },
+    { name: 'Growth Mindset', weight: 15, keywords: ['learn', 'grow', 'improve', 'develop', 'next', 'goal', 'aspire', 'working on', 'opportunity'], description: 'Shows self-awareness and desire to grow' },
+    { name: 'Specific Examples', weight: 10, keywords: ['project', 'initiative', 'specifically', 'example', 'instance', 'case', 'when'], description: 'Uses concrete examples, not vague claims' },
+  ],
+  tips: [
+    'Lead with your biggest wins and quantify them',
+    'Connect your work to team/company goals',
+    'Include leadership moments (mentoring, initiatives)',
+    'Show growth areas as aspirations, not weaknesses',
+    'Keep a "brag doc" throughout the year',
+  ],
+}
+
 // ============ ALL TOOLS ============
 
 export const allTools: Tool[] = [
@@ -2246,6 +2347,9 @@ export const allTools: Tool[] = [
   coldEmailGeneratorHiring,
   jobSearchStrategyQuiz,
   careerNarrativeScore,
+  exitInterviewScore,
+  workplaceConflictScore,
+  performanceReviewSelfScore,
 ]
 
 export function getToolBySlug(slug: string): Tool | undefined {
