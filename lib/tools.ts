@@ -1005,6 +1005,176 @@ Hi {{name}}, I hope you're doing well! I'm updating my LinkedIn and would really
   outputLabel: 'Your Reference Request',
 }
 
+export const companyResearchGenerator: GeneratorTool = {
+  slug: 'company-research-generator',
+  name: 'Company Research Generator',
+  description: 'Get a structured company research brief for interview prep',
+  category: 'Interview Prep',
+  type: 'generator',
+  seo: {
+    title: 'Free Company Research Generator | Interview Prep Tool',
+    description: 'Generate a structured company research checklist for your job interview. Know what to research and what questions to ask.',
+  },
+  fields: [
+    { id: 'company', label: 'Company Name', type: 'text', placeholder: 'Google', required: true },
+    { id: 'role', label: 'Role Title', type: 'text', placeholder: 'Senior Software Engineer', required: true },
+    { id: 'industry', label: 'Industry', type: 'select', options: [
+      { value: 'tech', label: 'Technology' },
+      { value: 'finance', label: 'Finance' },
+      { value: 'healthcare', label: 'Healthcare' },
+      { value: 'retail', label: 'Retail' },
+      { value: 'consulting', label: 'Consulting' },
+      { value: 'other', label: 'Other' },
+    ], required: true },
+  ],
+  template: `🔍 COMPANY RESEARCH BRIEF: {{company}}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📊 BUSINESS FUNDAMENTALS
+□ What does {{company}} do? (1-sentence)
+□ Business model (B2B, B2C, marketplace?)
+□ Key products/services
+□ Main competitors
+□ Recent funding/financials
+
+🎯 STRATEGIC CONTEXT
+□ Company mission statement
+□ Recent news (last 90 days)
+□ Current challenges in {{industry}}
+□ Growth trajectory/recent wins
+
+👥 TEAM & CULTURE
+□ CEO and leadership background
+□ Glassdoor reviews (patterns)
+□ Company values (actual vs stated)
+□ Interview process reviews
+
+💼 ROLE-SPECIFIC ({{role}})
+□ Team this role reports to
+□ Key projects this team owns
+□ Tools/tech stack mentioned
+□ Success metrics likely expected
+
+❓ QUESTIONS TO ASK
+1. "What does success look like for this role in the first 90 days?"
+2. "What's the biggest challenge {{company}} is facing right now?"
+3. "How does this team collaborate with [related team]?"
+4. "What's the career growth path for this role?"
+
+📝 WHERE TO RESEARCH
+• LinkedIn (company page + employees)
+• Crunchbase/PitchBook (funding)
+• Glassdoor (reviews)
+• News (TechCrunch, industry pubs)
+• Company blog/careers page`,
+  outputLabel: 'Your Research Brief',
+}
+
+export const jobOfferComparison: ScoreTool = {
+  slug: 'job-offer-comparison',
+  name: 'Job Offer Comparison Calculator',
+  description: 'Compare multiple job offers with weighted scoring across compensation, growth, and lifestyle factors',
+  category: 'Career Decisions',
+  type: 'score',
+  seo: {
+    title: 'Free Job Offer Comparison Calculator | Compare Multiple Offers',
+    description: 'Compare job offers side-by-side with weighted scoring for salary, benefits, growth, culture, and work-life balance.',
+  },
+  inputLabel: 'Describe your job offers (separate with ---)',
+  inputPlaceholder: `Offer 1: Google, $180k base, $50k RSU, remote 2 days, great benefits
+---
+Offer 2: Startup, $150k base, 0.5% equity, fully remote, unlimited PTO`,
+  criteria: [
+    { name: 'Compensation', weight: 30, keywords: ['salary', 'base', 'bonus', 'equity', 'rsu', 'stock', 'pay', '401k', 'benefits'], description: 'Total compensation including base, bonus, equity' },
+    { name: 'Growth Potential', weight: 25, keywords: ['growth', 'promotion', 'learning', 'career', 'mentor', 'opportunity', 'advance', 'develop'], description: 'Career development and advancement opportunities' },
+    { name: 'Work-Life Balance', weight: 20, keywords: ['remote', 'flexible', 'pto', 'vacation', 'hours', 'balance', 'wfh', 'hybrid'], description: 'Flexibility, time off, and work expectations' },
+    { name: 'Company Stability', weight: 15, keywords: ['profitable', 'funded', 'established', 'stable', 'growing', 'revenue', 'series'], description: 'Financial health and job security' },
+    { name: 'Culture Fit', weight: 10, keywords: ['culture', 'team', 'values', 'mission', 'people', 'vibe', 'environment'], description: 'Team dynamics and company values alignment' },
+  ],
+  tips: [
+    'Calculate total compensation (base + bonus + equity value)',
+    'Consider the 5-year trajectory, not just year 1',
+    'Factor in commute/remote flexibility as real dollars',
+    'Talk to current employees about actual culture',
+  ],
+}
+
+export const interviewPrepChecklist: GeneratorTool = {
+  slug: 'interview-prep-checklist',
+  name: 'Interview Prep Checklist Generator',
+  description: 'Get a personalized interview preparation plan based on your role and timeline',
+  category: 'Interview Prep',
+  type: 'generator',
+  seo: {
+    title: 'Free Interview Prep Checklist | Personalized Study Plan',
+    description: 'Generate a customized interview preparation checklist based on your role, company, and timeline.',
+  },
+  fields: [
+    { id: 'role_type', label: 'Role Type', type: 'select', options: [
+      { value: 'engineering', label: 'Software Engineering' },
+      { value: 'product', label: 'Product Management' },
+      { value: 'design', label: 'Design / UX' },
+      { value: 'data', label: 'Data Science / Analytics' },
+      { value: 'marketing', label: 'Marketing' },
+      { value: 'sales', label: 'Sales' },
+      { value: 'general', label: 'Other / General' },
+    ], required: true },
+    { id: 'days', label: 'Days Until Interview', type: 'select', options: [
+      { value: '3', label: '1-3 days' },
+      { value: '7', label: '1 week' },
+      { value: '14', label: '2 weeks' },
+      { value: '30', label: '1 month' },
+    ], required: true },
+    { id: 'company', label: 'Company Name', type: 'text', placeholder: 'Google', required: true },
+  ],
+  template: `📋 INTERVIEW PREP CHECKLIST
+
+Role: {{role_type}} at {{company}}
+Timeline: {{days}} days
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔴 PRIORITY 1: Do First (Days 1-2)
+□ Research {{company}} (business, products, news)
+□ Review job description line by line
+□ Prepare 3-5 STAR stories from your experience
+□ Practice your "tell me about yourself" (2 min)
+
+🟡 PRIORITY 2: Core Prep (Days 3-5)
+□ Review common {{role_type}} interview questions
+□ Prepare questions to ask the interviewer (5+)
+□ Practice technical/case questions for {{role_type}}
+□ Mock interview with a friend or record yourself
+
+🟢 PRIORITY 3: Polish (Remaining Time)
+□ Review your resume - be ready to discuss any line
+□ Prepare salary negotiation talking points
+□ Research your interviewer(s) on LinkedIn
+□ Plan your interview day logistics
+
+📝 NIGHT BEFORE
+□ Confirm interview time/location/link
+□ Prepare outfit
+□ Get 7-8 hours of sleep
+□ Review your STAR stories once
+
+☀️ DAY OF
+□ Eat a good breakfast
+□ Review company notes (10 min)
+□ Arrive/log in 5-10 min early
+□ Take deep breaths, you're prepared!
+
+💡 {{role_type}} SPECIFIC TIPS
+Engineering: LeetCode medium problems, system design basics
+Product: Framework practice (CIRCLES, prioritization)
+Design: Portfolio walkthrough, design critique
+Data: SQL, case studies, metrics definition
+Marketing: Campaign case studies, metrics
+Sales: Role plays, objection handling`,
+  outputLabel: 'Your Prep Checklist',
+}
+
 // ============ ALL TOOLS ============
 
 export const allTools: Tool[] = [
@@ -1024,6 +1194,9 @@ export const allTools: Tool[] = [
   executiveResumeScore,
   careerChangeQuiz,
   referenceRequestGenerator,
+  companyResearchGenerator,
+  jobOfferComparison,
+  interviewPrepChecklist,
 ]
 
 export function getToolBySlug(slug: string): Tool | undefined {
