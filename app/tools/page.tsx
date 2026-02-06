@@ -209,20 +209,7 @@ export default function ToolsPage() {
     : Object.entries(tools).filter(([cat]) => cat === activeCategory)
 
   return (
-    <div className="min-h-screen bg-[#0c0c0c] text-white">
-      <nav className="border-b border-white/10 px-6 py-4">
-        <div className="max-w-6xl mx-auto flex justify-between items-center">
-          <Link href="/" className="font-semibold text-lg hover:text-emerald-400 transition-colors">
-            GetTheJobAI
-          </Link>
-          <div className="flex gap-6 text-sm text-white/60">
-            <Link href="/guides" className="hover:text-white transition-colors">Guides</Link>
-            <Link href="/tools" className="text-white">Tools</Link>
-            <Link href="/prompts" className="hover:text-white transition-colors">Prompts</Link>
-          </div>
-        </div>
-      </nav>
-
+    <>
       <main className="max-w-6xl mx-auto px-6 py-20">
         <div className="max-w-2xl mb-16">
           <p className="text-emerald-400 font-mono text-sm mb-4 uppercase tracking-wider">
@@ -493,14 +480,6 @@ export default function ToolsPage() {
           </p>
         </section>
       </main>
-
-      <footer className="border-t border-white/10 mt-24">
-        <div className="max-w-6xl mx-auto px-6 py-8">
-          <p className="text-sm text-white/40">
-            © 2026 GetTheJobAI. Helping job seekers use AI effectively.
-          </p>
-        </div>
-      </footer>
-    </div>
+    </>
   )
 }

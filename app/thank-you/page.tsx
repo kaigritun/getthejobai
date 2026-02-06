@@ -7,13 +7,7 @@ export const metadata = {
 
 export default function ThankYou() {
   return (
-    <div className="min-h-screen bg-[#0c0c0c] text-white">
-      <nav className="border-b border-white/10 px-6 py-4">
-        <div className="max-w-5xl mx-auto flex justify-between items-center">
-          <Link href="/" className="font-semibold text-lg">GetTheJobAI</Link>
-        </div>
-      </nav>
-
+    <>
       <main className="max-w-2xl mx-auto px-6 py-20 text-center">
         <div className="mb-8">
           <span className="text-6xl">🎉</span>
@@ -67,14 +61,6 @@ export default function ThankYou() {
           </Link>
         </div>
       </main>
-
-      <footer className="border-t border-white/10 mt-24">
-        <div className="max-w-5xl mx-auto px-6 py-8">
-          <p className="text-sm text-white/40">
-            © 2025 GetTheJobAI. Questions? Email kai@kaigritun.com
-          </p>
-        </div>
-      </footer>
-    </div>
+    </>
   )
 }

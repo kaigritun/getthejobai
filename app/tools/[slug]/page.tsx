@@ -47,22 +47,8 @@ export default async function ToolPage({ params }: Props) {
     .slice(0, 3)
 
   return (
-    <div className="min-h-screen bg-[#0c0c0c] text-white">
-      {/* Nav */}
-      <nav className="border-b border-white/10 px-6 py-4">
-        <div className="max-w-4xl mx-auto flex justify-between items-center">
-          <Link href="/" className="font-semibold text-lg hover:text-emerald-400 transition-colors">
-            GetTheJobAI
-          </Link>
-          <div className="flex gap-6 text-sm text-white/60">
-            <Link href="/guides" className="hover:text-white transition-colors">Guides</Link>
-            <Link href="/tools" className="text-white">Tools</Link>
-            <Link href="/prompts" className="hover:text-white transition-colors">Prompts</Link>
-          </div>
-        </div>
-      </nav>
-
-      <main className="max-w-4xl mx-auto px-6 py-16">
+    <>
+<main className="max-w-4xl mx-auto px-6 py-16">
         {/* Breadcrumbs */}
         <div className="flex items-center gap-2 text-sm text-white/40 mb-8">
           <Link href="/" className="hover:text-white/60">Home</Link>
@@ -126,13 +112,6 @@ export default async function ToolPage({ params }: Props) {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-white/10 mt-24">
-        <div className="max-w-4xl mx-auto px-6 py-8">
-          <p className="text-sm text-white/40">
-            © 2026 GetTheJobAI. Helping job seekers use AI effectively.
-          </p>
-        </div>
-      </footer>
-    </div>
+    </>
   )
 }
