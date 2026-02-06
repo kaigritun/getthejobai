@@ -1988,6 +1988,116 @@ export const workStyleQuiz: QuizTool = {
   ],
 }
 
+// ============ NEW TOOLS FEB 6 ============
+
+export const portfolioReviewScore: ScoreTool = {
+  slug: 'portfolio-review-score',
+  name: 'Portfolio Review Score',
+  description: 'Rate your online portfolio for job application success',
+  category: 'Portfolio',
+  type: 'score',
+  seo: {
+    title: 'Portfolio Review Score | Rate Your Work Portfolio',
+    description: 'Get instant feedback on your portfolio. Optimize for recruiters and hiring managers.',
+  },
+  inputLabel: 'Describe Your Portfolio',
+  inputPlaceholder: 'Describe your portfolio: projects included, case studies, technologies shown, testimonials, contact info...',
+  criteria: [
+    { name: 'Project Variety', weight: 20, keywords: ['project', 'case study', 'built', 'designed', 'developed', 'created', 'shipped', 'launched'], description: 'Shows diverse, relevant work samples' },
+    { name: 'Results & Impact', weight: 25, keywords: ['increased', 'improved', 'reduced', 'generated', 'saved', '%', 'revenue', 'users', 'traffic', 'conversion'], description: 'Demonstrates measurable outcomes' },
+    { name: 'Technical Depth', weight: 20, keywords: ['stack', 'technology', 'framework', 'api', 'database', 'architecture', 'code', 'github', 'documentation'], description: 'Shows technical skills and decisions' },
+    { name: 'Visual Presentation', weight: 15, keywords: ['screenshot', 'demo', 'video', 'mockup', 'design', 'clean', 'responsive', 'mobile'], description: 'Professional, visually appealing presentation' },
+    { name: 'Contact & CTAs', weight: 20, keywords: ['contact', 'email', 'linkedin', 'hire', 'available', 'resume', 'calendar', 'schedule'], description: 'Easy to contact and clear next steps' },
+  ],
+  tips: [
+    'Feature 3-5 best projects rather than everything',
+    'Include case studies with problem → solution → results',
+    'Add context: your role, team size, timeline',
+    'Keep portfolio updated with recent work',
+    'Make it easy to contact you (multiple channels)',
+  ],
+}
+
+export const interviewReadinessQuiz: QuizTool = {
+  slug: 'interview-readiness-quiz',
+  name: 'Interview Readiness Quiz',
+  description: 'Test how prepared you are for your next job interview',
+  category: 'Interview',
+  type: 'quiz',
+  seo: {
+    title: 'Interview Readiness Quiz | Are You Prepared?',
+    description: 'Test your interview readiness. Find gaps in your preparation and get targeted tips.',
+  },
+  questions: [
+    { id: 'company', question: 'How well do you know the company?', options: [
+      { value: 'deep', label: 'Read annual report, recent news, know competitors', points: { ready: 3, moderate: 0, unprepared: 0 } },
+      { value: 'basic', label: 'Know what they do and checked their website', points: { ready: 1, moderate: 2, unprepared: 0 } },
+      { value: 'minimal', label: 'Just the job description', points: { ready: 0, moderate: 0, unprepared: 3 } },
+    ]},
+    { id: 'stories', question: 'Do you have STAR stories ready?', options: [
+      { value: 'prepared', label: 'Yes, 5+ stories practiced out loud', points: { ready: 3, moderate: 0, unprepared: 0 } },
+      { value: 'some', label: 'Have a few examples in mind', points: { ready: 1, moderate: 2, unprepared: 0 } },
+      { value: 'none', label: 'Will figure it out in the moment', points: { ready: 0, moderate: 0, unprepared: 3 } },
+    ]},
+    { id: 'questions', question: 'Have questions prepared for the interviewer?', options: [
+      { value: 'researched', label: 'Role-specific questions from research', points: { ready: 3, moderate: 0, unprepared: 0 } },
+      { value: 'generic', label: 'Standard questions like "what does success look like?"', points: { ready: 1, moderate: 2, unprepared: 0 } },
+      { value: 'none', label: 'Not really', points: { ready: 0, moderate: 0, unprepared: 3 } },
+    ]},
+    { id: 'salary', question: 'Know your salary expectations?', options: [
+      { value: 'researched', label: 'Researched market rate, have a range', points: { ready: 3, moderate: 0, unprepared: 0 } },
+      { value: 'rough', label: 'Have a rough idea', points: { ready: 1, moderate: 2, unprepared: 0 } },
+      { value: 'none', label: 'Will see what they offer', points: { ready: 0, moderate: 0, unprepared: 3 } },
+    ]},
+  ],
+  results: [
+    { id: 'ready', title: 'Interview Ready', description: 'You are well prepared. Focus on getting good sleep and staying calm.', recommendations: ['Review your notes morning-of', 'Arrive 10min early', 'Send thank-you within 24h'] },
+    { id: 'moderate', title: 'Almost There', description: 'Good foundation but some gaps. Spend 1-2 hours on final prep.', recommendations: ['Research the company deeper', 'Practice STAR stories out loud', 'Prepare 3+ specific questions'] },
+    { id: 'unprepared', title: 'More Prep Needed', description: 'You need more preparation to make a strong impression.', recommendations: ['Block 4+ hours for serious prep', 'Use our Interview Answer Generator', 'Consider rescheduling if possible'] },
+  ],
+}
+
+export const recommendationRequestGenerator: GeneratorTool = {
+  slug: 'recommendation-request-generator',
+  name: 'LinkedIn Recommendation Request',
+  description: 'Generate personalized requests for LinkedIn recommendations',
+  category: 'Networking',
+  type: 'generator',
+  seo: {
+    title: 'LinkedIn Recommendation Request Generator | Get More Recommendations',
+    description: 'Create personalized recommendation requests that get responses. Grow your LinkedIn credibility.',
+  },
+  fields: [
+    { id: 'name', label: 'Their Name', type: 'text', placeholder: 'Sarah Chen', required: true },
+    { id: 'relationship', label: 'How You Worked Together', type: 'select', options: [
+      { value: 'manager', label: 'They were my manager' },
+      { value: 'peer', label: 'We were peers/teammates' },
+      { value: 'report', label: 'They reported to me' },
+      { value: 'client', label: 'They were a client' },
+      { value: 'mentor', label: 'They mentored me' },
+    ], required: true },
+    { id: 'project', label: 'Key Project/Achievement Together', type: 'text', placeholder: 'Led the product launch for...' },
+    { id: 'skills', label: 'Skills You Want Highlighted', type: 'text', placeholder: 'leadership, technical problem-solving, collaboration' },
+  ],
+  template: `📝 LINKEDIN RECOMMENDATION REQUEST
+
+Hi {{name}},
+
+I hope you're doing well! I'm updating my LinkedIn profile and reaching out to colleagues whose opinions I really value.
+
+We worked together when {{project}}, and I was hoping you might be willing to write a brief recommendation highlighting our collaboration.
+
+No pressure at all — I know everyone's busy. If you're open to it, it would be especially helpful if you could speak to {{skills}} since those are skills I'm hoping to emphasize for my next role.
+
+I'm happy to return the favor anytime — just let me know!
+
+Thanks so much,
+[Your name]
+
+💡 TIMING: Best to ask within 6 months of working together. Follow up once after 1 week if no response.`,
+  outputLabel: 'Your Recommendation Request',
+}
+
 // ============ ALL TOOLS ============
 
 export const allTools: Tool[] = [
@@ -2025,6 +2135,9 @@ export const allTools: Tool[] = [
   backgroundCheckPrepScore,
   careerFairPitchGenerator,
   workStyleQuiz,
+  portfolioReviewScore,
+  interviewReadinessQuiz,
+  recommendationRequestGenerator,
 ]
 
 export function getToolBySlug(slug: string): Tool | undefined {
