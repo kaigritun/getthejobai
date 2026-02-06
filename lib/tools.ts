@@ -2898,6 +2898,138 @@ export const layoffRecoveryScore: ScoreTool = {
   ],
 }
 
+// ============ JOB HOPPING & CAREER GAPS ============
+
+export const jobHoppingExplanationScore: ScoreTool = {
+  slug: 'job-hopping-explanation-score',
+  name: 'Job Hopping Explanation Score',
+  description: 'Learn how to explain frequent job changes in a positive light',
+  category: 'Career Challenges',
+  type: 'score',
+  seo: {
+    title: 'Job Hopping Explanation Score | Turn Frequent Moves into Strengths',
+    description: 'Score your job hopping narrative. Learn how to explain multiple job changes as strategic career moves.',
+  },
+  inputLabel: 'Describe your job history and reasons for each change',
+  inputPlaceholder: `I've had 4 jobs in 5 years. Left first job after 8 months for better pay. Second company had layoffs after 14 months. Third job was a startup that ran out of funding after 10 months. Current role is a contract position I've been at for 6 months...`,
+  criteria: [
+    { name: 'Clear Narrative', weight: 25, keywords: ['growth', 'opportunity', 'challenge', 'promoted', 'recruited', 'strategic', 'deliberate', 'sought'], description: 'Coherent story connecting the moves' },
+    { name: 'External Factors', weight: 20, keywords: ['layoff', 'acquisition', 'funding', 'restructure', 'relocation', 'company closed', 'downsized'], description: 'Moves due to circumstances beyond control' },
+    { name: 'Skill Growth', weight: 20, keywords: ['learned', 'skills', 'experience', 'expertise', 'developed', 'mastered', 'expanded'], description: 'Skills gained at each position' },
+    { name: 'Progression', weight: 20, keywords: ['promotion', 'responsibility', 'leadership', 'senior', 'manager', 'bigger', 'scope'], description: 'Upward trajectory despite moves' },
+    { name: 'Stability Intent', weight: 15, keywords: ['long-term', 'stability', 'committed', 'stay', 'grow with', 'looking for', 'settle'], description: 'Showing interest in staying longer now' },
+  ],
+  tips: [
+    'Frame moves as intentional growth, not restlessness',
+    'Group short stints: "During a period of exploration..."',
+    'Quantify achievements at EACH role to show impact',
+    'Emphasize what you learned, not why you left',
+    'Show commitment to next role: "I\'m looking for a place to grow for 3-5+ years"',
+    'Be honest about layoffs/closures — they\'re understandable',
+    'Highlight relationships: "I\'ve maintained contact with former managers"',
+  ],
+}
+
+export const technicalInterviewPrepScore: ScoreTool = {
+  slug: 'technical-interview-prep-score',
+  name: 'Technical Interview Prep Score',
+  description: 'Assess your readiness for technical and coding interviews',
+  category: 'Interview Prep',
+  type: 'score',
+  seo: {
+    title: 'Technical Interview Prep Score | Coding Interview Readiness',
+    description: 'Score your technical interview preparation. Get personalized recommendations for algorithms, system design, and behavioral questions.',
+  },
+  inputLabel: 'Describe your current preparation status',
+  inputPlaceholder: `I have an interview with Google in 3 weeks. I've done about 50 LeetCode problems (mostly easy, some medium). Haven't practiced system design yet. I know Python well but rusty on algorithms. Did mock interviews with friends twice...`,
+  criteria: [
+    { name: 'Data Structures & Algorithms', weight: 30, keywords: ['leetcode', 'algorithms', 'data structures', 'arrays', 'trees', 'graphs', 'dynamic programming', 'sorting', 'searching', 'problems'], description: 'Core DSA preparation' },
+    { name: 'System Design', weight: 25, keywords: ['system design', 'architecture', 'scalability', 'distributed', 'database', 'caching', 'load balancer', 'design patterns'], description: 'High-level design knowledge' },
+    { name: 'Language Proficiency', weight: 15, keywords: ['python', 'java', 'javascript', 'c++', 'fluent', 'comfortable', 'syntax', 'standard library'], description: 'Coding language mastery' },
+    { name: 'Mock Practice', weight: 15, keywords: ['mock', 'practice', 'whiteboard', 'pramp', 'interviewing.io', 'timed', 'under pressure'], description: 'Realistic interview practice' },
+    { name: 'Behavioral Prep', weight: 15, keywords: ['behavioral', 'star', 'stories', 'leadership', 'conflict', 'failure', 'success', 'examples'], description: 'Soft skills and stories' },
+  ],
+  tips: [
+    'Focus on medium difficulty problems — most interviews are there',
+    'Practice explaining your thought process OUT LOUD',
+    'Time yourself: 20-25 min per coding problem',
+    'Learn the patterns (sliding window, two pointers, BFS/DFS)',
+    'System design: know your tradeoffs (SQL vs NoSQL, etc.)',
+    'Do at least 3-5 mock interviews with strangers',
+    'Prepare 5-7 STAR stories that can answer multiple questions',
+    'Review your resume — be ready to discuss any project',
+  ],
+}
+
+export const remoteWorkReadinessQuiz: QuizTool = {
+  slug: 'remote-work-readiness-quiz',
+  name: 'Remote Work Readiness Quiz',
+  description: 'Find out if remote work is right for you',
+  category: 'Career Decisions',
+  type: 'quiz',
+  seo: {
+    title: 'Remote Work Readiness Quiz | Are You Ready for WFH?',
+    description: 'Take this quiz to see if you\'re suited for remote work. Assess your self-discipline, communication style, and home setup.',
+  },
+  questions: [
+    {
+      id: 'self_discipline',
+      question: 'How do you typically stay productive without supervision?',
+      options: [
+        { value: 'thrive', label: 'I thrive independently — I set my own deadlines and exceed them', points: { remote: 3, hybrid: 1, office: 0 } },
+        { value: 'structure', label: 'I do well with some structure but can self-manage', points: { remote: 2, hybrid: 2, office: 1 } },
+        { value: 'checkins', label: 'I need regular check-ins to stay on track', points: { remote: 1, hybrid: 2, office: 2 } },
+        { value: 'oversight', label: 'I struggle without oversight and external accountability', points: { remote: 0, hybrid: 1, office: 3 } },
+      ],
+    },
+    {
+      id: 'communication',
+      question: 'How comfortable are you with async communication (Slack, email)?',
+      options: [
+        { value: 'prefer_written', label: 'Very comfortable — I prefer written communication', points: { remote: 3, hybrid: 1, office: 0 } },
+        { value: 'mixed', label: 'Comfortable with a mix of written and video calls', points: { remote: 2, hybrid: 3, office: 1 } },
+        { value: 'video', label: 'I prefer video calls over text-based communication', points: { remote: 1, hybrid: 2, office: 2 } },
+        { value: 'inperson', label: 'I strongly prefer in-person conversation', points: { remote: 0, hybrid: 1, office: 3 } },
+      ],
+    },
+    {
+      id: 'workspace',
+      question: 'What\'s your home workspace like?',
+      options: [
+        { value: 'dedicated', label: 'Dedicated office with good equipment and no distractions', points: { remote: 3, hybrid: 2, office: 0 } },
+        { value: 'quiet', label: 'Quiet space I can use consistently', points: { remote: 2, hybrid: 2, office: 1 } },
+        { value: 'shared', label: 'Shared space with some distractions', points: { remote: 1, hybrid: 2, office: 2 } },
+        { value: 'none', label: 'No dedicated workspace — I\'d work from couch/bed', points: { remote: 0, hybrid: 1, office: 3 } },
+      ],
+    },
+    {
+      id: 'social_needs',
+      question: 'How important is daily social interaction with coworkers?',
+      options: [
+        { value: 'solo', label: 'Not important — I prefer focused solo work', points: { remote: 3, hybrid: 1, office: 0 } },
+        { value: 'virtual_ok', label: 'Somewhat — virtual socializing is enough', points: { remote: 2, hybrid: 2, office: 1 } },
+        { value: 'miss_inperson', label: 'Important — I miss in-person connection', points: { remote: 1, hybrid: 2, office: 2 } },
+        { value: 'critical', label: 'Critical — I feel isolated working alone', points: { remote: 0, hybrid: 1, office: 3 } },
+      ],
+    },
+    {
+      id: 'time_management',
+      question: 'How do you handle flexible schedules?',
+      options: [
+        { value: 'strict', label: 'I set strict hours and stick to them', points: { remote: 3, hybrid: 2, office: 1 } },
+        { value: 'flexible', label: 'I\'m flexible but maintain work-life boundaries', points: { remote: 2, hybrid: 3, office: 1 } },
+        { value: 'bleed', label: 'Work tends to bleed into personal time', points: { remote: 1, hybrid: 2, office: 2 } },
+        { value: 'struggle', label: 'I struggle to stop working or get started', points: { remote: 0, hybrid: 1, office: 3 } },
+      ],
+    },
+  ],
+  results: [
+    { id: 'remote', title: 'Remote Work Natural', description: 'You\'re built for remote work. You have the discipline, workspace, and communication style to thrive.', recommendations: ['Target fully remote roles', 'Highlight self-management skills in applications', 'Emphasize async communication experience', 'Showcase your home office setup in interviews'] },
+    { id: 'hybrid', title: 'Hybrid Ready', description: 'You can succeed remotely but might benefit from occasional in-person collaboration.', recommendations: ['Target hybrid roles (2-3 days office)', 'Look for companies with flexible policies', 'Prepare for both remote and in-office interviews', 'Ask about team collaboration patterns'] },
+    { id: 'office', title: 'Office-Preferred', description: 'Remote work may not be the best fit right now. Consider building remote-work skills before transitioning.', recommendations: ['Consider in-office or hybrid roles first', 'Work on self-discipline and time management', 'Create a dedicated home workspace', 'Practice async communication skills'] },
+  ],
+}
+
 // ============ ALL TOOLS ============
 
 export const allTools: Tool[] = [
@@ -2956,6 +3088,9 @@ export const allTools: Tool[] = [
   companyCultureFitScore,
   networkingEventPrepGenerator,
   layoffRecoveryScore,
+  jobHoppingExplanationScore,
+  technicalInterviewPrepScore,
+  remoteWorkReadinessQuiz,
 ]
 
 export function getToolBySlug(slug: string): Tool | undefined {
