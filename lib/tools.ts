@@ -2759,6 +2759,145 @@ In 5 years, I will be a {{target_role}}, leveraging my {{core_strength}} to {{im
   outputLabel: 'Your Career Vision Statement',
 }
 
+// ============ CULTURE & TRANSITION TOOLS ============
+
+export const companyCultureFitScore: ScoreTool = {
+  slug: 'company-culture-fit-score',
+  name: 'Company Culture Fit Score',
+  description: 'Evaluate how well a company\'s culture matches your work style and values',
+  category: 'Career Decisions',
+  type: 'score',
+  seo: {
+    title: 'Company Culture Fit Score | Find Your Ideal Workplace',
+    description: 'Analyze job postings and company descriptions to see if the culture matches your preferences. Stop taking jobs at places you\'ll hate.',
+  },
+  inputLabel: 'Paste job posting, company about page, or Glassdoor reviews',
+  inputPlaceholder: `We're a fast-paced startup that values ownership and autonomy. Our team works hard and plays hard. We have unlimited PTO and expect everyone to be available for urgent issues. We move fast and break things...`,
+  criteria: [
+    { name: 'Work-Life Balance', weight: 25, keywords: ['flexible', 'balance', 'remote', 'wfh', 'hybrid', 'async', '40 hours', 'no overtime', 'boundaries', 'sustainable'], description: 'Respect for personal time and boundaries' },
+    { name: 'Growth & Learning', weight: 20, keywords: ['development', 'learning', 'training', 'mentorship', 'growth', 'career path', 'promotion', 'education budget', 'conferences'], description: 'Investment in employee development' },
+    { name: 'Collaboration Style', weight: 20, keywords: ['collaborative', 'team', 'cross-functional', 'inclusive', 'diverse', 'support', 'psychological safety'], description: 'How teams work together' },
+    { name: 'Transparency', weight: 15, keywords: ['transparent', 'open', 'honest', 'feedback', 'communication', 'all-hands', 'share', 'information'], description: 'Openness and honest communication' },
+    { name: 'Autonomy', weight: 10, keywords: ['autonomy', 'ownership', 'independent', 'trust', 'self-directed', 'empowered', 'decision-making'], description: 'Freedom to make decisions' },
+    { name: 'Red Flags', weight: 10, keywords: [], description: 'Watch for: "fast-paced" (chaos), "like a family" (boundaries), "rockstar" (overwork)' },
+  ],
+  tips: [
+    'Watch for coded language: "fast-paced" often means chaotic',
+    '"Like a family" can mean poor boundaries',
+    '"Unlimited PTO" often results in less vacation taken',
+    'Check Glassdoor/Blind for employee perspectives',
+    'Ask culture questions in interviews: "How do you handle work-life balance?"',
+  ],
+}
+
+export const networkingEventPrepGenerator: GeneratorTool = {
+  slug: 'networking-event-prep-generator',
+  name: 'Networking Event Prep Generator',
+  description: 'Get a personalized prep checklist for career fairs, conferences, and networking events',
+  category: 'Networking',
+  type: 'generator',
+  seo: {
+    title: 'Networking Event Prep Generator | Career Fair Success',
+    description: 'Generate a personalized prep checklist for networking events, career fairs, and conferences. Know exactly what to say and do.',
+  },
+  fields: [
+    { id: 'event_type', label: 'Event Type', type: 'select', options: [
+      { value: 'career_fair', label: 'Career Fair' },
+      { value: 'conference', label: 'Industry Conference' },
+      { value: 'meetup', label: 'Meetup / Casual Networking' },
+      { value: 'alumni', label: 'Alumni Event' },
+    ], required: true },
+    { id: 'goal', label: 'Your Main Goal', type: 'select', options: [
+      { value: 'job', label: 'Find a job' },
+      { value: 'learn', label: 'Learn and grow network' },
+      { value: 'clients', label: 'Find clients/business' },
+      { value: 'mentor', label: 'Find mentors' },
+    ], required: true },
+    { id: 'role', label: 'Your Role/Industry', type: 'text', placeholder: 'Software Engineer', required: true },
+    { id: 'target_companies', label: 'Target Companies (optional)', type: 'text', placeholder: 'Google, Microsoft, startups' },
+  ],
+  template: `📋 NETWORKING EVENT PREP CHECKLIST
+
+Event: {{event_type}} | Goal: {{goal}} | Role: {{role}}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📅 1 WEEK BEFORE
+□ Research {{target_companies}} attending
+□ Update LinkedIn profile
+□ Prepare 30-second elevator pitch
+□ Print 20+ business cards or set up digital card
+□ Prepare 3-5 questions to ask
+
+🎯 YOUR ELEVATOR PITCH
+"Hi, I'm [Name]. I'm a {{role}} with experience in [key skill]. I'm particularly interested in [topic] and looking to [goal]. What brings you here today?"
+
+❓ QUESTIONS TO ASK
+1. "What's the most exciting project your team is working on?"
+2. "What skills are most valuable in your role?"
+3. "How did you get into this field?"
+4. "What's the culture like at your company?"
+5. "Would you be open to connecting on LinkedIn?"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📅 DAY OF EVENT
+□ Dress code: business casual minimum
+□ Bring: Resume copies, business cards, phone charged
+□ Arrive 15 min early for less crowded conversations
+□ Set goal: Talk to at least 10 people
+
+💬 CONVERSATION FLOW
+1. Approach with a smile and handshake
+2. Deliver your elevator pitch
+3. Ask about THEM (people love talking about themselves)
+4. Find common ground
+5. Exchange contact info
+6. "Great meeting you, I'll follow up on LinkedIn!"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📅 WITHIN 24 HOURS AFTER
+□ Connect on LinkedIn with personalized note
+□ Send follow-up emails to key contacts
+□ Add notes about each person while fresh
+□ Thank event organizers
+
+📧 FOLLOW-UP TEMPLATE
+"Hi [Name], Great meeting you at [event]. I enjoyed our conversation about [topic]. Would love to stay in touch and [specific next step]. Best, [Your name]"`,
+  outputLabel: 'Your Networking Prep Checklist',
+}
+
+export const layoffRecoveryScore: ScoreTool = {
+  slug: 'layoff-recovery-score',
+  name: 'Layoff Recovery Score',
+  description: 'Assess your readiness to bounce back after being laid off',
+  category: 'Career Transition',
+  type: 'score',
+  seo: {
+    title: 'Layoff Recovery Score | Bounce Back Stronger',
+    description: 'Assess your readiness after a layoff. Get personalized action steps to land your next role faster.',
+  },
+  inputLabel: 'Describe your current situation after the layoff',
+  inputPlaceholder: `I was laid off 2 weeks ago from a senior PM role after 3 years. I have 4 months of savings. My resume is updated and I've started applying to a few roles. I've told my network but haven't been actively networking. I'm feeling discouraged but trying to stay positive...`,
+  criteria: [
+    { name: 'Financial Runway', weight: 25, keywords: ['savings', 'months', 'severance', 'runway', 'emergency fund', 'covered', 'budget', 'expenses'], description: 'Financial stability during job search' },
+    { name: 'Job Search Activity', weight: 25, keywords: ['applying', 'applications', 'interviews', 'reached out', 'networking', 'daily', 'weekly', 'proactive'], description: 'Active job search efforts' },
+    { name: 'Materials Ready', weight: 20, keywords: ['resume', 'updated', 'linkedin', 'portfolio', 'cover letter', 'ready', 'prepared', 'optimized'], description: 'Resume, LinkedIn, and materials updated' },
+    { name: 'Network Activation', weight: 15, keywords: ['network', 'connections', 'reached out', 'coffee', 'informational', 'referral', 'contacts', 'told'], description: 'Leverage of professional network' },
+    { name: 'Mental Health', weight: 15, keywords: ['positive', 'routine', 'exercise', 'support', 'healthy', 'processing', 'therapy', 'self-care'], description: 'Emotional well-being and self-care' },
+  ],
+  tips: [
+    'Take 1-2 weeks to process before full job search mode',
+    'File for unemployment immediately — it\'s your right',
+    'Update LinkedIn headline to "Open to Work" (recruiter setting)',
+    'Reach out to your network BEFORE you start applying',
+    'Aim for 5-10 quality applications per day, not 50 spray-and-pray',
+    'Treat job searching like a job: set hours, take breaks',
+    'Consider contract/freelance work for income while searching',
+  ],
+}
+
 // ============ ALL TOOLS ============
 
 export const allTools: Tool[] = [
@@ -2814,6 +2953,9 @@ export const allTools: Tool[] = [
   accomplishmentsScore,
   jobBoardStrategyQuiz,
   linkedinProfileOptimizer,
+  companyCultureFitScore,
+  networkingEventPrepGenerator,
+  layoffRecoveryScore,
 ]
 
 export function getToolBySlug(slug: string): Tool | undefined {
