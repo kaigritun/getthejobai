@@ -1689,6 +1689,201 @@ Best,
   outputLabel: 'Your Response',
 }
 
+// ============ SKILLS & BEHAVIORAL TOOLS ============
+
+export const skillsGapAnalyzer: ScoreTool = {
+  slug: 'skills-gap-analyzer',
+  name: 'Skills Gap Analyzer',
+  description: 'Identify missing skills between your experience and target role requirements',
+  category: 'Career Development',
+  type: 'score',
+  seo: {
+    title: 'Free Skills Gap Analyzer | Career Development Tool',
+    description: 'Identify skills gaps between your current experience and target role. Get actionable upskilling recommendations.',
+  },
+  inputLabel: 'Paste Your Resume + Target Job Description',
+  inputPlaceholder: `MY CURRENT SKILLS:
+[Paste your resume or list your skills]
+
+---
+
+TARGET JOB REQUIREMENTS:
+[Paste the job description for your target role]`,
+  criteria: [
+    {
+      name: 'Technical Skills Match',
+      weight: 30,
+      keywords: ['python', 'javascript', 'sql', 'excel', 'tableau', 'figma', 'aws', 'react', 'node', 'data analysis', 'machine learning'],
+      description: 'Hard skills from job description present in your experience',
+    },
+    {
+      name: 'Experience Level',
+      weight: 25,
+      keywords: ['years', 'experience', 'senior', 'junior', 'mid', 'lead', 'managed', 'led', 'built', 'scaled'],
+      description: 'Experience level matches requirements',
+    },
+    {
+      name: 'Industry Knowledge',
+      weight: 20,
+      keywords: ['saas', 'b2b', 'enterprise', 'fintech', 'healthcare', 'e-commerce', 'marketplace', 'startup'],
+      description: 'Industry experience alignment',
+    },
+    {
+      name: 'Soft Skills',
+      weight: 15,
+      keywords: ['leadership', 'communication', 'collaboration', 'problem-solving', 'stakeholder', 'cross-functional'],
+      description: 'Soft skills and leadership capabilities',
+    },
+    {
+      name: 'Certifications',
+      weight: 10,
+      keywords: ['certified', 'certification', 'degree', 'mba', 'pmp', 'scrum', 'aws certified', 'google certified'],
+      description: 'Required certifications or education',
+    },
+  ],
+  tips: [
+    'Focus on the 2-3 most critical missing skills first',
+    'Online courses can close most skills gaps in 2-4 weeks',
+    'Side projects demonstrate skills better than certificates',
+    'Frame adjacent experience as transferable',
+    'Don\'t wait for perfection - apply at 70% match',
+  ],
+}
+
+export const behavioralInterviewScore: ScoreTool = {
+  slug: 'behavioral-interview-score',
+  name: 'Behavioral Interview Answer Score',
+  description: 'Rate your STAR method behavioral interview answers for impact',
+  category: 'Interview',
+  type: 'score',
+  seo: {
+    title: 'Behavioral Interview Score | STAR Method Analyzer',
+    description: 'Score your behavioral interview answers. Get feedback on STAR structure and impact to ace your interviews.',
+  },
+  inputLabel: 'Paste Your Behavioral Answer',
+  inputPlaceholder: `Question: Tell me about a time you dealt with a difficult stakeholder.
+
+My answer: At my previous company, our VP of Sales wanted features that conflicted with our product roadmap. I scheduled a 1-on-1 to understand his concerns, mapped his requests to our existing priorities, and found a compromise. He became one of our biggest advocates, and we shipped features that increased sales 20%.`,
+  criteria: [
+    {
+      name: 'Situation Clarity',
+      weight: 20,
+      keywords: ['at', 'when', 'while', 'during', 'previous', 'company', 'team', 'project', 'was working'],
+      description: 'Sets clear context for the story',
+    },
+    {
+      name: 'Task Definition',
+      weight: 15,
+      keywords: ['needed to', 'responsible for', 'my role', 'I had to', 'goal was', 'challenge was', 'problem was'],
+      description: 'Clearly defines your responsibility',
+    },
+    {
+      name: 'Action Detail',
+      weight: 30,
+      keywords: ['I', 'decided', 'created', 'led', 'built', 'organized', 'reached out', 'scheduled', 'implemented', 'developed'],
+      description: 'Specific actions YOU took (not "we")',
+    },
+    {
+      name: 'Quantified Results',
+      weight: 25,
+      keywords: ['%', 'increased', 'decreased', 'reduced', 'saved', '$', 'x', 'resulted', 'achieved', 'delivered', 'improved'],
+      description: 'Measurable outcomes with numbers',
+    },
+    {
+      name: 'Learning/Growth',
+      weight: 10,
+      keywords: ['learned', 'realized', 'now I', 'going forward', 'taught me', 'changed how', 'since then'],
+      description: 'Shows reflection and growth',
+    },
+  ],
+  tips: [
+    'Use "I" not "we" - they want YOUR actions',
+    'Add specific numbers: "20% increase" not "significant growth"',
+    'Keep it under 2 minutes when spoken',
+    'End with results AND what you learned',
+    'Prepare 5-7 stories that cover common themes',
+  ],
+}
+
+export const salaryResearchGenerator: GeneratorTool = {
+  slug: 'salary-research-generator',
+  name: 'Salary Research Checklist Generator',
+  description: 'Generate a comprehensive salary research plan for your target role',
+  category: 'Negotiation',
+  type: 'generator',
+  seo: {
+    title: 'Free Salary Research Generator | Know Your Worth',
+    description: 'Generate a salary research checklist to confidently negotiate your compensation. Know market rates before your interview.',
+  },
+  fields: [
+    { id: 'role', label: 'Target Role', type: 'text', placeholder: 'Senior Software Engineer', required: true },
+    { id: 'company', label: 'Target Company', type: 'text', placeholder: 'Google', required: true },
+    { id: 'location', label: 'Location', type: 'text', placeholder: 'San Francisco / Remote', required: true },
+    { id: 'experience', label: 'Years of Experience', type: 'select', options: [
+      { value: '0-2', label: '0-2 years' },
+      { value: '3-5', label: '3-5 years' },
+      { value: '6-10', label: '6-10 years' },
+      { value: '10+', label: '10+ years' },
+    ], required: true },
+  ],
+  template: `💰 SALARY RESEARCH CHECKLIST
+
+Role: {{role}} at {{company}}
+Location: {{location}}
+Experience: {{experience}} years
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📊 DATA SOURCES TO CHECK
+
+□ **Levels.fyi** — Best for tech, shows total comp
+  Search: {{role}} at {{company}}
+
+□ **Glassdoor** — Broad coverage, check recent entries
+  Filter by: {{location}}, {{experience}}
+
+□ **LinkedIn Salary** — Good for comparing companies
+  Compare: {{company}} vs. similar companies
+
+□ **Blind** — Anonymous real salaries, tech focus
+  Search: "{{role}} {{company}} TC"
+
+□ **Payscale** — Good for non-tech roles
+
+□ **H1B Salary Database** — Public visa salary data
+  h1bdata.info - search {{company}}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📝 RESEARCH TEMPLATE
+
+Fill this out:
+• Market range: $___k - $___k
+• {{company}} range: $___k - $___k
+• My target: $___k (aim for 75th percentile)
+• My minimum: $___k (walk-away number)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+💡 TOTAL COMP COMPONENTS
+
+Don't forget to research:
+□ Base salary
+□ Annual bonus (% of base)
+□ Equity/RSU (vesting schedule)
+□ Sign-on bonus
+□ 401k match
+□ Benefits value (~$10-20k)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🗣️ TALKING POINTS
+
+When asked about salary expectations:
+"Based on my research for {{role}} positions in {{location}} with {{experience}} experience, I'm targeting a total compensation in the range of [your range]. But I'm flexible and want to learn more about the full package."`,
+  outputLabel: 'Your Research Checklist',
+}
+
 // ============ ALL TOOLS ============
 
 export const allTools: Tool[] = [
@@ -1720,6 +1915,9 @@ export const allTools: Tool[] = [
   informationalInterviewGenerator,
   counterOfferGenerator,
   rejectionResponseGenerator,
+  skillsGapAnalyzer,
+  behavioralInterviewScore,
+  salaryResearchGenerator,
 ]
 
 export function getToolBySlug(slug: string): Tool | undefined {
