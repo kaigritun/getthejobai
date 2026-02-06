@@ -1175,6 +1175,200 @@ Sales: Role plays, objection handling`,
   outputLabel: 'Your Prep Checklist',
 }
 
+// ============ NETWORKING SCORE TOOLS ============
+
+export const linkedinConnectionScore: ScoreTool = {
+  slug: 'linkedin-connection-score',
+  name: 'LinkedIn Connection Request Score',
+  description: 'Score your LinkedIn connection request messages for response likelihood',
+  category: 'Networking',
+  type: 'score',
+  seo: {
+    title: 'LinkedIn Connection Request Score | Message Analyzer',
+    description: 'Score your LinkedIn connection request messages. Get feedback on personalization, value proposition, and response likelihood.',
+  },
+  inputLabel: 'Paste Your Connection Request',
+  inputPlaceholder: `Hi Sarah,
+
+I saw your post about AI in recruiting - really insightful point about candidate experience. I'm working on similar challenges at my startup and would love to connect and exchange ideas.
+
+Best,
+Alex`,
+  criteria: [
+    {
+      name: 'Personalization',
+      weight: 25,
+      keywords: ['saw', 'noticed', 'read', 'loved', 'enjoyed', 'your post', 'your article', 'your talk', 'your work', 'your project'],
+      description: 'References something specific about the person',
+    },
+    {
+      name: 'Not Generic',
+      weight: 20,
+      keywords: ['specifically', 'because', 'impressed by', 'resonated', 'curious about', 'your perspective'],
+      description: 'Avoids copy-paste template feel',
+    },
+    {
+      name: 'Value Proposition',
+      weight: 25,
+      keywords: ['share', 'exchange', 'discuss', 'learn', 'connect about', 'similar', 'common', 'mutual', 'both'],
+      description: 'Explains why connecting benefits them',
+    },
+    {
+      name: 'Brevity',
+      weight: 15,
+      keywords: [],
+      description: 'Keeps it short and scannable (under 300 chars)',
+    },
+    {
+      name: 'Soft CTA',
+      weight: 15,
+      keywords: ['would love', 'happy to', 'hope to', 'looking forward', 'let me know'],
+      description: 'Ends with a natural, not aggressive, call to action',
+    },
+  ],
+  tips: [
+    'Keep it under 300 characters (LinkedIn cuts it off)',
+    'Reference something SPECIFIC about their work',
+    'Lead with them, not yourself',
+    'Don\'t ask for anything in the connection request',
+    'Save bigger asks for after they accept',
+  ],
+}
+
+export const jobDescriptionDecoder: ScoreTool = {
+  slug: 'job-description-decoder',
+  name: 'Job Description Decoder',
+  description: 'Decode job descriptions to understand real requirements vs nice-to-haves and identify red flags',
+  category: 'Job Search',
+  type: 'score',
+  seo: {
+    title: 'Job Description Decoder | Red Flag Analyzer',
+    description: 'Decode job descriptions to understand real requirements vs nice-to-haves. Identify red flags and hidden expectations.',
+  },
+  inputLabel: 'Paste the Job Description',
+  inputPlaceholder: `Senior Software Engineer
+
+Join our fast-paced, dynamic team! We're looking for a self-starter who can wear many hats.
+
+Requirements:
+- 3+ years experience with React, Node, Python, Go
+- Experience building end-to-end products
+- Ability to work independently
+
+Competitive salary and great benefits. We're like a family here!`,
+  criteria: [
+    {
+      name: 'Role Clarity',
+      weight: 20,
+      keywords: ['will', 'responsible for', 'own', 'build', 'develop', 'manage', 'lead', 'create', 'design', 'implement'],
+      description: 'How clearly the job responsibilities are defined',
+    },
+    {
+      name: 'Reasonable Requirements',
+      weight: 20,
+      keywords: ['1-3 years', '2-4 years', '3-5 years', 'preferred', 'nice to have', 'bonus', 'or equivalent'],
+      description: 'Whether requirements are realistic and flexible',
+    },
+    {
+      name: 'Compensation Transparency',
+      weight: 25,
+      keywords: ['$', 'salary', 'compensation', 'pay range', 'equity', 'stock', 'options', 'benefits', '401k', 'health', 'PTO'],
+      description: 'Whether salary and benefits are disclosed',
+    },
+    {
+      name: 'Growth Signals',
+      weight: 15,
+      keywords: ['growth', 'career', 'promotion', 'development', 'learning', 'mentorship', 'report to'],
+      description: 'Evidence of career growth opportunities',
+    },
+    {
+      name: 'Culture Signals',
+      weight: 20,
+      keywords: ['work-life', 'flexible', 'remote', 'hybrid', 'async', 'mental health', 'wellness'],
+      description: 'Positive work-life balance indicators',
+    },
+  ],
+  tips: [
+    'Watch for "wear many hats" = you\'ll do multiple jobs',
+    '"Fast-paced" often means long hours expected',
+    '"Like a family" may mean boundary issues',
+    '"Competitive salary" without numbers = they\'ll lowball',
+    '"Self-starter" + "minimal supervision" = sink or swim',
+    'Always ask about salary range in first conversation',
+  ],
+}
+
+export const referenceRequestScore: ScoreTool = {
+  slug: 'reference-request-score',
+  name: 'Reference Request Email Score',
+  description: 'Score your reference request emails for professionalism and likelihood of getting a strong reference',
+  category: 'Job Search',
+  type: 'score',
+  seo: {
+    title: 'Reference Request Email Score | Get Strong References',
+    description: 'Score your reference request emails. Get feedback on professionalism, context, and likelihood of getting a strong reference.',
+  },
+  inputLabel: 'Paste Your Reference Request Email',
+  inputPlaceholder: `Hi Michael,
+
+I hope you're doing well! I'm reaching out because I'm applying for a Senior PM role at Stripe, and I was hoping you might be willing to serve as a reference.
+
+We worked together at Acme Corp from 2020-2022 when you led the platform team. I think you could speak well to my cross-functional collaboration.
+
+The deadline is next Friday. Happy to send you my resume and talking points.
+
+Thank you so much!
+
+Best,
+Sarah`,
+  criteria: [
+    {
+      name: 'Context Provided',
+      weight: 25,
+      keywords: ['worked together', 'reported to', 'collaborated', 'team', 'project', 'when', 'at', 'from', 'during', '2020', '2021', '2022', '2023', '2024'],
+      description: 'Reminds them of your relationship and work together',
+    },
+    {
+      name: 'Role Details',
+      weight: 20,
+      keywords: ['applying', 'position', 'role', 'opportunity', 'company', 'job', 'skills', 'experience', 'strengths'],
+      description: 'Explains the job and why they are a good reference',
+    },
+    {
+      name: 'Easy Decline Option',
+      weight: 15,
+      keywords: ['no pressure', 'understand if', 'completely fine', 'no worries', 'feel free to decline', 'too busy'],
+      description: 'Gives them a graceful way to say no',
+    },
+    {
+      name: 'Timeline Given',
+      weight: 15,
+      keywords: ['by', 'before', 'deadline', 'within', 'next week', 'this week', 'end of', 'friday', 'monday'],
+      description: 'Mentions when you need the reference',
+    },
+    {
+      name: 'Makes It Easy',
+      weight: 15,
+      keywords: ['resume', 'talking points', 'bullet points', 'key points', 'summary', 'happy to provide', 'send you'],
+      description: 'Offers to provide materials or talking points',
+    },
+    {
+      name: 'Gratitude',
+      weight: 10,
+      keywords: ['thank', 'grateful', 'appreciate', 'means a lot', 'thanks'],
+      description: 'Thanks them genuinely',
+    },
+  ],
+  tips: [
+    'Remind them specifically who you are (project, dates)',
+    'Explain why they\'re the RIGHT person for this reference',
+    'Offer to make it easy (resume, bullet points)',
+    'Give them an out - they\'ll appreciate it',
+    'Follow up with your resume and talking points',
+    'Thank them again after they agree',
+  ],
+}
+
 // ============ ALL TOOLS ============
 
 export const allTools: Tool[] = [
@@ -1197,6 +1391,9 @@ export const allTools: Tool[] = [
   companyResearchGenerator,
   jobOfferComparison,
   interviewPrepChecklist,
+  linkedinConnectionScore,
+  jobDescriptionDecoder,
+  referenceRequestScore,
 ]
 
 export function getToolBySlug(slug: string): Tool | undefined {
