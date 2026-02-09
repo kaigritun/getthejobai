@@ -142,6 +142,23 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Stats Section */}
+      <section className="mt-24 border-t border-white/10 pt-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          {[
+            { stat: '38+', label: 'Free Guides' },
+            { stat: '50+', label: 'AI Prompts' },
+            { stat: '15+', label: 'Interactive Tools' },
+            { stat: '10min', label: 'Avg. Time Saved' },
+          ].map((item) => (
+            <div key={item.label}>
+              <div className="text-3xl md:text-4xl font-bold text-emerald-400 mb-2">{item.stat}</div>
+              <div className="text-sm text-white/50">{item.label}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* Why Use AI */}
       <section className="mt-24 border-t border-white/10 pt-16">
         <div className="max-w-xl">
